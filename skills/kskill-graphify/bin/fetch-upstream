@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Pull the official Graphify skill into upstream/ for re-trim diffs.
+# Do not copy it onto SKILL.md. GitHub raw only — never an unprefixed skill name.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+mkdir -p "$UPSTREAM_DIR"
+REF="${GRAPHIFY_UPSTREAM_REF:-v8}"
+URL="https://raw.githubusercontent.com/Graphify-Labs/graphify/${REF}/graphify/skill.md"
+curl -fsSL "$URL" -o "$UPSTREAM_DIR/SKILL.md"
+printf '%s\n' "$REF" "$URL" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$UPSTREAM_DIR/SOURCE.txt"
+wc -l "$UPSTREAM_DIR/SKILL.md"
+echo "snapshot: $UPSTREAM_DIR/SKILL.md (ref $REF)"
+echo "re-trim kskill-graphify/SKILL.md against that file; do not vendor it whole"

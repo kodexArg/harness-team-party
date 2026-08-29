@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": ".cursor/hooks/load-hook.py",
+        "timeout": 60
+      },
+      {
+        "command": ".cursor/hooks/graphify-ensure.py",
+        "timeout": 120
+      }
+    ]
+  }
+}

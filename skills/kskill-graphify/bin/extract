@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Rebuild the docs+harness graph into skills/kskill-graphify/graphify-out/.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+require_cli
+cd_repo
+mkdir -p "$OUT_DIR"
+graphify extract . --out "$SKILL_DIR"
+echo "graph: $GRAPH_JSON"

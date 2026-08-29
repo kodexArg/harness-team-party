@@ -1,0 +1,163 @@
+#!/usr/bin/env python3
+"""
+CLI entrypoint — composes dialog + art; owns neither resource set.
+
+  lib/dialog.py  → balloon / wrap / terminal width
+  lib/art.py     → cows/*.cow load + faces + active cow
+  cows/*.cow     → persistent ASCII resources (swap freely)
+"""
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from lib.art import (  # noqa: E402
+    face,
+    get_active_cow,
+    list_cows,
+    load_cow,
+    measure_art_width,
+    resolve_cow,
+    set_active_cow,
+)
+from lib.dialog import balloon, default_wrap_cols, wrap_lines  # noqa: E402
+from lib.legend import figure_for  # noqa: E402
+
+VERSION = "1.0.5"
+
+
+def read_text(argv_message: list[str]) -> str:
+    if argv_message:
+        return " ".join(argv_message)
+    data = sys.stdin.buffer.read()
+    try:
+        return data.decode("utf-8")
+    except UnicodeDecodeError:
+        sys.stderr.write("cowsay: invalid UTF-8 on stdin\n")
+        raise SystemExit(1) from None
+
+
+def parse(argv: list[str]) -> argparse.Namespace:
+    p = argparse.ArgumentParser(prog="cowsay", add_help=False)
+    p.add_argument("-h", "--help", action="store_true")
+    p.add_argument("-V", "--version", action="store_true")
+    p.add_argument("-l", action="store_true")
+    p.add_argument("-n", action="store_true")
+    p.add_argument("-W", type=int, default=None, metavar="cols")
+    p.add_argument("-e", default="oo")
+    p.add_argument("-T", default="  ")
+    # None → use get_active_cow() (.active-cow / COWSAY_COW / default)
+    p.add_argument("-f", default=None, metavar="cow")
+    p.add_argument("--set-cow", metavar="cow", help="persist active cow and exit")
+    p.add_argument("--show-cow", action="store_true", help="print active cow stem")
+    p.add_argument("-b", action="store_true")
+    p.add_argument("-d", action="store_true")
+    p.add_argument("-g", action="store_true")
+    p.add_argument("-p", action="store_true")
+    p.add_argument("-s", action="store_true")
+    p.add_argument("-t", action="store_true")
+    p.add_argument("-w", action="store_true")
+    p.add_argument("-y", action="store_true")
+    p.add_argument("--think", action="store_true")
+    p.add_argument(
+        "--legend",
+        default=None,
+        help="replace the animal with a micro-solid closed legend",
+    )
+    p.add_argument("message", nargs="*")
+    return p.parse_args(argv)
+
+
+def render(
+    text: str,
+    width: int | None = None,
+    *,
+    cow: str | None = None,
+    think: bool = False,
+    hard: bool = False,
+    eyes: str = "oo",
+    tongue: str = "  ",
+    flags: set[str] | None = None,
+    legend: str | None = None,
+) -> str:
+    """Wire dialog ← text and art ← cowfile or micro-solid legend."""
+    flags = flags or set()
+    if width is None:
+        width = default_wrap_cols()
+    width = max(1, width)
+    if cow is None:
+        cow = get_active_cow()
+
+    lines = wrap_lines(text.rstrip("\n"), width, hard)
+    e, t = face(eyes, tongue, flags)
+    thoughts = "o" if think else "\\"
+    art = figure_for(legend, thoughts) if legend else None
+    if art is None:
+        art = load_cow(resolve_cow(cow), thoughts, e, t)
+    min_content = max(0, measure_art_width(art) - 4)
+    ball, _ = balloon(lines, think, min_content_w=min_content)
+    return "\n".join(ball) + "\n" + art
+
+
+def main(argv: list[str] | None = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    args = parse(argv)
+    if args.help:
+        sys.stdout.write(
+            "usage: cowsay [-W cols] [-f cow] [--legend TOKEN] [-e eyes] [-T tongue]\n"
+            "              [-bdgpstwy] [-n] [--think] [-l] [message...]\n"
+            "       cowsay --set-cow NAME   # persist active cow (.active-cow)\n"
+            "       cowsay --show-cow       # print active stem\n"
+            "  --legend TOKEN replaces the animal with micro-solid art\n"
+            "  (QUICK WIN | GH ISSUE | GH REPO | EPIC DONE!).\n"
+            "  -W defaults to terminal width (COLS-4). Override: -W N or COWSAY_WIDTH.\n"
+            "  Default -f: COWSAY_COW env → .active-cow → default.\n"
+        )
+        return 0
+    if args.version:
+        sys.stdout.write(f"cowsay {VERSION} kodexArg\n")
+        return 0
+    if args.l:
+        return list_cows()
+    if args.show_cow:
+        sys.stdout.write(get_active_cow() + "\n")
+        return 0
+    if args.set_cow is not None:
+        stem = set_active_cow(args.set_cow)
+        sys.stdout.write(stem + "\n")
+        return 0
+
+    think = args.think or Path(sys.argv[0]).name == "cowthink"
+    flags = {k for k in "bdgpstwy" if getattr(args, k)}
+    text = read_text(args.message)
+    width = args.W if args.W is not None else default_wrap_cols()
+    cow = args.f if args.f is not None else get_active_cow()
+    sys.stdout.write(
+        render(
+            text,
+            width=width,
+            cow=cow,
+            think=think,
+            hard=args.n,
+            eyes=args.e,
+            tongue=args.T,
+            flags=flags,
+            legend=args.legend,
+        )
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        raise SystemExit(main())
+    except BrokenPipeError:
+        try:
+            sys.stdout.close()
+        except Exception:
+            pass
+        raise SystemExit(0)

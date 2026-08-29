@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+uvx --from graphifyy graphify extract . --code-only
+echo "Graphify graph refreshed (AST code-only)"

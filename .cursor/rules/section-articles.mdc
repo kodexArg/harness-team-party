@@ -1,0 +1,17 @@
+---
+description: First-level children of a section are articles with shared page-level chrome
+globs: "**/*.{{component extension}}"
+alwaysApply: false
+---
+
+# Section children are articles
+
+Every first-level child of a `<section>` is an `<article>`. Do not mount a page-level card as a `div`.
+
+All articles share one look: the project's page-level surface chrome plus the full width of the page measure — wide content, same theming. The project's card component composes that level, so a card is an `<article>`.
+
+Nested chrome (tile, floating, menu, control, pill, table) stays a `div`.
+
+Instantiation: point the `globs` above at this project's component file
+extension and name the project's own surface/card classes in place of this
+generic wording ([[CLONE]]). A headless project deletes this rule.

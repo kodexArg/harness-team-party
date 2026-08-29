@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>concepto · {{CONCEPT_NAME}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ====== design-tokens.css — embedded VERBATIM from references/design-tokens.css (SSOT). Do not hand-edit here. ====== */
+:root { --ink-1000: #0C0B09; --ink-900:  #141210; --ink-850:  #1a1714; --ink-600:  #3a352f; --ink-500:  #6b6358; --cream-100: #F3EEE4; --warm-200:  #cdbfa8; --orange-500: #ff8c42; --orange-400: #ffaa70; --orange-deep:#FF6A1A; --orange-600: #E25510; --teal-500: #4FA6AB; --teal-300: #7cc4c8; --sage-500: #87A878; --sage-300: #a9c49e; --good: var(--sage-500); --warn: var(--orange-500); --bad:  #d9694e; --diff-add-bg:  rgba(135,168,120,0.12); --diff-add-fg:  #a9c49e; --diff-del-bg:  rgba(217,105,78,0.12); --diff-del-fg:  #e0937f; --font-sans: 'Nunito', system-ui, sans-serif; --font-mono: 'DM Mono', ui-monospace, monospace; --radius-md: 0; --radius-lg: 0; --radius-pill: 999px; --hairline: 1.5px solid var(--ink-600); --shadow-glow: 0 0 0 transparent; --dur-slow: 760ms; --ease-settle: cubic-bezier(0.16, 1, 0.3, 1); --gap-block: 2rem; --gap-section: 4.5rem; --mermaid-min-h: 50rem; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+margin: 0;
+background: var(--ink-1000);
+color: var(--cream-100);
+font-family: var(--font-sans);
+font-weight: 400;
+line-height: 1.72;
+letter-spacing: 0.01em;
+font-size: 16px;
+max-width: 480px;
+margin-inline: auto;
+padding: 2.5rem 1rem 4rem;
+position: relative;
+overflow-x: hidden; }
+.po-glow {
+position: fixed;
+inset: 0;
+z-index: -1;
+pointer-events: none;
+background:
+radial-gradient(60% 40% at 78% 12%,
+rgba(255,106,26,0.16) 0%,
+rgba(255,106,26,0.05) 38%,
+transparent 70%); }
+.kicker {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--orange-500);
+margin: 2rem 0 1rem;
+display: flex;
+gap: 8px;
+align-items: center; }
+.kicker .num { color: var(--warm-200); }
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 0.75rem; text-transform: lowercase; overflow-wrap: anywhere; hyphens: auto; }
+h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); color: var(--orange-400); margin-bottom: 1.5rem; }
+h2 { font-size: clamp(1.6rem, 7.5vw, 2.1rem); margin-bottom: 1.25rem; }
+h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem; }
+p { color: var(--warm-200); margin: 0 0 1.5rem; }
+strong { color: var(--cream-100); font-weight: 800; }
+a { color: var(--orange-500); text-decoration: none; border-bottom: 1.5px solid rgba(255,140,66,0.35); }
+section { margin: 0 0 var(--gap-section); }
+section > :first-child { margin-top: 0; }
+.takeaway {
+background: var(--orange-500);
+color: var(--ink-1000);
+padding: 1.5rem;
+margin: 2rem 0;
+border: none; }
+.takeaway :is(h2, h3, p, strong, code, li) { color: var(--ink-1000); }
+.takeaway :last-child { margin-bottom: 0; }
+.takeaway code { background: rgba(12,11,9,0.12); font-weight: 500; }
+.card {
+background: none;
+border: none;
+border-radius: 0;
+padding: 0;
+margin: 0 0 var(--gap-block); }
+.card.good, .card.ok  { border-left: 2px solid var(--orange-deep); padding-left: 0.75rem; }
+.card.teal { border-left: 2px solid var(--teal-500);  padding-left: 0.75rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-family: var(--font-mono);
+font-size: 0.82rem;
+letter-spacing: 0.03em;
+padding: 6px 13px;
+border-radius: var(--radius-pill);
+border: var(--hairline);
+color: var(--cream-100); }
+.chip.ok   { color: var(--sage-300);   border-color: rgba(135,168,120,0.5); }
+.chip.work { color: var(--orange-400); border-color: rgba(255,140,66,0.5); }
+.chip.stop { color: var(--teal-300);   border-color: rgba(79,166,171,0.5); }
+pre, code { font-family: var(--font-mono); font-size: 0.94rem; }
+code { color: var(--orange-400); }
+pre {
+background: var(--ink-1000);
+border: var(--hairline);
+border-radius: var(--radius-md);
+padding: 16px 16px;
+overflow-x: auto;
+line-height: 1.6;
+color: var(--cream-100); }
+pre code { color: inherit; }
+.diff .add { display: block; background: var(--diff-add-bg); color: var(--diff-add-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .del { display: block; background: var(--diff-del-bg); color: var(--diff-del-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .add::before { content: '+ '; opacity: 0.6; }
+.diff .del::before { content: '- '; opacity: 0.6; }
+.icon { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.75; vertical-align: -0.18em; }
+.icon-lg { width: 2.4rem; height: 2.4rem; stroke: var(--orange-500); }
+.stat { font-size: clamp(3rem, 18vw, 4.6rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--cream-100); }
+.stat .unit { color: var(--orange-500); font-size: 0.4em; }
+.diagram {
+width: 100vw;
+margin-inline: calc(50% - 50vw);
+padding: 0;
+margin-block: 2rem 3rem;
+background: none;
+border: none;
+overflow-x: auto;
+overflow-y: visible; -webkit-overflow-scrolling: touch;
+scrollbar-width: thin;
+scrollbar-color: var(--orange-deep) transparent; }
+.diagram::-webkit-scrollbar { height: 3px; }
+.diagram::-webkit-scrollbar-track { background: transparent; }
+.diagram::-webkit-scrollbar-thumb { background: var(--orange-deep); border-radius: var(--radius-pill); }
+.diagram .mermaid, .diagram pre.mermaid {
+display: flex; justify-content: center; min-width: min-content;
+background: none; border: none; padding: 0 1rem; margin: 0; }
+.diagram svg { display: block; max-width: none !important; background: transparent !important; min-height: var(--mermaid-min-h); }
+.diagram svg .background, .diagram foreignObject div { background: transparent !important; }
+.diagram .labelBkg { background: transparent !important; }
+.diagram .edgeLabel, .diagram span.edgeLabel, .diagram .edgeLabel p { background-color: var(--ink-900) !important; color: var(--warm-200) !important; }
+.diagram .edgeLabel rect, .diagram .edgeLabels rect { fill: var(--ink-900) !important; opacity: 1 !important; }
+.diagram .edgeLabel span, .diagram .edgeLabel text, .diagram .edgeLabel tspan { color: var(--warm-200) !important; fill: var(--warm-200) !important; }
+.figure { margin: 0 0 16px; border: var(--hairline); border-radius: var(--radius-lg); overflow: hidden; background: var(--ink-1000); position: relative; }
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-500); padding: 10px 14px; border-top: var(--hairline); display: flex; gap: 8px; align-items: center; }
+.figure--veil::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 0, rgba(255,106,26,.16), transparent 60%); mix-blend-mode: soft-light; pointer-events: none; }
+.image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 160px; border: 1.5px dashed var(--ink-600); border-radius: var(--radius-lg); color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 24px; margin: 0 0 16px; }
+.image-slot .icon { width: 2rem; height: 2rem; stroke: var(--ink-500); }
+.beat { color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-align: center; margin-top: 40px; }
+@media (prefers-reduced-motion: no-preference) {
+.rise { opacity: 0; transform: translateY(18px); animation: rise var(--dur-slow) var(--ease-settle) forwards; }
+.d1 { animation-delay: 80ms; } .d2 { animation-delay: 200ms; }
+.d3 { animation-delay: 320ms; } .d4 { animation-delay: 440ms; } .d5 { animation-delay: 560ms; }
+@keyframes rise { to { opacity: 1; transform: none; } } }
+@media (min-width:768px){
+body{max-width:660px;font-size:17px;padding:4rem 2.5rem 6rem}
+p{text-align:justify;text-wrap:pretty;hyphens:auto}
+.kicker,.beat,.chips,figcaption{text-align:left} }
+@media (min-width:1024px){
+body{max-width:880px;font-size:18px;padding:5rem 4rem 7rem}
+h1{font-size:clamp(3rem,5.4vw,4.6rem)}
+h2{font-size:clamp(2rem,3.2vw,2.7rem)}
+.stat{font-size:clamp(4.5rem,9vw,7rem)}
+.po-glow{background:radial-gradient(52% 40% at 82% 8%,rgba(255,106,26,.20) 0%,rgba(255,106,26,.06) 42%,transparent 72%)} }
+.compare-nav {
+position: sticky;
+top: 0;
+z-index: 10;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+padding: 12px 0 16px;
+margin: 0 0 8px;
+background: linear-gradient(180deg, var(--ink-1000) 75%, transparent); }
+.compare-tab {
+font-family: var(--font-mono);
+font-size: 0.78rem;
+letter-spacing: 0.05em;
+text-transform: lowercase;
+padding: 10px 16px;
+min-height: 44px;
+border: var(--hairline);
+border-radius: var(--radius-pill);
+background: var(--ink-900);
+color: var(--warm-200);
+cursor: pointer; -webkit-tap-highlight-color: transparent;
+touch-action: manipulation; }
+.compare-tab.is-active { font-weight: 800; }
+.compare-tab.is-active[data-compare="both"] { border-color: var(--cream-100); color: var(--cream-100); }
+.compare-tab.is-active[data-compare="grok"] { border-color: var(--orange-500); color: var(--orange-400); }
+.compare-tab.is-active[data-compare="kodex"] { border-color: var(--teal-500); color: var(--teal-300); }
+.compare-tab.is-active[data-compare="contrast"] { border-color: var(--sage-500); color: var(--sage-300); } [data-compare-panel][hidden] { display: none !important; }
+.compare-row {
+display: grid;
+grid-template-columns: 1fr;
+gap: 24px;
+margin: 0 0 32px; }
+.compare-col--a { border-left: 2px solid var(--orange-deep); padding-left: 16px; }
+.compare-col--b { border-left: 2px solid var(--teal-500); padding-left: 16px; }
+.compare-col-label {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin: 0 0 10px;
+display: block; }
+.compare-col--a .compare-col-label { color: var(--orange-500); }
+.compare-col--b .compare-col-label { color: var(--teal-300); }
+@media (min-width: 768px) {
+.compare-row { grid-template-columns: 1fr 1fr; gap: 32px; } }
+
+.hero-q{font-size:clamp(4rem,22vw,7rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:var(--orange-500);margin:0 0 1rem}
+</style>
+</head>
+<body>
+<div class="po-glow"></div>
+
+<!-- ============ HERO ============ -->
+<section class="rise d1">
+  <p class="kicker">CONCEPTO</p>
+  <p class="hero-q">{{?}}</p>
+  <h1>{{CONCEPT_NAME}}</h1>
+  <p>{{ONE_LINE_HOOK}}</p>
+  <div class="chips">
+    <span class="chip work">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      {{DOMAIN}}
+    </span>
+    <span class="chip">{{TAG_2}}</span>
+  </div>
+</section>
+
+<!-- ============ PASO 01 ============ -->
+<section class="rise d2">
+  <p class="kicker"><span class="num">01</span> · el problema</p>
+  <div class="card">
+    <h3>
+      <svg class="icon" style="stroke:var(--orange-500)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      {{STEP_1_TITLE}}
+    </h3>
+    <p>{{STEP_1_BODY}}</p>
+    <p>→ {{STEP_1_IMPLICATION}}</p>
+  </div>
+  <div class="diagram">
+<pre class="mermaid">
+%%{init: {'theme':'base','fontFamily':"'Nunito',sans-serif",'themeVariables':{'lineColor':'#cdbfa8','edgeLabelBackground':'#141210','tertiaryTextColor':'#F3EEE4'},'flowchart':{'curve':'basis','htmlLabels':true}}}%%
+flowchart TD
+  A([pregunta]) --> B{tiene respuesta?}
+  B -->|sí| C[responder directo]
+  B -->|no| D[explicar en pasos]
+  C --> E([entendido])
+  D --> F([entendido igual])
+  classDef step fill:#1a1714,stroke:#3a352f,stroke-width:1.5px,color:#F3EEE4,rx:10,ry:10;
+  classDef hero fill:#1a1714,stroke:#ff8c42,stroke-width:1.75px,color:#ff8c42,rx:10,ry:10;
+  classDef cool fill:#1a1714,stroke:#4FA6AB,stroke-width:1.5px,color:#4FA6AB,rx:10,ry:10;
+  classDef ok fill:#1a1714,stroke:#87A878,stroke-width:1.5px,color:#87A878,rx:10,ry:10;
+  classDef bad fill:#1a1714,stroke:#FF6A1A,stroke-width:1.5px,color:#FF6A1A,rx:10,ry:10;
+  class A,C,D step
+  class B hero
+  class E,F ok
+</pre>
+  </div>
+</section>
+
+<!-- ============ PASO 02 ============ -->
+<section class="rise d3">
+  <p class="kicker"><span class="num">02</span> · el mecanismo</p>
+  <div class="card">
+    <h3>
+      <svg class="icon" style="stroke:var(--teal-300)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+      {{STEP_2_TITLE}}
+    </h3>
+    <p>{{STEP_2_BODY}}</p>
+    <p>→ {{STEP_2_DETAIL}}</p>
+    <p>→ {{STEP_2_NUANCE}}</p>
+  </div>
+</section>
+
+<!-- ============ PASO 03 · diagrama de estados ============ -->
+<section class="rise d4">
+  <p class="kicker"><span class="num">03</span> · los estados posibles</p>
+  <div class="card">
+    <h3>
+      <svg class="icon" style="stroke:var(--sage-300)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      {{STEP_3_TITLE}}
+    </h3>
+    <p>{{STEP_3_BODY}}</p>
+  </div>
+  <div class="diagram">
+<pre class="mermaid">
+%%{init: {'theme':'base','fontFamily':"'Nunito',sans-serif",'themeVariables':{'lineColor':'#cdbfa8','edgeLabelBackground':'#141210','tertiaryTextColor':'#F3EEE4'}}}%%
+stateDiagram-v2
+  s0 : inactivo
+  s1 : cargando
+  s2 : listo
+  s3 : error
+  [*] --> s0
+  s0 --> s1 : iniciar
+  s1 --> s2 : ok
+  s2 --> [*]
+  s1 --> s3 : falla
+  s3 --> s0 : reintentar
+  classDef step fill:#1a1714,stroke:#3a352f,stroke-width:1.5px,color:#F3EEE4,rx:10,ry:10;
+  classDef hero fill:#1a1714,stroke:#ff8c42,stroke-width:1.75px,color:#ff8c42,rx:10,ry:10;
+  classDef ok fill:#1a1714,stroke:#87A878,stroke-width:1.5px,color:#87A878,rx:10,ry:10;
+  classDef bad fill:#1a1714,stroke:#FF6A1A,stroke-width:1.5px,color:#FF6A1A,rx:10,ry:10;
+  class s0,s1 step
+  class s2 ok
+  class s3 bad
+</pre>
+  </div>
+</section>
+
+<!-- ============ PASO 04 · cierre ============ -->
+<section class="rise d5">
+  <p class="kicker"><span class="num">04</span> · por qué importa</p>
+  <div class="card">
+    <h3>
+      <svg class="icon" style="stroke:var(--orange-500)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      {{STEP_4_TITLE}}
+    </h3>
+    <p>{{STEP_4_BODY}}</p>
+    <p>→ {{STEP_4_CONSEQUENCE}}</p>
+  </div>
+  <!-- takeaway -->
+  <div class="card good">
+    <span class="chip ok">takeaway</span>
+    <p style="margin-top:12px"><strong>{{TAKEAWAY_ONE_LINE}}</strong></p>
+  </div>
+</section>
+
+<p class="beat">{{DATE}} · concepto · {{CONCEPT_NAME}}</p>
+
+<!-- mermaid loader (CDN); see references/mermaid-guide.md -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' });
+  mermaid.run().then(() => {
+    const MIN_H = 800; /* px — same minimum legible height for every diagram */
+    document.querySelectorAll('.diagram svg').forEach(svg => {
+      const vb = svg.viewBox && svg.viewBox.baseVal;
+      if (!vb || !vb.height) return;
+      const k = Math.max(1, MIN_H / vb.height); /* upscale-only: never shrink a shape */
+      svg.style.width = (vb.width * k) + 'px';
+      svg.style.height = (vb.height * k) + 'px';
+      svg.style.maxWidth = 'none';
+    });
+  });
+</script>
+</body>
+</html>

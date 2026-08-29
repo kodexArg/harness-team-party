@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden fixture — structural selftest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+/* ============================================================================
+   Design tokens — Presentation Orange, mobile-first dark theme
+   Embed this block INLINE inside <style> in every artifact. Single source of
+   truth for color / type / radius / glow / motion. Translated from the
+   1920x1080 wall aesthetic to a phone viewport. Do not improvise values.
+   ============================================================================ */
+:root {
+  --ink-1000: #0C0B09;
+  --cream-100: #F3EEE4;
+}
+body{margin:0;background:var(--ink-1000);color:var(--cream-100)}
+</style>
+</head>
+<body>
+<h1>Golden fixture</h1>
+<p>One-line summary for the structural selftest.</p>
+<figure class="figure"><img src="./assets/sample-figure.jpg" alt="local asset ref"></figure>
+<pre class="mermaid">
+%%{init: {'theme':'base','fontFamily':"'Nunito',sans-serif"}}%%
+flowchart TD
+  A([entrada]) --> B{validar}
+  B -->|ok| C[procesar]
+</pre>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+/* ============================================================================
+   Design tokens — Presentation Orange, mobile-first dark theme
+   Embed this block INLINE inside <style> in every artifact. Single source of
+   truth for color / type / radius / glow / motion. Translated from the
+   1920x1080 wall aesthetic to a phone viewport. Do not improvise values.
+   ============================================================================ */
+
+:root {
+  /* --- ink / surface (warm near-black) --- */
+  --ink-1000: #0C0B09;   /* deepest backdrop / curtain */
+  --ink-900:  #141210;   /* body / card surface */
+  --ink-850:  #1a1714;   /* raised card surface */
+  --ink-600:  #3a352f;   /* hairline borders */
+  --ink-500:  #6b6358;   /* muted / disabled text */
+
+  /* --- text (cream) --- */
+  --cream-100: #F3EEE4;  /* primary text */
+  --warm-200:  #cdbfa8;  /* secondary text */
+
+  /* --- orange (lead accent) --- */
+  --orange-500: #ff8c42; /* DEFAULT interactive / heading accent (terminal tone) */
+  --orange-400: #ffaa70; /* hover / shimmer lighten */
+  --orange-deep:#FF6A1A; /* glow/halo + high-emphasis punctuation */
+  --orange-600: #E25510; /* press / deepen */
+
+  /* --- second voices --- */
+  --teal-500: #4FA6AB;   /* petroleo — "the other tool" / column B */
+  --teal-300: #7cc4c8;
+  --sage-500: #87A878;   /* salvia — organic ok / safe / go */
+  --sage-300: #a9c49e;
+
+  /* --- semantic --- */
+  --good: var(--sage-500);
+  --warn: var(--orange-500);
+  --bad:  #d9694e;        /* warm red, never pure red */
+  --diff-add-bg:  rgba(135,168,120,0.12);
+  --diff-add-fg:  #a9c49e;
+  --diff-del-bg:  rgba(217,105,78,0.12);
+  --diff-del-fg:  #e0937f;
+
+  /* --- type --- */
+  --font-sans: 'Nunito', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  /* --- radius (squared: no rounded corners — text fills full width) --- */
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 999px;   /* chips stay pill-shaped on purpose */
+
+  /* --- borders --- */
+  --hairline: 1.5px solid var(--ink-600);
+
+  /* --- glow (the "spot rojo oscuro") --- */
+  --shadow-glow: 0 0 0 transparent; /* no elevation shadows; glow is a layer */
+
+  /* --- motion --- */
+  --dur-slow: 760ms;
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* --- vertical rhythm (round rem; ~+15/25% over the previous px values) --- */
+  --gap-block: 2rem;     /* between blocks inside a section */
+  --gap-section: 4.5rem; /* between sections */
+  --mermaid-min-h: 50rem; /* 800px — the minimum legible height of ANY diagram */
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ink-1000);
+  color: var(--cream-100);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  /* airier leading compensates the 1px smaller body size: same block height,
+     more room between lines. Mono is NOT reduced (it is rem/root-based). */
+  line-height: 1.72;
+  letter-spacing: 0.01em;
+  font-size: 16px;
+  /* phone-width single column; margins pulled in — text nearly edge-to-edge */
+  max-width: 480px;
+  margin-inline: auto;
+  padding: 2.5rem 1rem 4rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- the orange radial glow: one off-center halo behind the void --- */
+.po-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 40% at 78% 12%,
+      rgba(255,106,26,0.16) 0%,
+      rgba(255,106,26,0.05) 38%,
+      transparent 70%);
+}
+
+/* --- kicker eyebrow: the ONLY uppercase.
+   It opens a section, so the top air lives here (not on the section). --- */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange-500);
+  margin: 2rem 0 1rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.kicker .num { color: var(--warm-200); }
+
+/* --- headings: big, airy, lowercase --- */
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 0.75rem; text-transform: lowercase; overflow-wrap: anywhere; hyphens: auto; }
+/* the report title — and ONLY it — carries the orange */
+h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); color: var(--orange-400); margin-bottom: 1.5rem; }
+h2 { font-size: clamp(1.6rem, 7.5vw, 2.1rem); margin-bottom: 1.25rem; }
+h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem; }
+
+/* paragraph separation is deliberately generous (×1.25 over the old 1.2rem) —
+   prose breathes; it is the main readability lever on a phone */
+p { color: var(--warm-200); margin: 0 0 1.5rem; }
+strong { color: var(--cream-100); font-weight: 800; }
+a { color: var(--orange-500); text-decoration: none; border-bottom: 1.5px solid rgba(255,140,66,0.35); }
+
+section { margin: 0 0 var(--gap-section); }
+section > :first-child { margin-top: 0; }
+
+/* --- takeaway: the one loud block. Solid orange, black type, full contrast. --- */
+.takeaway {
+  background: var(--orange-500);
+  color: var(--ink-1000);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: none;
+}
+.takeaway :is(h2, h3, p, strong, code, li) { color: var(--ink-1000); }
+.takeaway :last-child { margin-bottom: 0; }
+.takeaway code { background: rgba(12,11,9,0.12); font-weight: 500; }
+
+/* --- card: flattened to a flow block — no surface, no border box, no padding.
+   Text runs the full column width. A left orange rule marks emphasis instead of
+   a boxed body. (Cuerpo y bordes redondeados removidos por pedido de kodex.) --- */
+.card {
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 0 var(--gap-block);
+}
+/* emphasis variant: a single left rule, hugging the text (minimum separation) */
+.card.good, .card.ok  { border-left: 2px solid var(--orange-deep); padding-left: 0.75rem; }
+.card.teal { border-left: 2px solid var(--teal-500);  padding-left: 0.75rem; }
+
+/* --- chips / pills --- */
+/* wrap several chips in a .chips row so multiple tags sit side by side */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;        /* up from .72: was straining the eye at mono scale */
+  letter-spacing: 0.03em;
+  padding: 6px 13px;
+  border-radius: var(--radius-pill);
+  border: var(--hairline);
+  color: var(--cream-100);   /* brighter than warm-200: dim mono tags were hard to read */
+}
+.chip.ok   { color: var(--sage-300);   border-color: rgba(135,168,120,0.5); }
+.chip.work { color: var(--orange-400); border-color: rgba(255,140,66,0.5); }
+.chip.stop { color: var(--teal-300);   border-color: rgba(79,166,171,0.5); }
+
+/* --- code / terminal in DM Mono --- */
+/* mono runs visually small vs Nunito at the same px — pull it closer to body copy */
+pre, code { font-family: var(--font-mono); font-size: 0.94rem; }
+code { color: var(--orange-400); }
+pre {
+  background: var(--ink-1000);
+  border: var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 16px 16px;
+  overflow-x: auto;
+  line-height: 1.6;
+  color: var(--cream-100);
+}
+pre code { color: inherit; }
+
+/* --- diff coloring (subtle, from token set) --- */
+.diff .add { display: block; background: var(--diff-add-bg); color: var(--diff-add-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .del { display: block; background: var(--diff-del-bg); color: var(--diff-del-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .add::before { content: '+ '; opacity: 0.6; }
+.diff .del::before { content: '- '; opacity: 0.6; }
+
+/* --- icon sizing: inline SVG inherits currentColor --- */
+.icon { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.75; vertical-align: -0.18em; }
+.icon-lg { width: 2.4rem; height: 2.4rem; stroke: var(--orange-500); }
+
+/* --- big stat figure --- */
+.stat { font-size: clamp(3rem, 18vw, 4.6rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--cream-100); }
+.stat .unit { color: var(--orange-500); font-size: 0.4em; }
+
+/* --- mermaid: TOP PRIORITY. Full width, centred, no background, no frame. ---
+   Sizing contract (enforced by the fitDiagrams() loader script — CSS alone
+   cannot express it, see mermaid-guide.md):
+     · vertical   → min --mermaid-min-h, then grows to infinity. NEVER scrolls.
+     · horizontal → scrolls when it must. NEVER shrinks a shape to fit.
+   Result: every diagram, simple or huge, renders at the same minimum legible
+   scale. The script writes px width/height onto the svg from its viewBox, so
+   nothing here may be !important on width/height or it would override it. */
+.diagram {
+  /* full-bleed: escape the body column, stay centred */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  padding: 0;
+  margin-block: 2rem 3rem;
+  background: none;
+  border: none;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;                              /* hairline, only when needed */
+  scrollbar-color: var(--orange-deep) transparent;
+}
+.diagram::-webkit-scrollbar { height: 3px; }
+.diagram::-webkit-scrollbar-track { background: transparent; }
+.diagram::-webkit-scrollbar-thumb { background: var(--orange-deep); border-radius: var(--radius-pill); }
+/* .mermaid is a <pre> — strip the code-block skin, it must sit on nothing.
+   Centred when it fits; flush-left and scrolling when it doesn't. */
+.diagram .mermaid, .diagram pre.mermaid {
+  display: flex; justify-content: center; min-width: min-content;
+  background: none; border: none; padding: 0 1rem; margin: 0;
+}
+.diagram svg { display: block; max-width: none !important; background: transparent !important; min-height: var(--mermaid-min-h); }
+.diagram svg .background, .diagram foreignObject div { background: transparent !important; }
+/* edge / transition labels: mermaid's edgeLabelBackground theme var is unreliable.
+   The visible light box is div.labelBkg + mermaid's own #id-scoped .edgeLabel rule;
+   force readable cream-on-charcoal here (verified against mermaid v11 DOM). */
+.diagram .labelBkg { background: transparent !important; }
+.diagram .edgeLabel, .diagram span.edgeLabel, .diagram .edgeLabel p { background-color: var(--ink-900) !important; color: var(--warm-200) !important; }
+.diagram .edgeLabel rect, .diagram .edgeLabels rect { fill: var(--ink-900) !important; opacity: 1 !important; }
+.diagram .edgeLabel span, .diagram .edgeLabel text, .diagram .edgeLabel tspan { color: var(--warm-200) !important; fill: var(--warm-200) !important; }
+
+/* --- figure: framed LOCAL image (referenced, not embedded — see SKILL image
+   handling). Images are LOCAL USE: they don't travel when only the .html is
+   sent over WhatsApp. Drop the file in an assets/ beside the artifact. --- */
+.figure { margin: 0 0 16px; border: var(--hairline); border-radius: var(--radius-lg); overflow: hidden; background: var(--ink-1000); position: relative; }
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-500); padding: 10px 14px; border-top: var(--hairline); display: flex; gap: 8px; align-items: center; }
+.figure--veil::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 0, rgba(255,106,26,.16), transparent 60%); mix-blend-mode: soft-light; pointer-events: none; }
+/* empty slot: a placeholder to drop a local image into */
+.image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 160px; border: 1.5px dashed var(--ink-600); border-radius: var(--radius-lg); color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 24px; margin: 0 0 16px; }
+.image-slot .icon { width: 2rem; height: 2rem; stroke: var(--ink-500); }
+
+/* --- footer beat --- */
+.beat { color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-align: center; margin-top: 40px; }
+
+/* --- liminal entrance, gated for reduced-motion / print / WhatsApp preview --- */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { opacity: 0; transform: translateY(18px); animation: rise var(--dur-slow) var(--ease-settle) forwards; }
+  .d1 { animation-delay: 80ms; } .d2 { animation-delay: 200ms; }
+  .d3 { animation-delay: 320ms; } .d4 { animation-delay: 440ms; } .d5 { animation-delay: 560ms; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+/* ===== responsive: mobile-first base above; progressive enhancement for tablet/desktop.
+   First ≠ only — the report must read well on a phone AND a desktop. ===== */
+@media (min-width:768px){
+  body{max-width:660px;font-size:17px;padding:4rem 2.5rem 6rem}
+  /* justified only where the column is wide enough not to open rivers —
+     with hyphens on. Phone stays ragged-right. */
+  p{text-align:justify;text-wrap:pretty;hyphens:auto}
+  .kicker,.beat,.chips,figcaption{text-align:left}
+}
+@media (min-width:1024px){
+  body{max-width:880px;font-size:18px;padding:5rem 4rem 7rem}
+  h1{font-size:clamp(3rem,5.4vw,4.6rem)}
+  h2{font-size:clamp(2rem,3.2vw,2.7rem)}
+  .stat{font-size:clamp(4.5rem,9vw,7rem)}
+  .po-glow{background:radial-gradient(52% 40% at 82% 8%,rgba(255,106,26,.20) 0%,rgba(255,106,26,.06) 42%,transparent 72%)}
+}
+
+/* --- interactive compare (vanilla JS tabs — see references/interactive-compare.md) --- */
+.compare-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 0 16px;
+  margin: 0 0 8px;
+  background: linear-gradient(180deg, var(--ink-1000) 75%, transparent);
+}
+.compare-tab {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  padding: 10px 16px;
+  min-height: 44px;
+  border: var(--hairline);
+  border-radius: var(--radius-pill);
+  background: var(--ink-900);
+  color: var(--warm-200);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.compare-tab.is-active { font-weight: 800; }
+.compare-tab.is-active[data-compare="both"] { border-color: var(--cream-100); color: var(--cream-100); }
+.compare-tab.is-active[data-compare="grok"] { border-color: var(--orange-500); color: var(--orange-400); }
+.compare-tab.is-active[data-compare="kodex"] { border-color: var(--teal-500); color: var(--teal-300); }
+.compare-tab.is-active[data-compare="contrast"] { border-color: var(--sage-500); color: var(--sage-300); }
+[data-compare-panel][hidden] { display: none !important; }
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 0 32px;
+}
+.compare-col--a { border-left: 2px solid var(--orange-deep); padding-left: 16px; }
+.compare-col--b { border-left: 2px solid var(--teal-500); padding-left: 16px; }
+.compare-col-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  display: block;
+}
+.compare-col--a .compare-col-label { color: var(--orange-500); }
+.compare-col--b .compare-col-label { color: var(--teal-300); }
+@media (min-width: 768px) {
+  .compare-row { grid-template-columns: 1fr 1fr; gap: 32px; }
+}

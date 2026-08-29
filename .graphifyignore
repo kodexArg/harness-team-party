@@ -1,0 +1,10 @@
+tests/
+node_modules/
+dist/
+build/
+.venv/
+__pycache__/
+.git/
+.mvmcp/
+.local/
+graphify-out/

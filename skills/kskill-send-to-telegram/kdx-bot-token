@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# Resolve a Telegram bot token for the current Unix user. Prints it on stdout.
+#   usage: kdx-bot-token report    -> @KdxHQBot     (REPORT OUTPUT, default)
+#          kdx-bot-token terminal  -> @KdxTuringBot (TERMINAL OUTPUT)
+#
+# Three lanes, tried in order until one yields a non-empty token:
+#   1. pykodex -> sandboxed, HAS NO SUDO; reads its own 0600 copy under ~/.config.
+#   2. kodex   -> reads the root-only .env through NOPASSWD sudo, but only when
+#                 that file is actually readable (sudo alone is not enough).
+#   3. either  -> AWS Secrets Manager, when KDX_BOT_TOKEN_SECRET_ID is set; the
+#                 durable, file-free fallback that survives a repo clean with no
+#                 hand-copy (aligns with the no-secrets-in-files doctrine).
+# Local copy wins when present, so the sandbox never needs privilege.
+set -euo pipefail
+
+case "${1:-report}" in
+  report)   var=KDXHQ_BOT_TOKEN  ; dir=kdxhq-bot ;;
+  terminal) var=TURING_BOT_TOKEN ; dir=turing-bot ;;
+  *) echo "kdx-bot-token: unknown channel '$1' (use: report | terminal)" >&2; exit 2 ;;
+esac
+
+local_env="$HOME/.config/$dir/.env"
+root_env="/root/.config/$dir/.env"
+token=""
+
+# Lane 1 — local 0600 copy (pykodex sandbox; kodex too if a copy exists).
+if [[ -r "$local_env" ]]; then
+  token=$(grep -oP "^${var}=\K.*" "$local_env" || true)
+fi
+
+# Lane 2 — root-only .env via NOPASSWD sudo, only when it is actually readable.
+# The sudo -n test alone is not enough: on the kodex machine sudo succeeds even
+# when $root_env is absent, so require sudo test -r before reading it.
+if [[ -z "$token" ]] && sudo -n true 2>/dev/null && sudo test -r "$root_env"; then
+  token=$(sudo grep -oP "^${var}=\K.*" "$root_env" || true)
+fi
+
+# Lane 3 — AWS Secrets Manager, the durable file-free fallback. Gated on
+# KDX_BOT_TOKEN_SECRET_ID; the SecretString is JSON keyed by the same var names
+# the .env files use ($var), read with the ambient AWS profile.
+if [[ -z "$token" && -n "${KDX_BOT_TOKEN_SECRET_ID:-}" ]] && command -v aws >/dev/null 2>&1; then
+  token=$(aws secretsmanager get-secret-value \
+    --secret-id "$KDX_BOT_TOKEN_SECRET_ID" \
+    --region "${AWS_REGION:-us-east-1}" \
+    --query SecretString --output text 2>/dev/null \
+    | VAR="$var" python3 -c 'import json,os,sys; print(json.load(sys.stdin).get(os.environ["VAR"],""))' 2>/dev/null || true)
+fi
+
+[[ -n "${token:-}" ]] || {
+  echo "kdx-bot-token: no token for '$1' — none in $local_env, $root_env (via sudo), or Secrets Manager (\$KDX_BOT_TOKEN_SECRET_ID)." >&2
+  exit 1
+}
+printf '%s' "$token"

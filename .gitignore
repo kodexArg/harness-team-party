@@ -1,0 +1,39 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+build/
+.DS_Store
+*.egg-info/
+.coverage
+htmlcov/
+.claude/.nudge-seen-*
+.claude/kdx-park.json
+.claude/scheduled_tasks.lock
+.claude/worktrees/
+.vscode/
+.obsidian/
+
+# Local-only artifacts (DB dumps, scratch). Never commit — may hold production rows / PII.
+.local/
+
+# MCP server secrets live outside the repo, always.
+mcp/obsidian_token
+
+.continue/
+.kilo/
+
+# Graphify generated artifacts — graph.json and manifest.json are tracked
+skills/kskill-graphify/graphify-out/*
+!skills/kskill-graphify/graphify-out/graph.json
+!skills/kskill-graphify/graphify-out/manifest.json
+graphify-out/*
+!graphify-out/graph.json
+!graphify-out/manifest.json

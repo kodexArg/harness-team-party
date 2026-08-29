@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Upgrade the host Graphify CLI (PyPI graphifyy). Isolated uv tool, not a project dep.
+set -euo pipefail
+if ! command -v uv >/dev/null 2>&1; then
+  echo "uv is required: https://docs.astral.sh/uv/" >&2
+  exit 1
+fi
+uv tool install --upgrade 'graphifyy[mcp]'
+graphify --help | head -n 1
+command -v graphify

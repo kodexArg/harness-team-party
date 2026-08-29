@@ -1,0 +1,19 @@
+{
+  "env": {
+    "MCP_TIMEOUT": "180000",
+    "FASTMCP_CHECK_FOR_UPDATES": "off"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(gh api:*)",
+      "Bash(gh label list:*)"
+    ]
+  }
+}

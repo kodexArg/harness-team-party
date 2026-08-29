@@ -1,0 +1,21 @@
+---
+description: graphify knowledge graph context
+alwaysApply: true
+---
+
+This project has a graphify knowledge graph at graphify-out/. Governance: [[adr-35-graphify]]. Facts: docs/GRAPHIFY.md.
+
+**MANDATORY: Before using Read, Grep, Glob, or Bash to explore the codebase, you MUST query the Graphify MCP tools first:**
+- `query_graph` — search entities and relationships in the knowledge graph
+- `get_neighbors` — incoming callers and outgoing dependencies
+- `get_node` — inspect full node details, incoming/outgoing edges, and community
+- `shortest_path` — find connection paths between symbols/concepts
+
+This applies to YOU and to every subagent you spawn. Do not skip graphify because files are "already known" or because you are executing a plan — the graph surfaces cross-file dependencies and INFERRED edges that grep and Read cannot find.
+
+Only use Read/Grep/Glob directly when:
+1. Graphify MCP tools have already oriented you and you need to inspect or edit specific lines
+2. `graphify-out/graph.json` does not exist yet (run `scripts/graphify-update` first; if it still cannot produce a graph, Grep is the fallback)
+
+- Refresh the AST graph after changes with `scripts/graphify-update` (`--code-only`). Rebuild the semantic graph with `scripts/graphify-extract` (needs an LLM key).
+- Do not run `npx skills add`, `graphify add <url>`, or `graphify claude|codex|opencode install`.

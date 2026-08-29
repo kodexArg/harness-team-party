@@ -1,0 +1,70 @@
+name: ci
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+# Jobs always start, then scripts/ci_select.py says whether the job has work
+# from the PR diff. The template ships the harness and merge-gate jobs;
+# instantiation adds the product jobs (service suite, surface suite)
+# alongside them ([[CLONE]]).
+
+jobs:
+  pr-harness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - id: sel
+        run: python3 scripts/ci_select.py --job harness --base "${{ github.event.pull_request.base.sha }}" --head "${{ github.sha }}" >> "$GITHUB_OUTPUT"
+      - name: Run selected harness tests
+        env:
+          SELECTED: ${{ steps.sel.outputs.files }}
+          RUN: ${{ steps.sel.outputs.run }}
+        run: |
+          set -uo pipefail
+          if [ "$RUN" != "true" ]; then
+            echo "skip — diff has no harness surface"
+            exit 0
+          fi
+          failed=0
+          for t in $SELECTED; do
+            echo "=== $t ==="
+            if ! python3 "$t"; then
+              failed=1
+            fi
+          done
+          exit $failed
+
+  pr-merge-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Read the review routine's signature
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: python3 scripts/check_pr_tags.py
+      - id: sel
+        run: python3 scripts/ci_select.py --job merge-gate --base "${{ github.event.pull_request.base.sha }}" --head "${{ github.sha }}" >> "$GITHUB_OUTPUT"
+      - if: steps.sel.outputs.run != 'true'
+        run: echo "skip — diff hits no guardian watchlist surface"
+      - if: steps.sel.outputs.run == 'true'
+        run: python3 scripts/check_merge_gate.py

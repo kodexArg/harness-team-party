@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>comparación · {{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ====== design-tokens.css — embedded VERBATIM from references/design-tokens.css (SSOT). Do not hand-edit here. ====== */
+:root { --ink-1000: #0C0B09; --ink-900:  #141210; --ink-850:  #1a1714; --ink-600:  #3a352f; --ink-500:  #6b6358; --cream-100: #F3EEE4; --warm-200:  #cdbfa8; --orange-500: #ff8c42; --orange-400: #ffaa70; --orange-deep:#FF6A1A; --orange-600: #E25510; --teal-500: #4FA6AB; --teal-300: #7cc4c8; --sage-500: #87A878; --sage-300: #a9c49e; --good: var(--sage-500); --warn: var(--orange-500); --bad:  #d9694e; --diff-add-bg:  rgba(135,168,120,0.12); --diff-add-fg:  #a9c49e; --diff-del-bg:  rgba(217,105,78,0.12); --diff-del-fg:  #e0937f; --font-sans: 'Nunito', system-ui, sans-serif; --font-mono: 'DM Mono', ui-monospace, monospace; --radius-md: 0; --radius-lg: 0; --radius-pill: 999px; --hairline: 1.5px solid var(--ink-600); --shadow-glow: 0 0 0 transparent; --dur-slow: 760ms; --ease-settle: cubic-bezier(0.16, 1, 0.3, 1); --gap-block: 2rem; --gap-section: 4.5rem; --mermaid-min-h: 50rem; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+margin: 0;
+background: var(--ink-1000);
+color: var(--cream-100);
+font-family: var(--font-sans);
+font-weight: 400;
+line-height: 1.72;
+letter-spacing: 0.01em;
+font-size: 16px;
+max-width: 480px;
+margin-inline: auto;
+padding: 2.5rem 1rem 4rem;
+position: relative;
+overflow-x: hidden; }
+.po-glow {
+position: fixed;
+inset: 0;
+z-index: -1;
+pointer-events: none;
+background:
+radial-gradient(60% 40% at 78% 12%,
+rgba(255,106,26,0.16) 0%,
+rgba(255,106,26,0.05) 38%,
+transparent 70%); }
+.kicker {
+font-family: var(--font-mono);
+font-size: 0.72rem;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+color: var(--orange-500);
+margin: 2rem 0 1rem;
+display: flex;
+gap: 8px;
+align-items: center; }
+.kicker .num { color: var(--warm-200); }
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 0.75rem; text-transform: lowercase; overflow-wrap: anywhere; hyphens: auto; }
+h1 { font-size: clamp(2.2rem, 11vw, 3.2rem); color: var(--orange-400); margin-bottom: 1.5rem; }
+h2 { font-size: clamp(1.6rem, 7.5vw, 2.1rem); margin-bottom: 1.25rem; }
+h3 { font-size: 1.2rem; font-weight: 500; margin-bottom: 1rem; }
+p { color: var(--warm-200); margin: 0 0 1.5rem; }
+strong { color: var(--cream-100); font-weight: 800; }
+a { color: var(--orange-500); text-decoration: none; border-bottom: 1.5px solid rgba(255,140,66,0.35); }
+section { margin: 0 0 var(--gap-section); }
+section > :first-child { margin-top: 0; }
+.takeaway {
+background: var(--orange-500);
+color: var(--ink-1000);
+padding: 1.5rem;
+margin: 2rem 0;
+border: none; }
+.takeaway :is(h2, h3, p, strong, code, li) { color: var(--ink-1000); }
+.takeaway :last-child { margin-bottom: 0; }
+.takeaway code { background: rgba(12,11,9,0.12); font-weight: 500; }
+.card {
+background: none;
+border: none;
+border-radius: 0;
+padding: 0;
+margin: 0 0 var(--gap-block); }
+.card.good, .card.ok  { border-left: 2px solid var(--orange-deep); padding-left: 0.75rem; }
+.card.teal { border-left: 2px solid var(--teal-500);  padding-left: 0.75rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-family: var(--font-mono);
+font-size: 0.82rem;
+letter-spacing: 0.03em;
+padding: 6px 13px;
+border-radius: var(--radius-pill);
+border: var(--hairline);
+color: var(--cream-100); }
+.chip.ok   { color: var(--sage-300);   border-color: rgba(135,168,120,0.5); }
+.chip.work { color: var(--orange-400); border-color: rgba(255,140,66,0.5); }
+.chip.stop { color: var(--teal-300);   border-color: rgba(79,166,171,0.5); }
+pre, code { font-family: var(--font-mono); font-size: 0.94rem; }
+code { color: var(--orange-400); }
+pre {
+background: var(--ink-1000);
+border: var(--hairline);
+border-radius: var(--radius-md);
+padding: 16px 16px;
+overflow-x: auto;
+line-height: 1.6;
+color: var(--cream-100); }
+pre code { color: inherit; }
+.diff .add { display: block; background: var(--diff-add-bg); color: var(--diff-add-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .del { display: block; background: var(--diff-del-bg); color: var(--diff-del-fg); margin: 0 -16px; padding: 0 16px; }
+.diff .add::before { content: '+ '; opacity: 0.6; }
+.diff .del::before { content: '- '; opacity: 0.6; }
+.icon { width: 1.1em; height: 1.1em; stroke: currentColor; fill: none; stroke-width: 1.75; vertical-align: -0.18em; }
+.icon-lg { width: 2.4rem; height: 2.4rem; stroke: var(--orange-500); }
+.stat { font-size: clamp(3rem, 18vw, 4.6rem); font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--cream-100); }
+.stat .unit { color: var(--orange-500); font-size: 0.4em; }
+.diagram {
+width: 100vw;
+margin-inline: calc(50% - 50vw);
+padding: 0;
+margin-block: 2rem 3rem;
+background: none;
+border: none;
+overflow-x: auto;
+overflow-y: visible; -webkit-overflow-scrolling: touch;
+scrollbar-width: thin;
+scrollbar-color: var(--orange-deep) transparent; }
+.diagram::-webkit-scrollbar { height: 3px; }
+.diagram::-webkit-scrollbar-track { background: transparent; }
+.diagram::-webkit-scrollbar-thumb { background: var(--orange-deep); border-radius: var(--radius-pill); }
+.diagram .mermaid, .diagram pre.mermaid {
+display: flex; justify-content: center; min-width: min-content;
+background: none; border: none; padding: 0 1rem; margin: 0; }
+.diagram svg { display: block; max-width: none !important; background: transparent !important; min-height: var(--mermaid-min-h); }
+.diagram svg .background, .diagram foreignObject div { background: transparent !important; }
+.diagram .labelBkg { background: transparent !important; }
+.diagram .edgeLabel, .diagram span.edgeLabel, .diagram .edgeLabel p { background-color: var(--ink-900) !important; color: var(--warm-200) !important; }
+.diagram .edgeLabel rect, .diagram .edgeLabels rect { fill: var(--ink-900) !important; opacity: 1 !important; }
+.diagram .edgeLabel span, .diagram .edgeLabel text, .diagram .edgeLabel tspan { color: var(--warm-200) !important; fill: var(--warm-200) !important; }
+.figure { margin: 0 0 16px; border: var(--hairline); border-radius: var(--radius-lg); overflow: hidden; background: var(--ink-1000); position: relative; }
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-500); padding: 10px 14px; border-top: var(--hairline); display: flex; gap: 8px; align-items: center; }
+.figure--veil::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 80% 0, rgba(255,106,26,.16), transparent 60%); mix-blend-mode: soft-light; pointer-events: none; }
+.image-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 160px; border: 1.5px dashed var(--ink-600); border-radius: var(--radius-lg); color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; padding: 24px; margin: 0 0 16px; }
+.image-slot .icon { width: 2rem; height: 2rem; stroke: var(--ink-500); }
+.beat { color: var(--ink-500); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-align: center; margin-top: 40px; }
+@media (prefers-reduced-motion: no-preference) {
+.rise { opacity: 0; transform: translateY(18px); animation: rise var(--dur-slow) var(--ease-settle) forwards; }
+.d1 { animation-delay: 80ms; } .d2 { animation-delay: 200ms; }
+.d3 { animation-delay: 320ms; } .d4 { animation-delay: 440ms; } .d5 { animation-delay: 560ms; }
+@keyframes rise { to { opacity: 1; transform: none; } } }
+@media (min-width:768px){
+body{max-width:660px;font-size:17px;padding:4rem 2.5rem 6rem}
+p{text-align:justify;text-wrap:pretty;hyphens:auto}
+.kicker,.beat,.chips,figcaption{text-align:left} }
+@media (min-width:1024px){
+body{max-width:880px;font-size:18px;padding:5rem 4rem 7rem}
+h1{font-size:clamp(3rem,5.4vw,4.6rem)}
+h2{font-size:clamp(2rem,3.2vw,2.7rem)}
+.stat{font-size:clamp(4.5rem,9vw,7rem)}
+.po-glow{background:radial-gradient(52% 40% at 82% 8%,rgba(255,106,26,.20) 0%,rgba(255,106,26,.06) 42%,transparent 72%)} }
+.compare-nav {
+position: sticky;
+top: 0;
+z-index: 10;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+padding: 12px 0 16px;
+margin: 0 0 8px;
+background: linear-gradient(180deg, var(--ink-1000) 75%, transparent); }
+.compare-tab {
+font-family: var(--font-mono);
+font-size: 0.78rem;
+letter-spacing: 0.05em;
+text-transform: lowercase;
+padding: 10px 16px;
+min-height: 44px;
+border: var(--hairline);
+border-radius: var(--radius-pill);
+background: var(--ink-900);
+color: var(--warm-200);
+cursor: pointer; -webkit-tap-highlight-color: transparent;
+touch-action: manipulation; }
+.compare-tab.is-active { font-weight: 800; }
+.compare-tab.is-active[data-compare="both"] { border-color: var(--cream-100); color: var(--cream-100); }
+.compare-tab.is-active[data-compare="grok"] { border-color: var(--orange-500); color: var(--orange-400); }
+.compare-tab.is-active[data-compare="kodex"] { border-color: var(--teal-500); color: var(--teal-300); }
+.compare-tab.is-active[data-compare="contrast"] { border-color: var(--sage-500); color: var(--sage-300); } [data-compare-panel][hidden] { display: none !important; }
+.compare-row {
+display: grid;
+grid-template-columns: 1fr;
+gap: 24px;
+margin: 0 0 32px; }
+.compare-col--a { border-left: 2px solid var(--orange-deep); padding-left: 16px; }
+.compare-col--b { border-left: 2px solid var(--teal-500); padding-left: 16px; }
+.compare-col-label {
+font-family: var(--font-mono);
+font-size: 0.68rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+margin: 0 0 10px;
+display: block; }
+.compare-col--a .compare-col-label { color: var(--orange-500); }
+.compare-col--b .compare-col-label { color: var(--teal-300); }
+@media (min-width: 768px) {
+.compare-row { grid-template-columns: 1fr 1fr; gap: 32px; } }
+</style>
+</head>
+<body>
+<div class="po-glow"></div>
+
+<!-- SHARED: hero -->
+<section data-compare-panel="shared" class="rise d1">
+  <p class="kicker">comparación · {{DOMAIN}}</p>
+  <h1>{{TITLE}}</h1>
+  <p>{{HOOK}}</p>
+  <div class="chips">
+    <span class="chip work">{{SIDE_A_LABEL}}</span>
+    <span class="chip stop">{{SIDE_B_LABEL}}</span>
+  </div>
+</section>
+
+<!-- SHARED: tab nav — place immediately after hero -->
+<nav class="compare-nav" role="tablist" aria-label="comparar">
+  <button type="button" class="compare-tab is-active" role="tab" data-compare="both" aria-selected="true">ambos</button>
+  <button type="button" class="compare-tab" role="tab" data-compare="grok" aria-selected="false">{{SIDE_A_TAB}}</button>
+  <button type="button" class="compare-tab" role="tab" data-compare="kodex" aria-selected="false">{{SIDE_B_TAB}}</button>
+  <button type="button" class="compare-tab" role="tab" data-compare="contrast" aria-selected="false">contraste</button>
+</nav>
+
+<!-- CONTRAST: side-by-side summary rows (abbreviated — no duplicate full mermaid) -->
+<section data-compare-panel="contrast" class="rise d2">
+  <p class="kicker"><span class="num">↔</span> · contraste rápido</p>
+  <div class="compare-row">
+    <div class="compare-col compare-col--a">
+      <span class="compare-col-label">{{SIDE_A_LABEL}}</span>
+      <h3>{{CONTRAST_A_1_TITLE}}</h3>
+      <p>{{CONTRAST_A_1_BODY}}</p>
+    </div>
+    <div class="compare-col compare-col--b">
+      <span class="compare-col-label">{{SIDE_B_LABEL}}</span>
+      <h3>{{CONTRAST_B_1_TITLE}}</h3>
+      <p>{{CONTRAST_B_1_BODY}}</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIDE A: full sections -->
+<section data-compare-panel="grok" class="rise d3">
+  <p class="kicker"><span class="num">A</span> · {{SIDE_A_LABEL}}</p>
+  <!-- fill with cards + mermaid -->
+</section>
+
+<!-- SIDE B: full sections -->
+<section data-compare-panel="kodex" class="rise d4">
+  <p class="kicker"><span class="num">B</span> · {{SIDE_B_LABEL}}</p>
+  <!-- fill with cards + mermaid -->
+</section>
+
+<!-- SHARED: footer -->
+<p data-compare-panel="shared" class="beat">{{DATE}} · {{TITLE}}</p>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' });
+  mermaid.run().then(() => {
+    const MIN_H = 800; /* px — same minimum legible height for every diagram */
+    document.querySelectorAll('.diagram svg').forEach(svg => {
+      const vb = svg.viewBox && svg.viewBox.baseVal;
+      if (!vb || !vb.height) return;
+      const k = Math.max(1, MIN_H / vb.height); /* upscale-only: never shrink a shape */
+      svg.style.width = (vb.width * k) + 'px';
+      svg.style.height = (vb.height * k) + 'px';
+      svg.style.maxWidth = 'none';
+    });
+  });
+</script>
+<script>
+(function () {
+  var VIS = {
+    both:     { shared: 1, grok: 1, kodex: 1, contrast: 0 },
+    grok:     { shared: 1, grok: 1, kodex: 0, contrast: 0 },
+    kodex:    { shared: 1, grok: 0, kodex: 1, contrast: 0 },
+    contrast: { shared: 1, grok: 0, kodex: 0, contrast: 1 }
+  };
+  var nav = document.querySelector('.compare-nav');
+  if (!nav) return;
+  var tabs = nav.querySelectorAll('.compare-tab');
+  var panels = document.querySelectorAll('[data-compare-panel]');
+  var KEY = 'kdx-compare-mode';
+  function setMode(mode) {
+    if (!VIS[mode]) mode = 'both';
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-compare') === mode;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      var side = p.getAttribute('data-compare-panel');
+      p.hidden = !VIS[mode][side];
+    });
+    try { sessionStorage.setItem(KEY, mode); } catch (e) {}
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { setMode(t.getAttribute('data-compare')); });
+  });
+  var saved = null;
+  try { saved = sessionStorage.getItem(KEY); } catch (e) {}
+  setMode(saved && VIS[saved] ? saved : 'both');
+})();
+</script>
+</body>
+</html>

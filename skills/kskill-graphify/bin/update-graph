@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Incremental AST refresh of the docs+harness graph. Ensures if missing.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+cd_repo
+if [[ ! -f "$GRAPH_JSON" ]]; then
+  exec "$SKILL_DIR/bin/ensure"
+fi
+require_cli
+graphify extract . --out "$SKILL_DIR" --code-only
+echo "graph: $GRAPH_JSON"

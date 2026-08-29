@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Needs GEMINI_API_KEY / OPENAI_API_KEY, depending on the LLM backend
+uvx --from graphifyy graphify extract .
+echo "Graphify semantic graph rebuilt"

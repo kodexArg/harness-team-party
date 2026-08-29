@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Install the Graphify CLI if missing; build a code-only graph if graph.json is absent.
+# No LLM key. Semantic rebuild remains bin/extract.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+cd_repo
+if ! command -v graphify >/dev/null 2>&1; then
+  if ! command -v uv >/dev/null 2>&1; then
+    echo "graphify CLI missing and uv is not on PATH. Install uv: https://docs.astral.sh/uv/" >&2
+    exit 1
+  fi
+  uv tool install 'graphifyy[mcp]'
+fi
+mkdir -p "$OUT_DIR"
+if [[ ! -f "$GRAPH_JSON" ]]; then
+  graphify extract . --out "$SKILL_DIR" --code-only
+fi
+echo "cli: $(command -v graphify)"
+echo "graph: $GRAPH_JSON"
