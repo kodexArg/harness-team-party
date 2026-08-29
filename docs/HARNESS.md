@@ -205,7 +205,7 @@ Admitting or retiring a role slug is an edit to this table, not to an ADR.
 
 **The ADR-to-agent edge is a pair.** An ADR lists the agents that carry it in `related_agents` ([[adr-00.a-adr-frontmatter]]); each of those agents lists that ADR in `related_adrs`. Both ends move in the same batch, and a one-sided edge is a defect in both files.
 
-**Entity and liturgy** live in `agents/hb-ag-liturgy.md` (The Liturgist): how an `hb-ag-*` is given personality without extra powers, with bilingual example phrases and parenthetical glosses. The Liturgist is a **mock**. Never dispatch it for product, hunt, ship, or research. Mechanical fields stay in this section; entity copy is copied from that file into live agents in later revisions.
+**Entity and liturgy** live in `agents/hb-ag-liturgy.md` (The Liturgist): how an `hb-ag-*` is given personality without extra powers, with bilingual example phrases. The Liturgist is a **mock**. Never dispatch it for product, hunt, ship, or research. Mechanical fields stay in this section; each live agent carries a copy of its liturgy block.
 
 ### The product `hb-ag-*` family
 
@@ -234,7 +234,7 @@ Tool allowlists cannot path-filter `Write`. The **body** is the bound: specialis
 
 Titles live in a different family from the archived `kwf-*` cast: `kwf-warrior` was the *service* builder; `kwf-archer` was the *surface* builder; `kwf-bard` was a publish node. Forbidden: dispatching `kwf-warrior` when you mean The Dwarf; dispatching `kwf-archer` when you mean The Elf; using `warrior` / `archer` / `elf` / `cleric` / `trickster` / `bard` unprefixed; restoring `The Archer` or `The Warrior` as a live title ([[GLOSSARY]]).
 
-Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". Voice stays short. Depth of entity (traits, EN/ES phrases, glosses) is authored against The Liturgist (`hb-ag-liturgy`); that file is not a fifteenth worker.
+Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". Voice stays short. Depth of entity (traits, EN/ES phrases) lives under `## Liturgy`, authored against The Liturgist (`hb-ag-liturgy`); that file is not a fifteenth worker.
 
 - **The Cleric** ✝️ — one rite, one row. Holds the scroll ([[INTERFACES]]). Agents Dwarf, Elf, Trickster. Never walks into the melee.
 - **The Dwarf** 🔨 — forges framework-bound `{{service tree}}` work. Fulfills the Cleric's row; does not write it. Pure Python rules go to The Paladin. Never writes tests or Agents The Elf.

@@ -96,7 +96,7 @@ def test_liturgist_frontmatter_and_tools() -> None:
     lower = body.lower()
     assert "never dispatch" in lower or "not a worker" in lower
     assert "mock" in lower
-    assert "parenthetical" in lower or "gloss" in lower
+    assert "**gloss.**" not in lower
 
 
 def test_liturgy_covers_every_live_agent_bilingual() -> None:
@@ -109,6 +109,14 @@ def test_liturgy_covers_every_live_agent_bilingual() -> None:
     assert "El Enano" in body
     assert "El Elfo" in body
     assert "El Cazador" in body
+
+
+def test_live_agents_carry_their_own_liturgy() -> None:
+    for stem in LIVE_STEMS:
+        _, body = agent_parts(stem)
+        assert "## Liturgy" in body, f"{stem} is missing ## Liturgy"
+        assert "**EN.**" in body, f"{stem} is missing **EN.**"
+        assert "**ES.**" in body, f"{stem} is missing **ES.**"
 
 
 def test_liturgist_is_not_on_the_live_roster() -> None:
@@ -126,8 +134,9 @@ def test_liturgist_is_not_on_the_live_roster() -> None:
 def main() -> int:
     test_liturgist_frontmatter_and_tools()
     test_liturgy_covers_every_live_agent_bilingual()
+    test_live_agents_carry_their_own_liturgy()
     test_liturgist_is_not_on_the_live_roster()
-    print("all 3 Liturgist contract test(s) passed")
+    print("all 4 Liturgist contract test(s) passed")
     return 0
 
 

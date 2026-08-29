@@ -6,9 +6,10 @@ Every change landing on `main` records an entry here in the same batch
 ## v1.2.0 — 2026-08-29
 
 Add The Liturgist (`hb-ag-liturgy`) as a non-dispatchable authoring mock:
-entity contract, parenthetical glosses, and hardcoded English/Spanish
-example phrases for every live `hb-ag-*` agent. Live agent files are
-unchanged this revision; later versions copy liturgy into them.
+entity contract and hardcoded English/Spanish example phrases for every
+live `hb-ag-*` agent. Literary voice without Area/stack glosses. Each of
+the fourteen live agent files carries its own `## Liturgy`. The Liturgist
+is not a fifteenth worker and is never dispatched.
 
 ## v1.1.0 — 2026-08-29
 

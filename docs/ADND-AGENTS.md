@@ -44,7 +44,7 @@ Host-agnostic: the stems below are the names. Where a host runtime exposes a nat
 | `hb-ag-owl` | The Owl 🦉 | `agents/hb-ag-owl.md` | **nothing**. Official-docs scout; [[OWL-INDEX]] only | `hb-sk-owl` | **no** — universally callable scout |
 | `hb-ag-crow` | The Crow 🐦‍⬛ | `agents/hb-ag-crow.md` | **nothing**. Kamikaze unofficial web scout | `hb-sk-crow` | **no** — universally callable scout |
 
-**Authoring mock.** `hb-ag-liturgy` (The Liturgist) exists under `agents/` as the liturgy contract and bilingual phrase book. It is **not** a live roster row. Parents never Agent it. It owns nothing.
+**Authoring mock.** `hb-ag-liturgy` (The Liturgist) exists under `agents/` as the liturgy contract and bilingual phrase book. Live agents copy their block under `## Liturgy`. It is **not** a live roster row. Parents never Agent it. It owns nothing.
 
 Specialist areas do not overlap. The sole execution exception is a parent-validated [[ISSUE-TRIAGE|Adventurer lane]]: for one eligible bounded task, The Adventurer temporarily owns implementation and tests while the specialist owners stay out. Interfaces/contracts, ADRs, Git/GitHub, secret values, and deployment remain outside that lease. Tool allowlists cannot path-filter `Write`; the **body** of each agent file is the bound.
 
