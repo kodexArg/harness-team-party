@@ -1082,11 +1082,44 @@
       "source_location": "L56"
     },
     {
+      "id": "scripts_replace_harness_default_is_text_file",
+      "label": "is_text_file()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "is_text_file()",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "scripts_replace_harness_default_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L60"
+    },
+    {
+      "id": "scripts_replace_harness_default_run_replacement",
+      "label": "run_replacement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "run_replacement()",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L29"
+    },
+    {
       "id": "scripts_check_branch_model_findings",
       "label": "_findings()",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "file_type": "code",
       "norm_label": "_findings()",
       "source_file": "scripts/check_branch_model.py",
@@ -1097,7 +1130,7 @@
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "scripts/check_branch_model.py",
@@ -1108,7 +1141,7 @@
       "label": "_remote_branches()",
       "_callable": true,
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "file_type": "code",
       "norm_label": "_remote_branches()",
       "source_file": "scripts/check_branch_model.py",
@@ -1119,7 +1152,7 @@
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": ".cursor/hooks/graphify-ensure.py",
@@ -1130,7 +1163,7 @@
       "label": "_present()",
       "_callable": true,
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "file_type": "code",
       "norm_label": "_present()",
       "source_file": ".cursor/hooks/graphify-ensure.py",
@@ -1141,7 +1174,7 @@
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 18,
+      "community": 19,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "scripts/apply_main_ruleset.py",
@@ -2812,10 +2845,30 @@
       "source_location": "L1"
     },
     {
+      "id": "path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scripts_replace_harness_default",
+      "label": "replace_harness_default.py",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "norm_label": "replace_harness_default.py",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L1"
+    },
+    {
       "id": "skills_kskill_graphify_bin_lib",
       "label": "lib.sh",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2829,7 +2882,7 @@
       "id": "skills_kskill_graphify_bin_lib_cd_repo",
       "label": "cd_repo()",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2843,7 +2896,7 @@
       "id": "skills_kskill_graphify_bin_lib_path",
       "label": "PATH",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2857,7 +2910,7 @@
       "id": "skills_kskill_graphify_bin_lib_require_cli",
       "label": "require_cli()",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2871,7 +2924,7 @@
       "id": "skills_kskill_graphify_bin_lib_sh__entry",
       "label": "lib.sh script",
       "_origin": "ast",
-      "community": 14,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2885,7 +2938,7 @@
       "id": "scripts_check_branch_model",
       "label": "check_branch_model.py",
       "_origin": "ast",
-      "community": 15,
+      "community": 16,
       "file_type": "code",
       "norm_label": "check_branch_model.py",
       "source_file": "scripts/check_branch_model.py",
@@ -2895,7 +2948,7 @@
       "id": "scripts_cursor_cloud_gh_auth",
       "label": "cursor_cloud_gh_auth.sh",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2909,7 +2962,7 @@
       "id": "scripts_cursor_cloud_gh_auth_cursor_cloud_gh_auth",
       "label": "_cursor_cloud_gh_auth()",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2923,7 +2976,7 @@
       "id": "scripts_cursor_cloud_gh_auth_cursor_cloud_operator_pat",
       "label": "_cursor_cloud_operator_pat()",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2937,7 +2990,7 @@
       "id": "scripts_cursor_cloud_gh_auth_sh__entry",
       "label": "cursor_cloud_gh_auth.sh script",
       "_origin": "ast",
-      "community": 16,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -2951,7 +3004,7 @@
       "id": "cursor_hooks_graphify_ensure",
       "label": "graphify-ensure.py",
       "_origin": "ast",
-      "community": 17,
+      "community": 18,
       "file_type": "code",
       "norm_label": "graphify-ensure.py",
       "source_file": ".cursor/hooks/graphify-ensure.py",
@@ -2961,38 +3014,10 @@
       "id": "scripts_apply_main_ruleset",
       "label": "apply_main_ruleset.py",
       "_origin": "ast",
-      "community": 18,
+      "community": 19,
       "file_type": "code",
       "norm_label": "apply_main_ruleset.py",
       "source_file": "scripts/apply_main_ruleset.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_cloud_setup",
-      "label": "cloud_setup.sh",
-      "_origin": "ast",
-      "community": 19,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "file"
-      },
-      "norm_label": "cloud_setup.sh",
-      "source_file": "scripts/cloud_setup.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "scripts_cloud_setup_sh__entry",
-      "label": "cloud_setup.sh script",
-      "_origin": "ast",
-      "community": 19,
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "cloud_setup.sh script",
-      "source_file": "scripts/cloud_setup.sh",
       "source_location": "L1"
     },
     {
@@ -3136,10 +3161,38 @@
       "source_location": "L94"
     },
     {
+      "id": "scripts_cloud_setup",
+      "label": "cloud_setup.sh",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "cloud_setup.sh",
+      "source_file": "scripts/cloud_setup.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_cloud_setup_sh__entry",
+      "label": "cloud_setup.sh script",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "cloud_setup.sh script",
+      "source_file": "scripts/cloud_setup.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "scripts_graphify_extract",
       "label": "graphify-extract",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3153,7 +3206,7 @@
       "id": "scripts_graphify_extract__entry",
       "label": "graphify-extract script",
       "_origin": "ast",
-      "community": 20,
+      "community": 21,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3167,7 +3220,7 @@
       "id": "scripts_graphify_update",
       "label": "graphify-update",
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3181,7 +3234,7 @@
       "id": "scripts_graphify_update__entry",
       "label": "graphify-update script",
       "_origin": "ast",
-      "community": 21,
+      "community": 22,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3195,7 +3248,7 @@
       "id": "scripts_guardian_watchlists",
       "label": "guardian_watchlists.py",
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "file_type": "code",
       "norm_label": "guardian_watchlists.py",
       "source_file": "scripts/guardian_watchlists.py",
@@ -3205,7 +3258,7 @@
       "id": "scripts_guardian_watchlists_rationale_1",
       "label": "Guardian watchlists. One of two copies; the other is each guardian's Watchlist\u2026",
       "_origin": "ast",
-      "community": 22,
+      "community": 23,
       "file_type": "rationale",
       "norm_label": "guardian watchlists. one of two copies; the other is each guardian's watchlist...",
       "source_file": "scripts/guardian_watchlists.py",
@@ -3215,7 +3268,7 @@
       "id": "skills_kskill_graphify_bin_ensure",
       "label": "ensure",
       "_origin": "ast",
-      "community": 23,
+      "community": 24,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3229,7 +3282,7 @@
       "id": "skills_kskill_graphify_bin_ensure__entry",
       "label": "ensure script",
       "_origin": "ast",
-      "community": 23,
+      "community": 24,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3243,7 +3296,7 @@
       "id": "skills_kskill_graphify_bin_extract",
       "label": "extract",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3257,7 +3310,7 @@
       "id": "skills_kskill_graphify_bin_extract__entry",
       "label": "extract script",
       "_origin": "ast",
-      "community": 24,
+      "community": 25,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3271,7 +3324,7 @@
       "id": "skills_kskill_graphify_bin_fetch_upstream",
       "label": "fetch-upstream",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3285,7 +3338,7 @@
       "id": "skills_kskill_graphify_bin_fetch_upstream__entry",
       "label": "fetch-upstream script",
       "_origin": "ast",
-      "community": 25,
+      "community": 26,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3299,7 +3352,7 @@
       "id": "skills_kskill_graphify_bin_update_graph",
       "label": "update-graph",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3313,7 +3366,7 @@
       "id": "skills_kskill_graphify_bin_update_graph__entry",
       "label": "update-graph script",
       "_origin": "ast",
-      "community": 26,
+      "community": 27,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3327,7 +3380,7 @@
       "id": "skills_kskill_graphify_bin_upgrade_cli",
       "label": "upgrade-cli",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3341,7 +3394,7 @@
       "id": "skills_kskill_graphify_bin_upgrade_cli__entry",
       "label": "upgrade-cli script",
       "_origin": "ast",
-      "community": 27,
+      "community": 28,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3355,7 +3408,7 @@
       "id": "skills_kskill_send_to_telegram_kdx_bot_token",
       "label": "kdx-bot-token",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -3369,7 +3422,7 @@
       "id": "skills_kskill_send_to_telegram_kdx_bot_token__entry",
       "label": "kdx-bot-token script",
       "_origin": "ast",
-      "community": 28,
+      "community": 29,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -4251,6 +4304,42 @@
       "context": "call",
       "source_file": "scripts/cursor_cloud_gh_auth.sh",
       "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default_main",
+      "target": "scripts_replace_harness_default_run_replacement",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default_run_replacement",
+      "target": "path",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default_run_replacement",
+      "target": "scripts_replace_harness_default_is_text_file",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -7410,6 +7499,18 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_replace_harness_default_is_text_file",
+      "target": "path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_strip_comments_docstring_lineno_range",
       "target": "ast",
       "relation": "references",
@@ -8468,6 +8569,39 @@
       "confidence_score": 1.0,
       "source_file": "scripts/graphify-update",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default",
+      "target": "scripts_replace_harness_default_is_text_file",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default",
+      "target": "scripts_replace_harness_default_run_replacement",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_replace_harness_default",
+      "target": "scripts_replace_harness_default_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/replace_harness_default.py",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -11137,5 +11271,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "43349b4bcba931febc1cb092f737afe889205798"
+  "built_at_commit": "e514f36eb0d56086c4fba81060fc3933e8666c69"
 }

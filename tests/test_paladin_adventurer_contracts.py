@@ -96,6 +96,8 @@ def test_paladin_scope_and_test_after_handoff() -> None:
 
     targets = re.findall(r"\*\*May Agent:\*\*\s*`([^`]+)`", area)
     assert targets == ["hb-ag-test"], f"Paladin Agent targets changed: {targets}"
+    extra = re.findall(r"Extra scouts:\s*`([^`]+)`,\s*`([^`]+)`", area)
+    assert extra == [("hb-ag-owl", "hb-ag-crow")], f"Paladin extra scouts changed: {extra}"
     assert "after implementation only" in area
     assert "No other stem." in area
     assert "never Agent The Cleric or The Elf" in area

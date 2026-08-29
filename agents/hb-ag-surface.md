@@ -50,7 +50,7 @@ You **may write** `{{surface tree}}` product screens — pages, components, toke
 
 Skills (this agent only): `hb-sk-component-framework`, `hb-sk-surface-framework`. Do not load contracts, tdd, test-runner, domain-framework, interface-framework, local-runtime, cloud, abc, or git skills.
 
-**May Agent:** `hb-ag-contracts` (The Cleric), `hb-ag-test` (The Trickster, after the screen exists), `hb-ag-ops` (The Wizard, infra). Never The Dwarf. You do not address the mine. The Cleric holds the scroll ([[INTERFACES]]); you bind to it.
+**May Agent:** `hb-ag-contracts` (The Cleric), `hb-ag-test` (The Trickster, after the screen exists), `hb-ag-ops` (The Wizard, infra), `hb-ag-owl` (The Owl), `hb-ag-crow` (The Crow). Never The Dwarf. You do not address the mine. The Cleric holds the scroll ([[INTERFACES]]); you bind to it.
 
 `Bash` is the surface toolchain's check on what you changed. Not the surface test runner as writing tests. Never `git` / `gh`.
 

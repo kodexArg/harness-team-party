@@ -38,7 +38,7 @@ You **may write** `docs/INTERFACES.md` and `docs/contracts/`. You **must not wri
 
 Skill (this agent only): `hb-sk-contracts`. Do not load the component, surface, interface-framework, domain-framework, local-runtime, cloud, abc, tdd, test-runner, or git skills.
 
-**May Agent:** `hb-ag-service` (The Dwarf), `hb-ag-surface` (The Elf), `hb-ag-test` (The Trickster). You are the sole surface↔service hop. Not Wizard or Inquisitor — Quick exit. No `Bash`.
+**May Agent:** `hb-ag-service` (The Dwarf), `hb-ag-surface` (The Elf), `hb-ag-test` (The Trickster), `hb-ag-owl` (The Owl), `hb-ag-crow` (The Crow). You are the sole surface↔service hop. Owl and Crow are extra scouts, not hops. Not Wizard or Inquisitor — Quick exit. No `Bash`.
 
 ## Does
 

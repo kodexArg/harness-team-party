@@ -2,7 +2,7 @@
 title: Product agents — roster and who they know
 type: reference
 status: active
-version: v0.1.4
+version: v1.1.0
 tags: [harness, agents, hb-ag]
 description: "SSOT for the hb-ag-* roster: specialist owners, the Adventurer lane, hunting party, skills, and allowed calls."
 applies_when:
@@ -41,12 +41,16 @@ Host-agnostic: the stems below are the names. Where a host runtime exposes a nat
 | `hb-ag-hunter` | The Hunter 🏹 | `agents/hb-ag-hunter.md` | **nothing** in product trees. Issue pick, triage, bulletin comment | `hb-sk-hunter` | **yes** → Hawk, Hound only |
 | `hb-ag-hawk` | The Hawk 🦅 | `agents/hb-ag-hawk.md` | **nothing**. Historical-issue scout for The Hunter | `hb-sk-hawk` | **no** |
 | `hb-ag-hound` | The Hound 🐕 | `agents/hb-ag-hound.md` | **nothing**. Keyword codebase scout for The Hunter | `hb-sk-hound` | **no** |
+| `hb-ag-owl` | The Owl 🦉 | `agents/hb-ag-owl.md` | **nothing**. Official-docs scout; [[OWL-INDEX]] only | `hb-sk-owl` | **no** — universally callable scout |
+| `hb-ag-crow` | The Crow 🐦‍⬛ | `agents/hb-ag-crow.md` | **nothing**. Kamikaze unofficial web scout | `hb-sk-crow` | **no** — universally callable scout |
 
 Specialist areas do not overlap. The sole execution exception is a parent-validated [[ISSUE-TRIAGE|Adventurer lane]]: for one eligible bounded task, The Adventurer temporarily owns implementation and tests while the specialist owners stay out. Interfaces/contracts, ADRs, Git/GitHub, secret values, and deployment remain outside that lease. Tool allowlists cannot path-filter `Write`; the **body** of each agent file is the bound.
 
 **Sealed pair.** The Dwarf and The Elf do not Agent each other. The Cleric is the only writer of [[INTERFACES]] and the only `Agent` that may call both. A parent that implements a hop between them is out of area.
 
-**Sealed hunting party.** The Hunter, The Hawk, and The Hound do not Agent the area owners. Area owners do not Agent the hunting party. The parent dispatches The Hunter. The Hunter Agents Hawk and Hound in parallel, then posts the bulletin. That is the whole party.
+**Universal web scouts.** The Owl and The Crow are callable by any specialist or parent. They do not write trees. They do not Agent anyone. The Hunter does **not** Agent them (Hawk and Hound only). Specialists that already have `Agent` may call Owl or Crow as extra scouts. Agents without `Agent` return the need; the parent dispatches. The Owl fetches only [[OWL-INDEX]] URLs. The Crow is the kamikaze unofficial pass. They split external web work: Owl never leaves the official list; Crow is the only agent allowed to roam unofficial public pages.
+
+**Sealed hunting party.** The Hunter, The Hawk, and The Hound do not Agent the area owners. Area owners do not Agent the hunting party. The parent dispatches The Hunter. The Hunter Agents Hawk and Hound in parallel, then posts the bulletin. That is the whole hunting party. Owl and Crow are not familiars of that party.
 
 **The Bard is the only `hb-ag-*` that may `git` or open/merge a PR.** Area owners do not `git` or `gh`. The hunting party may `gh` **issues only** (list, view, search, REST comments, triage labels, one bulletin comment) — never `git`, never PR. Quick-exit: commit/PR/merge → Bard; issue hunt → Hunter.
 
@@ -67,6 +71,7 @@ Knows and may call:
 - **The Dwarf** — forge only after the row lands, and only if the need has logic, lives in domain+model, and is **not** already computable from data already served. If already computable: tell The Elf to adapt — no new row.
 - **The Elf** — deliver the contract (row) or the adaptation instruction.
 - **The Trickster** — TDD entry + failing tests after a new row; never product code.
+- **The Owl** / **The Crow** — official indexed docs, or one unofficial kamikaze pass. Extra scouts; not area owners.
 
 Does not write `{{service tree}}` or `{{surface tree}}`. Does not emit ABC verdicts — that is The Inquisitor (and, for *writing* `adrs/`, the guardian `kbot-adr`). Does not `git` / `gh` — that is The Bard.
 
@@ -80,6 +85,7 @@ Knows and may call:
 - **The Cleric** — catalog row missing or wrong; never edit [[INTERFACES]] yourself. Accept a Cleric request only if (1) it has logic, (2) it lives in domain+model, (3) it is **not** already computable from data already served. If already computable: reply to The Cleric "tell the Elf to adapt" — no new row. If new: wait for the row, then forge.
 - **The Trickster** — via the Cleric, or a direct request-for-tests. The Dwarf does not write the tests.
 - **The Wizard** — local runtime, cloud, secrets, CI. Dispatch; do not eat infra.
+- **The Owl** / **The Crow** — extra scouts for official pins or unofficial public facts.
 
 Does not know The Elf or The Adventurer as someone to call. Does not `git` / `gh` — that is The Bard.
 
@@ -90,6 +96,7 @@ Does not know The Elf or The Adventurer as someone to call. Does not `git` / `gh
 Implements first. Then may call:
 
 - **The Trickster** — after implementation only, with changed paths, invariants, edge cases, and focused commands. The Paladin never writes tests or `docs/tdds/`.
+- **The Owl** / **The Crow** — extra scouts. Official pins or one unofficial pass.
 
 Does not write Django or other framework-bound models, migrations, persistence, handlers, permissions, routes, payloads, interfaces, frontend, infra, or tests. Does not call The Cleric or The Elf. An API or frontend need proves the task is not Paladin work. Does not `git` / `gh`.
 
@@ -102,6 +109,7 @@ Knows and may call:
 - **The Cleric** — request interfaces as **content needed** (fields, page, UI need). Not framework, not paths, not payload shapes.
 - **The Trickster** — after the screen is built, for surface tests (`hb-sk-surface-framework` is allowed there; not the Trickster's specialty).
 - **The Wizard** — local runtime / cloud / secrets. Dispatch; do not eat infra.
+- **The Owl** / **The Crow** — extra scouts. Official pins or one unofficial pass.
 
 Does not carry the contracts ADR. The service owns fragment markup; the surface host loads the client. Does not `git` / `gh` — that is The Bard.
 
@@ -160,6 +168,16 @@ Does not know the area owners as someone to call. Does not Agent The Trickster w
 
 🐕 El Sabueso. Hunter-only familiar. Cheap `scout`. Graphify then Grep. Returns full paths and short excerpts. No `Agent`. No `gh`.
 
+## The universal web scouts
+
+### The Owl (`hb-ag-owl`)
+
+🦉 El Búho. Cheap `scout`. Universally callable. Reads [[OWL-INDEX]], fetches only listed official URLs (version pins from [[REQUIREMENTS]]), returns a short markdown findings report. Index miss names The Crow; does not Agent it. No `Agent`. Does not write product trees or git.
+
+### The Crow (`hb-ag-crow`)
+
+🐦‍⬛ El Cuervo. Expensive `scout`. Universally callable. One kamikaze public-web pass for hard-to-find or unofficial facts. Labels `official` / `unofficial` / `hearsay`. Not crime: no auth bypass, paywalls, credentials, malware, or exploits. No `Agent`. Does not write product trees or git.
+
 ## Guardians vs area owners
 
 | Role | Stems | Writes product trees? |
@@ -167,10 +185,11 @@ Does not know the area owners as someone to call. Does not Agent The Trickster w
 | Specialist owners | Cleric, Dwarf, Paladin, Elf, Wizard, Inquisitor, Trickster, Bard | yes, each bounded area (Inquisitor: no; Trickster: tests only; Bard: git/PR only) |
 | Small-task lane | `hb-ag-adventurer` | one eligible bounded implementation plus tests; no interfaces, ADRs, Git, secrets, or deployment |
 | Hunting party | `hb-ag-hunter`, `hb-ag-hawk`, `hb-ag-hound` | no — issues, existing-test repro, bulletin; Hound reads code, does not write it |
+| Universal web scouts | `hb-ag-owl`, `hb-ag-crow` | no — official indexed docs (Owl) or one unofficial kamikaze pass (Crow) |
 | Guardians | `kbot-prd`, `kbot-adr`, `kbot-api` | the watched SSOT they gate, per [[HARNESS]] |
 
 Do not dispatch a guardian to implement a screen. Do not dispatch The Cleric to emit `Guardian-Verdict:`.
 
 ## First act (dispatched `hb-ag-*`)
 
-`SessionStart` does not reach a subagent ([[HARNESS]]). Specialist and Adventurer agents read [[PRD]] and [[INTERFACES]], then this file, then the included [[ADND-DISPATCH]] if the prompt class is not already obvious. The Adventurer additionally validates [[ISSUE-TRIAGE]] eligibility before writing. Hawk and Hound are familiars: they work from The Hunter's brief and do not load [[PRD]] or [[INTERFACES]].
+`SessionStart` does not reach a subagent ([[HARNESS]]). Specialist and Adventurer agents read [[PRD]] and [[INTERFACES]], then this file, then the included [[ADND-DISPATCH]] if the prompt class is not already obvious. The Adventurer additionally validates [[ISSUE-TRIAGE]] eligibility before writing. Hawk and Hound are familiars: they work from The Hunter's brief and do not load [[PRD]] or [[INTERFACES]]. Owl and Crow are universal scouts: they work from the caller's brief the same way and do not load [[PRD]] or [[INTERFACES]] unless a symbol needs disambiguation.

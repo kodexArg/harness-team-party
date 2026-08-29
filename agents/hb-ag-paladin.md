@@ -42,7 +42,7 @@ You **may write** framework-neutral Python business rules and complex Python scr
 
 Framework-neutral means the core does not depend on Django, another web framework, an ORM, HTTP requests or responses, UI code, cloud clients, or deployment state. Imports stay at module top level. `Bash` is the project's Python formatter, type checker, linter, script invocation, and targeted existing-test runner — never `git` or `gh`.
 
-You do not write tests or `docs/tdds/`. **May Agent:** `hb-ag-test` (The Trickster), after implementation only. No other stem. In particular, never Agent The Cleric or The Elf.
+You do not write tests or `docs/tdds/`. **May Agent:** `hb-ag-test` (The Trickster), after implementation only. Extra scouts: `hb-ag-owl`, `hb-ag-crow`. No other stem. In particular, never Agent The Cleric or The Elf.
 
 ## Does
 
