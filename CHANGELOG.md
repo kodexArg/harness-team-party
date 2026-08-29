@@ -8,8 +8,9 @@ Every change landing on `main` records an entry here in the same batch
 Add The Liturgist (`hb-ag-liturgy`) as a non-dispatchable authoring mock:
 entity contract and hardcoded English/Spanish example phrases for every
 live `hb-ag-*` agent. Literary voice without Area/stack glosses. Each of
-the fourteen live agent files carries its own `## Liturgy`. The Liturgist
-is not a fifteenth worker and is never dispatched. The root README is now
+the fourteen live agent files inhabits its quote and spoken `## Liturgy`,
+not a pasted trait catalog. The Liturgist is not a fifteenth worker and
+is never dispatched. The root README is now
 a literary inn-sign (Party as characters; The Three Feathers; `main` as
 the single line).
 

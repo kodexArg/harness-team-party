@@ -117,6 +117,8 @@ def test_live_agents_carry_their_own_liturgy() -> None:
         assert "## Liturgy" in body, f"{stem} is missing ## Liturgy"
         assert "**EN.**" in body, f"{stem} is missing **EN.**"
         assert "**ES.**" in body, f"{stem} is missing **ES.**"
+        liturgy = body.split("## Liturgy", 1)[1]
+        assert "Traits:" not in liturgy, f"{stem} liturgy is still a trait catalog"
 
 
 def test_liturgist_is_not_on_the_live_roster() -> None:

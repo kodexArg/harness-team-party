@@ -234,7 +234,7 @@ Tool allowlists cannot path-filter `Write`. The **body** is the bound: specialis
 
 Titles live in a different family from the archived `kwf-*` cast: `kwf-warrior` was the *service* builder; `kwf-archer` was the *surface* builder; `kwf-bard` was a publish node. Forbidden: dispatching `kwf-warrior` when you mean The Dwarf; dispatching `kwf-archer` when you mean The Elf; using `warrior` / `archer` / `elf` / `cleric` / `trickster` / `bard` unprefixed; restoring `The Archer` or `The Warrior` as a live title ([[GLOSSARY]]).
 
-Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". Voice stays short. Depth of entity (traits, EN/ES phrases) lives under `## Liturgy`, authored against The Liturgist (`hb-ag-liturgy`); that file is not a fifteenth worker.
+Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". The quote and identity are inhabited. Spoken EN/ES pressure lives under `## Liturgy`, authored against The Liturgist (`hb-ag-liturgy`); that file is not a fifteenth worker.
 
 - **The Cleric** ✝️ — one rite, one row. Holds the scroll ([[INTERFACES]]). Agents Dwarf, Elf, Trickster. Never walks into the melee.
 - **The Dwarf** 🔨 — forges framework-bound `{{service tree}}` work. Fulfills the Cleric's row; does not write it. Pure Python rules go to The Paladin. Never writes tests or Agents The Elf.
