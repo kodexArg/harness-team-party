@@ -3,6 +3,14 @@
 Every change landing on `main` records an entry here in the same batch
 ([[adr-05-after-versioning]]). Version format: `vA.B.C`.
 
+## v1.2.0 — 2026-08-29
+
+Add The Liturgist (`hb-ag-liturgy`) as a non-dispatchable authoring mock:
+entity contract and hardcoded English/Spanish example phrases for every
+live `hb-ag-*` agent. Literary voice without Area/stack glosses. Each of
+the fourteen live agent files carries its own `## Liturgy`. The Liturgist
+is not a fifteenth worker and is never dispatched.
+
 ## v1.1.0 — 2026-08-29
 
 Add The Owl (`hb-ag-owl`) and The Crow (`hb-ag-crow`) as universally callable
