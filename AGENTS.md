@@ -111,6 +111,7 @@ Agents preserve ownership boundaries in a large harness. A complete low-score tr
 - `hb-ag-hound` — The Hound 🐕 — El Sabueso. Hunter-only keyword codebase scout.
 - `hb-ag-owl` — The Owl 🦉 — El Búho. Universal official-docs scout; [[OWL-INDEX]] only.
 - `hb-ag-crow` — The Crow 🐦‍⬛ — El Cuervo. Universal kamikaze unofficial web scout.
+- `hb-ag-liturgy` — The Liturgist — El Liturgo. Authoring mock only; never dispatch for work. Entity and bilingual liturgy live in `agents/hb-ag-liturgy.md`.
 
 Changes to `AGENTS.md` or the PRD engage `kbot-prd`; ADR and rule changes engage `kbot-adr`; interface and routed service surfaces engage `kbot-api`. Canonical watchlists are in `scripts/guardian_watchlists.py`.
 

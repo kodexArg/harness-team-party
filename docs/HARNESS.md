@@ -2,7 +2,7 @@
 title: Harness inventory, vendored skills, and agent contracts
 type: reference
 status: active
-version: v1.1.0
+version: v1.2.0
 tags: [harness, skills, agents, ssot]
 description: "Complete inventory of vendored skills, kind prefixes, MCP policies, and agent definition contracts."
 applies_when:
@@ -205,6 +205,8 @@ Admitting or retiring a role slug is an edit to this table, not to an ADR.
 
 **The ADR-to-agent edge is a pair.** An ADR lists the agents that carry it in `related_agents` ([[adr-00.a-adr-frontmatter]]); each of those agents lists that ADR in `related_adrs`. Both ends move in the same batch, and a one-sided edge is a defect in both files.
 
+**Entity and liturgy** live in `agents/hb-ag-liturgy.md` (The Liturgist): how an `hb-ag-*` is given personality without extra powers, with bilingual example phrases and parenthetical glosses. The Liturgist is a **mock**. Never dispatch it for product, hunt, ship, or research. Mechanical fields stay in this section; entity copy is copied from that file into live agents in later revisions.
+
 ### The product `hb-ag-*` family
 
 Specialists own non-overlapping areas. The one exception is a parent-validated Adventurer lease: one eligible low-score task temporarily gives The Adventurer its bounded implementation and tests while specialists stay out. Interfaces/contracts, ADRs, Git/GitHub, secret values, and deployment never enter that lease. The filename stem is the harness name; the fantasy title is personality (opening quote + voice). `hb-ag-contracts` is the **writer** of the catalog, not a merge-verdict bot. Do not restore archived `kbot-*` builders.
@@ -232,7 +234,7 @@ Tool allowlists cannot path-filter `Write`. The **body** is the bound: specialis
 
 Titles live in a different family from the archived `kwf-*` cast: `kwf-warrior` was the *service* builder; `kwf-archer` was the *surface* builder; `kwf-bard` was a publish node. Forbidden: dispatching `kwf-warrior` when you mean The Dwarf; dispatching `kwf-archer` when you mean The Elf; using `warrior` / `archer` / `elf` / `cleric` / `trickster` / `bard` unprefixed; restoring `The Archer` or `The Warrior` as a live title ([[GLOSSARY]]).
 
-Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". Voice stays short.
+Each live definition opens with a one-line quote, then "You are **The X** (`hb-ag-…`)". Voice stays short. Depth of entity (traits, EN/ES phrases, glosses) is authored against The Liturgist (`hb-ag-liturgy`); that file is not a fifteenth worker.
 
 - **The Cleric** ✝️ — one rite, one row. Holds the scroll ([[INTERFACES]]). Agents Dwarf, Elf, Trickster. Never walks into the melee.
 - **The Dwarf** 🔨 — forges framework-bound `{{service tree}}` work. Fulfills the Cleric's row; does not write it. Pure Python rules go to The Paladin. Never writes tests or Agents The Elf.

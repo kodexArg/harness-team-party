@@ -2,7 +2,7 @@
 title: Soft dispatch graphs — prompt class to hb-ag-* handoff
 type: reference
 status: active
-version: v1.1.0
+version: v1.2.0
 tags: [harness, agents, dispatch]
 description: "Soft, host-agnostic graphs: given a user prompt class, which hb-ag-* goes first and whom they call. Included from ADND-AGENTS."
 applies_when:
@@ -45,6 +45,7 @@ The development loop remains [[DEVELOPMENT-LOOP]]. These graphs name **which age
 - **Official vendor docs / versioned pin lookup → Owl.** Any specialist or parent may call The Owl. Index miss → name Crow; Owl does not Agent Crow.
 - **Hard-to-find or unofficial public fact → Crow.** Any specialist or parent may call The Crow for one intensive pass. Not a second Owl.
 - **Adventurer lane → parent only.** The Hunter records triage but does not call The Adventurer. No specialist calls The Adventurer, and The Adventurer calls nobody.
+- **The Liturgist is never dispatched for work.** `hb-ag-liturgy` is an authoring mock. Product, hunt, ship, and research go to the live stems above.
 
 ## Prompt class → first agent
 

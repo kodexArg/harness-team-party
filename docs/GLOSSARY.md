@@ -2,7 +2,7 @@
 title: Canonical naming authority, terms, and forbidden forms
 type: reference
 status: active
-version: v1.1.0
+version: v1.2.0
 tags: [harness, glossary, ssot]
 description: "Canonical naming authority, terminology invariants, and forbidden forms across the codebase. Harness terms ship live; project terms are registered at instantiation."
 applies_when:
@@ -56,6 +56,7 @@ Canonical form and forbidden forms. Force: [[adr-01-nomenclature]].
 | The Hound | `hb-ag-hound`, title **The Hound** (El Sabueso) | Hunter-only familiar; keyword/tag walk of the tree; Graphify then Grep; cheap `scout` | searching GitHub issues as The Hawk; Agent anyone; writing the bulletin |
 | The Owl | `hb-ag-owl`, title **The Owl** (El Búho) | universal official-docs scout; reads [[OWL-INDEX]]; fetches listed vendor URLs only; cheap `scout` | unofficial web search as The Crow; writing files including the index; Agent anyone |
 | The Crow | `hb-ag-crow`, title **The Crow** (El Cuervo) | universal kamikaze unofficial web scout; one intensive public pass; source-trust labels | official indexed lookup as The Owl; auth/paywall bypass; exploits; writing files; Agent anyone |
+| The Liturgist | `hb-ag-liturgy`, title **The Liturgist** (El Liturgo) | authoring mock: entity contract, bilingual example phrases, parenthetical glosses; owns nothing | dispatching it as a worker; unprefixed `liturgist`; treating it as a fifteenth live roster row |
 | harness SSOT trees | `skills/` · `hooks/` · `agents/` · `adrs/` | the one real copy of every skill, hook, agent definition and ADR. `.claude/{skills,hooks,agents,rules}` and `.agents/{skills,hooks,agents,rules}` are **links** to them; a second real copy is a second authority that can drift ([[HARNESS]]). Reached by path | a second real directory at any of the link paths |
 | agent definition contract | the closed frontmatter key set every file under `agents/` declares — `name`, `description`, `model`, `tools`, `related_adrs`, plus the cosmetic `color` ([[HARNESS]]) | authoring or reviewing any agent definition; `tests/test_hb_ag_roster.py`, `tests/test_agents_are_subagents.py`, `tests/test_agent_model_inherit.py` | an inline or flow `tools:` list (the block sequence is the one shape); an invented key; omitting `related_adrs` instead of declaring `[]` |
 | ADR-to-agent edge | the pair `related_agents:` on the ADR side and `related_adrs:` on the agent side, naming each other ([[adr-00-adr-doctrine]] r3, [[HARNESS]]) | ADR frontmatter, agent frontmatter, the symmetry check | a one-sided edge; declaring the edge in prose only; repairing one end by rewriting the other |
