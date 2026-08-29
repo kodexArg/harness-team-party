@@ -2,7 +2,7 @@
 title: Harness inventory, vendored skills, and agent contracts
 type: reference
 status: active
-version: v0.1.4
+version: v1.1.0
 tags: [harness, skills, agents, ssot]
 description: "Complete inventory of vendored skills, kind prefixes, MCP policies, and agent definition contracts."
 applies_when:
@@ -124,6 +124,8 @@ This heading does not cover adding a rule or changing what a rule requires or fo
 | `hb-sk-hunter` | Issue hunt at The Three Feathers: noise-stripped `problem`, one imperative `goal` for a later Hunter, existing-test repro, bulletin comment. | The Hunter (`hb-ag-hunter`) only |
 | `hb-sk-hawk` | Historical-issue scout: Graphify first, then `gh`. | The Hawk (`hb-ag-hawk`) only — Hunter familiar |
 | `hb-sk-hound` | Keyword codebase scout: Graphify first, then Grep. | The Hound (`hb-ag-hound`) only — Hunter familiar |
+| `hb-sk-owl` | Official-docs scout: [[OWL-INDEX]] first, listed URLs only, markdown findings. | The Owl (`hb-ag-owl`) only — universal web scout |
+| `hb-sk-crow` | Kamikaze unofficial public-web scout: one intensive pass, source-trust labels. | The Crow (`hb-ag-crow`) only — universal web scout |
 | `hb-sk-abc` | ABC checklist: PR vs [[PRD]], ADRs, [[INTERFACES]]. | **Parent fallback** — The Inquisitor does not load skills |
 | `kskill-graphify` | First exploration mechanism when the graph is present ([[adr-35-graphify]], [[GRAPHIFY]]). Query/path/explain; `bin/ensure` after clone; extract and update; MCP in `mcp/mcp.json`. | exploration, `/kskill-graphify` |
 | `kskill-mood` | Session stance (`/kdx-mood`). | main loop |
@@ -197,7 +199,7 @@ Every file under `agents/` declares the same closed set of frontmatter keys, in 
 |---|---|---|
 | `thinker` | planner/thinker — judgment, planning, doctrine gates | guardians, the Inquisitor, plan-time judges |
 | `builder` | builder — implementation, worktree diffs, publish | Paladin, Dwarf, Elf, Adventurer, Bard (`kwf-warrior` / `kwf-archer` / `kwf-bard` were the archived delivery-party builders) |
-| `scout` | fast/scout — cheap parallel reads, familiars, pattern scans | The Hawk, The Hound, read-only familiars and sweep nodes |
+| `scout` | fast/scout — cheap parallel reads, familiars, pattern scans, official-docs Owl, kamikaze Crow | The Hawk, The Hound, The Owl, The Crow, read-only familiars and sweep nodes |
 
 Admitting or retiring a role slug is an edit to this table, not to an ADR.
 
@@ -207,7 +209,7 @@ Admitting or retiring a role slug is an edit to this table, not to an ADR.
 
 Specialists own non-overlapping areas. The one exception is a parent-validated Adventurer lease: one eligible low-score task temporarily gives The Adventurer its bounded implementation and tests while specialists stay out. Interfaces/contracts, ADRs, Git/GitHub, secret values, and deployment never enter that lease. The filename stem is the harness name; the fantasy title is personality (opening quote + voice). `hb-ag-contracts` is the **writer** of the catalog, not a merge-verdict bot. Do not restore archived `kbot-*` builders.
 
-`hb-sk-*` consumers are named in the inventory; most skills have one owner. `hb-sk-surface-framework` is Elf-owned (Trickster may load for surface tests). `hb-sk-abc` is a parent fallback (Inquisitor loads none). `hb-sk-git` is Bard-only. `hb-sk-hunter` / `hb-sk-hawk` / `hb-sk-hound` are the hunting party at The Three Feathers.
+`hb-sk-*` consumers are named in the inventory; most skills have one owner. `hb-sk-surface-framework` is Elf-owned (Trickster may load for surface tests). `hb-sk-abc` is a parent fallback (Inquisitor loads none). `hb-sk-git` is Bard-only. `hb-sk-hunter` / `hb-sk-hawk` / `hb-sk-hound` are the hunting party at The Three Feathers. `hb-sk-owl` / `hb-sk-crow` are the universal web scouts.
 
 | Stem | Title | Owns (may write) | Must not write | `Agent` tool |
 |---|---|---|---|---|
@@ -223,8 +225,10 @@ Specialists own non-overlapping areas. The one exception is a parent-validated A
 | `hb-ag-hunter` | The Hunter 🏹 | issue bulletin comment at The Three Feathers | product trees, tests, git, PR | **yes** → Hawk, Hound only |
 | `hb-ag-hawk` | The Hawk 🦅 | **nothing**. Historical-issue scout | product trees, tests, git, the bulletin | **no** |
 | `hb-ag-hound` | The Hound 🐕 | **nothing**. Keyword codebase scout | product trees, tests, `gh` | **no** |
+| `hb-ag-owl` | The Owl 🦉 | **nothing**. Official-docs scout | product trees, tests, git, [[OWL-INDEX]] writes | **no** |
+| `hb-ag-crow` | The Crow 🐦‍⬛ | **nothing**. Kamikaze unofficial web scout | product trees, tests, git | **no** |
 
-Tool allowlists cannot path-filter `Write`. The **body** is the bound: specialists hold `Write`/`Edit` for their area, while The Adventurer holds it only for a validated task lease. Need a new row → dispatch `hb-ag-contracts`. Do not edit the catalog. Need a commit or PR → dispatch `hb-ag-git`. Issue hunt and the notice board → `hb-ag-hunter`. Product implementers do not `git` or `gh`. The hunting party may `gh` issues only.
+Tool allowlists cannot path-filter `Write`. The **body** is the bound: specialists hold `Write`/`Edit` for their area, while The Adventurer holds it only for a validated task lease. Need a new row → dispatch `hb-ag-contracts`. Do not edit the catalog. Need a commit or PR → dispatch `hb-ag-git`. Issue hunt and the notice board → `hb-ag-hunter`. Official docs → `hb-ag-owl`. Unofficial or hard-to-find public facts → `hb-ag-crow`. Product implementers do not `git` or `gh`. The hunting party may `gh` issues only.
 
 Titles live in a different family from the archived `kwf-*` cast: `kwf-warrior` was the *service* builder; `kwf-archer` was the *surface* builder; `kwf-bard` was a publish node. Forbidden: dispatching `kwf-warrior` when you mean The Dwarf; dispatching `kwf-archer` when you mean The Elf; using `warrior` / `archer` / `elf` / `cleric` / `trickster` / `bard` unprefixed; restoring `The Archer` or `The Warrior` as a live title ([[GLOSSARY]]).
 
@@ -242,6 +246,8 @@ Each live definition opens with a one-line quote, then "You are **The X** (`hb-a
 - **The Hunter** 🏹 — El Cazador. Issue gateway at The Three Feathers. Pins a noise-stripped bulletin (`problem` + one `goal`) for a later Hunter.
 - **The Hawk** 🦅 — El Halcón. Cheap `scout`. Old issues, Graphify then `gh`. Hunter only.
 - **The Hound** 🐕 — El Sabueso. Cheap `scout`. Keywords in the tree. Hunter only.
+- **The Owl** 🦉 — El Búho. Cheap `scout`. [[OWL-INDEX]] then listed official URLs. Universal.
+- **The Crow** 🐦‍⬛ — El Cuervo. Expensive `scout`. One unofficial kamikaze pass. Universal.
 
 ### Invocation shape — every agent is a subagent
 
@@ -250,5 +256,6 @@ Each live definition opens with a one-line quote, then "You are **The X** (`hb-a
 - **product specialists** — The Cleric holds `Agent` (Dwarf, Elf, Trickster) and is the sole surface↔service hop. The Dwarf may call The Paladin for a pure Python core, plus The Cleric, The Trickster, and The Wizard — never The Elf. The Paladin may call The Trickster after implementation only, never The Cleric or The Elf. The Elf retains its existing sealed path. Trickster, Inquisitor, and Bard do not spawn builders. Wizard Agent is infra-only; prefer the parent.
 - **single-agent lane** — The Adventurer has no `Agent`. The parent dispatches it only for a complete [[ISSUE-TRIAGE]] card totaling less than 5 with no axis above 2 and no excluded boundary.
 - **hunting party** — The Hunter holds `Agent` (Hawk, Hound only). Hawk and Hound do not spawn. The party does not Agent area owners. Dispatch Hawk/Hound as `scout`.
+- **universal web scouts** — The Owl and The Crow have no `Agent`. Any specialist or parent may dispatch them as `scout`. They do not write trees.
 
 What is enforceable, and is enforced by `tests/test_agents_are_subagents.py`: no definition under `agents/` declares itself a teammate or carries teammate-only frontmatter. If a host runtime still hands a definition to a teammate mechanism, the decision above constrains how the agents are *written*, not how a given machine chooses to run them.

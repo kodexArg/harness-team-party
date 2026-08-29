@@ -2,7 +2,7 @@
 title: Soft dispatch graphs — prompt class to hb-ag-* handoff
 type: reference
 status: active
-version: v0.1.4
+version: v1.1.0
 tags: [harness, agents, dispatch]
 description: "Soft, host-agnostic graphs: given a user prompt class, which hb-ag-* goes first and whom they call. Included from ADND-AGENTS."
 applies_when:
@@ -21,9 +21,9 @@ related_adrs:
 
 **Soft:** a parent or subagent is expected to follow these graphs. It is not a hard `agentType` resolver. Do not hand-dispatch archived `kwf-*` nodes from here.
 
-**Host-agnostic:** the node labels are stems (`hb-ag-contracts`, `hb-ag-service`, `hb-ag-paladin`, `hb-ag-surface`, `hb-ag-ops`, `hb-ag-judge`, `hb-ag-test`, `hb-ag-adventurer`, `hb-ag-git`, `hb-ag-hunter`, `hb-ag-hawk`, `hb-ag-hound`). Where the host has no native type for a stem, the parent loads `agents/<stem>.md` and still obeys the graph.
+**Host-agnostic:** the node labels are stems (`hb-ag-contracts`, `hb-ag-service`, `hb-ag-paladin`, `hb-ag-surface`, `hb-ag-ops`, `hb-ag-judge`, `hb-ag-test`, `hb-ag-adventurer`, `hb-ag-git`, `hb-ag-hunter`, `hb-ag-hawk`, `hb-ag-hound`, `hb-ag-owl`, `hb-ag-crow`). Where the host has no native type for a stem, the parent loads `agents/<stem>.md` and still obeys the graph.
 
-The development loop remains [[DEVELOPMENT-LOOP]]. These graphs name **which agent** walks each step, including the Paladin's implementation-first pure-Python path and the Adventurer's one-agent small-task lane.
+The development loop remains [[DEVELOPMENT-LOOP]]. These graphs name **which agent** walks each step, including the Paladin's implementation-first pure-Python path, the Adventurer's one-agent small-task lane, and the Owl/Crow web-scout lanes.
 
 ## Recursion (always)
 
@@ -35,12 +35,15 @@ The development loop remains [[DEVELOPMENT-LOOP]]. These graphs name **which age
 - **The Bard** has no `Agent`. Does not write app code while shipping. Does not spawn builders to "fix" a red on the way to `main`.
 - **The Hunter** has `Agent` (Hawk, Hound only). Does not Agent area owners. Does not spawn a builder to "fix" the issue.
 - **The Hawk** and **The Hound** have no `Agent`. They return a pack to The Hunter.
+- **The Owl** and **The Crow** have no `Agent`. They return a markdown findings report to the caller. Owl: [[OWL-INDEX]] only. Crow: one unofficial kamikaze pass.
 - Do not nest two Inquisitor calls.
 - **Elf never Agents Dwarf. Dwarf never Agents Elf.** Only The Cleric carries messages both ways. The Paladin is not a third hop.
 - **Dwarf may Agent Paladin** only for framework-neutral Python business logic or a complex script core, before the Dwarf's TDD path.
 - One missing-row trip to The Cleric per need. Do not edit [[INTERFACES]] from Dwarf, Elf, or Trickster.
 - **git / PR / merge → Bard.** No area owner may `git` or `gh`. The hunting party may `gh` issues only. Their Bash is not a loophole.
 - **Issue hunt → Hunter.** Area owners do not Agent the hunting party. The hunting party does not Agent area owners.
+- **Official vendor docs / versioned pin lookup → Owl.** Any specialist or parent may call The Owl. Index miss → name Crow; Owl does not Agent Crow.
+- **Hard-to-find or unofficial public fact → Crow.** Any specialist or parent may call The Crow for one intensive pass. Not a second Owl.
 - **Adventurer lane → parent only.** The Hunter records triage but does not call The Adventurer. No specialist calls The Adventurer, and The Adventurer calls nobody.
 
 ## Prompt class → first agent
@@ -63,6 +66,8 @@ Classify the **user's ask**, not the files you wish were in scope. First check w
 | Writing `adrs/` itself | guardian `kbot-adr` | Not The Inquisitor. Watchlist in [[AGENTS]] |
 | `git`, `gh`, commit, push, PR, merge | The Bard | Quick-exit. No area owner. Bard does not patch product trees while shipping. Issue hunt is not this row |
 | Lowest-numbered issue, issue triage, issue forensics, hunter bulletin | The Hunter | Parallel Hawk + Hound (`scout`). Immediate existing-test repro (quick-exit). Bulletin. **Never** an area owner |
+| Official vendor documentation, versioned pin, listed docs URL | The Owl | Read [[OWL-INDEX]], fetch listed URLs, return markdown findings. Index miss names The Crow. No codebase writes |
+| Hard-to-find fact, unofficial source, intensive public scrape | The Crow | One kamikaze pass. Label source trust. Return pack and stop. No codebase writes |
 | Ambiguous (screen + new interface + infra) | Parent splits | Catalog first (Cleric), tests (Trickster), then Dwarf, then Elf; infra last (Wizard). Surface↔service only through Cleric. Ship via Bard. Inquisitor after the product hunk if ABC is in question |
 
 Undeclared route in code is a defect ([[INTERFACES]]). Inventing a path on the surface is the same defect.
@@ -247,7 +252,29 @@ flowchart TD
   h --> b
 ```
 
-The Hunter fires Hawk and Hound, then **immediately** runs one existing-test slice to reproduce. It strips noise from the report and pins a bulletin at **The Three Feathers** — finished `problem` plus one specific `goal` — for a later Hunter. Quick-exit on the repro is enough. It does not write tests and does not Agent The Trickster. Scout packs fold into the bulletin when they land. Hawk: Graphify first, then `gh`. Hound: Graphify first, then Grep. Neither familiar loads [[PRD]]. The party does not Agent area owners. The parent may use the bulletin's completed triage card to open the Adventurer lane.
+The Hunter fires Hawk and Hound, then **immediately** runs one existing-test slice to reproduce. It strips noise from the report and pins a bulletin at **The Three Feathers** — finished `problem` plus one specific `goal` — for a later Hunter. Quick-exit on the repro is enough. It does not write tests and does not Agent The Trickster. Scout packs fold into the bulletin when they land. Hawk: Graphify first, then `gh`. Hound: Graphify first, then Grep. Neither familiar loads [[PRD]]. The party does not Agent area owners. The parent may use the bulletin's completed triage card to open the Adventurer lane. Official or unofficial **web** lore is Owl or Crow, dispatched by the later parent — not by The Hunter.
+
+## Graph — Owl and Crow (web scouts)
+
+```mermaid
+flowchart TD
+  p[Prompt: external fact]
+  q{Official pin or listed docs?}
+  o[The Owl]
+  c[The Crow]
+  idx[OWL-INDEX]
+  miss[Index miss]
+  p --> q
+  q -->|yes| o
+  o --> idx
+  idx -->|listed URL| report[markdown findings]
+  idx -->|no row| miss
+  miss -->|caller dispatches| c
+  q -->|unofficial or hard to find| c
+  c -->|one kamikaze pass| pack[labeled pack]
+```
+
+The Owl never leaves [[OWL-INDEX]]. The Crow does one public unofficial pass and stops. Neither writes trees. Neither Agents the other.
 
 ## Parent session (any host)
 

@@ -2,7 +2,7 @@
 title: Incoming-agent fill-in map for harness-team-party
 type: reference
 status: active
-version: v0.1.4
+version: v1.1.0
 tags: [harness, onboarding, instantiation, placeholders]
 description: "Playbook for another model entering this template: how to fill every slot without confusing AGENTS.md, plus the full placeholder inventory."
 applies_when:
@@ -218,10 +218,11 @@ Harness rows stay. The empty project table uses:
 | `{{source}}` | [[VARIABLES]] | Where the value comes from |
 | `{{description}}` | [[VARIABLES]] | What the variable is |
 | `{{yes/no}}` | [[VARIABLES]] | Secret? `yes` or `no` |
-| `{{package}}` | [[REQUIREMENTS]] | Package name |
+| `{{package}}` | [[REQUIREMENTS]], [[OWL-INDEX]] | Package name |
 | `{{pin version}}` | [[REQUIREMENTS]] | Pinned version — **not** the docs `version:` frontmatter |
 | `{{pin date}}` | [[REQUIREMENTS]] | Date the pin was checked — **not** a changelog date |
-| `{{why this pin}}` | [[REQUIREMENTS]] | Why this version |
+| `{{why this pin}}` | [[REQUIREMENTS]], [[OWL-INDEX]] | Why this version |
+| `{{official docs url}}` | [[OWL-INDEX]] | Official vendor documentation URL for that pin |
 | `{{REQ-DOMAIN-NN}}` | [[REQ]] | Optional tracking id |
 | `{{requirement summary}}` / `{{open issues}}` / `{{closed issues}}` | [[REQ]] | Snapshot cells |
 | `{{stage 1}}`, `{{stage 2}}`, `{{stage 3}}`, … | [[ROADMAP]] | Stage name + one-line exit; mark exactly one current |
@@ -264,7 +265,7 @@ Shared tokens appear in many files so the product name cannot drift. **Load** is
 | `{{repo}}` | `docs/GITHUB.md`, `adrs/adr-08-github.md`, `scripts/apply_main_ruleset.py`, `skills/hb-sk-git/SKILL.md` | GitHub repo |
 | `{{project slug}}` | `docs/GLOSSARY.md`, `docs/VARIABLES.md`, `.env.example` | Slug |
 | `{{prefix}}` | every `skills/hb-sk-*/SKILL.md` Instantiation section | New kind prefix with dash |
-| `{{technology}}` | stack-shaped `hb-sk-*` Instantiation sections (not abc/contracts/tdd/git/hunter/hawk/hound which keep their stem) | Folder rename target |
+| `{{technology}}` | stack-shaped `hb-sk-*` Instantiation sections (not abc/contracts/tdd/git/hunter/hawk/hound/owl/crow which keep their stem) | Folder rename target |
 | `{{domain framework}}` | `docs/HARNESS.md`, `docs/SERVICES.md`, `adrs/adr-02-stack.md`, `skills/hb-sk-domain-framework/SKILL.md` | Domain framework |
 | `{{interface framework}}` | `docs/HARNESS.md`, `docs/SERVICES.md`, `adrs/adr-02-stack.md`, `skills/hb-sk-interface-framework/SKILL.md` | Interface framework |
 | `{{surface framework}}` | `docs/HARNESS.md`, `adrs/adr-02-stack.md`, `skills/hb-sk-surface-framework/SKILL.md` | Surface host |
@@ -318,6 +319,7 @@ Shared tokens appear in many files so the product name cannot drift. **Load** is
 | `{{author name}}` / `{{author email}}` / `{{author role}}` | `docs/CLAUDE-TEAM.md` | Author row |
 | `{{stage 1}}` `2` `3` | `docs/ROADMAP.md` | Stages |
 | `{{package}}` / `{{pin version}}` / `{{pin date}}` / `{{why this pin}}` | `docs/REQUIREMENTS.md` | Stack pin rows |
+| `{{official docs url}}` | `docs/OWL-INDEX.md` | Official docs URL per pin; same batch as the REQUIREMENTS row |
 | `{{VARIABLE_NAME}}` / `{{PUBLIC_VARIABLE_NAME}}` / `{{scope}}` / `{{envs}}` / `{{source}}` / `{{description}}` / `{{yes/no}}` | `docs/VARIABLES.md` | Variable rows |
 | `{{REQ-DOMAIN-NN}}` / `{{requirement summary}}` / `{{open issues}}` / `{{closed issues}}` | `docs/REQ.md` | Optional REQ snapshot |
 | `{{ruleset id}}` | `scripts/apply_main_ruleset.py` | GitHub ruleset id |

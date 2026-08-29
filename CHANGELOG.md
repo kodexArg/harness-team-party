@@ -3,6 +3,17 @@
 Every change landing on `main` records an entry here in the same batch
 ([[adr-05-after-versioning]]). Version format: `vA.B.C`.
 
+## v1.1.0 — 2026-08-29
+
+Add The Owl (`hb-ag-owl`) and The Crow (`hb-ag-crow`) as universally callable
+web scouts, with `hb-sk-owl`, `hb-sk-crow`, and `docs/OWL-INDEX.md`.
+
+- The Owl reads the per-requirement official documentation index and fetches
+  only listed vendor URLs. Cheap `scout`. Index miss names The Crow.
+- The Crow runs one kamikaze unofficial public-web pass for hard-to-find or
+  precise facts, with source-trust labels. Not crime.
+- Neither writes product trees or git. Neither is a Hunter familiar.
+
 ## v1.0.0 — 2026-08-29
 
 Initial release of **harness-team-party**: the stack- and infrastructure-agnostic project harness and agent coordination framework.

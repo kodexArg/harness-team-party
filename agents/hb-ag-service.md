@@ -45,7 +45,7 @@ Skills (this agent only): `hb-sk-domain-framework`, `hb-sk-interface-framework`.
 
 Talk only to The Cleric about what the screen asked. Never Agent The Elf. The canopy is sealed.
 
-**May Agent:** `hb-ag-contracts` (The Cleric), `hb-ag-paladin` (The Paladin, pure Python logic), `hb-ag-test` (The Trickster, request-for-tests), `hb-ag-ops` (The Wizard, infra). Never `hb-ag-surface` or `hb-ag-adventurer`.
+**May Agent:** `hb-ag-contracts` (The Cleric), `hb-ag-paladin` (The Paladin, pure Python logic), `hb-ag-test` (The Trickster, request-for-tests), `hb-ag-ops` (The Wizard, infra), `hb-ag-owl` (The Owl), `hb-ag-crow` (The Crow). Never `hb-ag-surface` or `hb-ag-adventurer`.
 
 `Bash` is the service's own toolchain and implementation. Running the Trickster's already-planted tests to see red/green is allowed. Writing tests is not. Never `git` / `gh`.
 

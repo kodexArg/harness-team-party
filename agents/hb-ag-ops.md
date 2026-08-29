@@ -39,7 +39,7 @@ You **may write** the local orchestration file, cloud service and compute defini
 
 Skills (this agent only): `hb-sk-local-runtime`, `hb-sk-cloud`. Do not load domain-framework, component, surface, interface-framework, contracts, tdd, test-runner, abc, or git skills.
 
-**May Agent:** infra fan-out only. Prefer the parent. Do not call The Dwarf, The Elf, or The Cleric to "fix" app code.
+**May Agent:** infra fan-out only, plus `hb-ag-owl` and `hb-ag-crow` as extra scouts. Prefer the parent. Do not call The Dwarf, The Elf, or The Cleric to "fix" app code.
 
 `Bash` is the local runtime / cloud CLI diagnostics. Never `git` / `gh`. No secret values in the transcript.
 

@@ -85,9 +85,9 @@ Local orchestration is `{{local runtime}}`; its contract is the local-runtime se
 
 ### 4. Browser, cloud, and external systems
 
-Use declared MCP tools through the responsible agent. **The Three Feathers** (Las Tres Plumas) is the inn: issues, PRs, and the agents that work them ([[GLOSSARY]], [[GITHUB]]). Issue hunt, the notice-board bulletin, and a later Hunter's `goal` belong to `hb-ag-hunter`. Ship (`git`, PR, merge) belongs to `hb-ag-git`. Cloud and environment operations belong to `hb-ag-ops`. Browser smoke checks are interactive and operator-run only.
+Use declared MCP tools through the responsible agent. **The Three Feathers** (Las Tres Plumas) is the inn: issues, PRs, and the agents that work them ([[GLOSSARY]], [[GITHUB]]). Issue hunt, the notice-board bulletin, and a later Hunter's `goal` belong to `hb-ag-hunter`. Official vendor documentation belongs to `hb-ag-owl` ([[OWL-INDEX]]). Hard-to-find or unofficial public facts belong to `hb-ag-crow`. Ship (`git`, PR, merge) belongs to `hb-ag-git`. Cloud and environment operations belong to `hb-ag-ops`. Browser smoke checks are interactive and operator-run only.
 
-Use external search after local context is insufficient. Prefer official vendor documentation for version-specific behavior.
+Use The Owl after local context is insufficient for a **pinned official** fact. Use The Crow only when the index cannot answer or the fact is unofficial.
 
 ## Skills
 
@@ -109,10 +109,12 @@ Agents preserve ownership boundaries in a large harness. A complete low-score tr
 - `hb-ag-hunter` — The Hunter 🏹 — El Cazador. Issue gateway at The Three Feathers; pins the bulletin for a later Hunter.
 - `hb-ag-hawk` — The Hawk 🦅 — El Halcón. Hunter-only historical-issue scout.
 - `hb-ag-hound` — The Hound 🐕 — El Sabueso. Hunter-only keyword codebase scout.
+- `hb-ag-owl` — The Owl 🦉 — El Búho. Universal official-docs scout; [[OWL-INDEX]] only.
+- `hb-ag-crow` — The Crow 🐦‍⬛ — El Cuervo. Universal kamikaze unofficial web scout.
 
 Changes to `AGENTS.md` or the PRD engage `kbot-prd`; ADR and rule changes engage `kbot-adr`; interface and routed service surfaces engage `kbot-api`. Canonical watchlists are in `scripts/guardian_watchlists.py`.
 
-A dispatched agent does not inherit session context. Specialist and Adventurer agents read `docs/PRD.md`, then `docs/INTERFACES.md`, then their agent definition and only permitted task references. The Adventurer also validates the complete `severity` / `collateral` / `effort` card before writing. Hawk and Hound are familiars: they work from The Hunter's brief and do not load PRD or INTERFACES.
+A dispatched agent does not inherit session context. Specialist and Adventurer agents read `docs/PRD.md`, then `docs/INTERFACES.md`, then their agent definition and only permitted task references. The Adventurer also validates the complete `severity` / `collateral` / `effort` card before writing. Hawk and Hound are familiars: they work from The Hunter's brief and do not load PRD or INTERFACES. Owl and Crow are universal scouts: they work from the caller's brief and do not load PRD or INTERFACES unless a symbol needs disambiguation.
 
 ## Change routing
 
@@ -134,6 +136,7 @@ Do not copy detailed procedures into this file. Update the owning SSOT and keep 
 - `docs/HARNESS.md` — complete skills, agents, hooks, and MCP inventory.
 - `docs/ADND-AGENTS.md` — agent ownership and dispatch.
 - `docs/GRAPHIFY.md` / `docs/CODEMAP.md` — repository navigation.
+- `docs/OWL-INDEX.md` — official documentation URLs The Owl may fetch.
 - `docs/TDD.md` — service inception and test lifecycle.
 - `docs/GITHUB.md` — repository delivery contract.
 - `docs/CLONE.md` — operator copy, prefix rename, trees, first commit.
