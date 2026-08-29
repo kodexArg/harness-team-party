@@ -9,7 +9,9 @@ Add The Liturgist (`hb-ag-liturgy`) as a non-dispatchable authoring mock:
 entity contract and hardcoded English/Spanish example phrases for every
 live `hb-ag-*` agent. Literary voice without Area/stack glosses. Each of
 the fourteen live agent files carries its own `## Liturgy`. The Liturgist
-is not a fifteenth worker and is never dispatched.
+is not a fifteenth worker and is never dispatched. The root README is now
+a literary inn-sign (Party as characters; The Three Feathers; `main` as
+the single line).
 
 ## v1.1.0 — 2026-08-29
 
