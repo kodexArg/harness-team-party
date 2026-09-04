@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>decision · {{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* shell.css — embedded VERBATIM. Edit references/shell.css then re-inline. */
+/* gj-sk-report shell — mobile-first report chrome.
+   Primary skin: diagram-design dark roles.
+   Soft inheritance from Presentation Orange: one glow, takeaway block, chips, squared flow.
+   Embed VERBATIM inside every template <style>. Do not hand-tune per report. */
+
+:root {
+  /* diagram-design dark roles */
+  --paper: #2d3142;
+  --paper-2: #393e53;
+  --ink: #f5f5f5;
+  --muted: #bfc0c0;
+  --soft: #8e98ac;
+  --rule: rgba(245, 245, 245, 0.12);
+  --rule-solid: rgba(191, 192, 192, 0.25);
+  --accent: #f08a59;
+  --accent-tint: rgba(240, 138, 89, 0.10);
+  --link: #6a95d8;
+
+  /* soft PO second voices */
+  --teal: #4fa6ab;
+  --sage: #87a878;
+  --bad: #d9694e;
+  --diff-add-bg: rgba(135, 168, 120, 0.12);
+  --diff-add-fg: #a9c49e;
+  --diff-del-bg: rgba(217, 105, 78, 0.12);
+  --diff-del-fg: #e0937f;
+
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --radius: 0;
+  --radius-pill: 999px;
+  --hairline: 1.5px solid var(--rule-solid);
+  --gap-block: 1.5rem;
+  --gap-section: 3rem;
+  --dur: 700ms;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 2.25rem 1rem 3.5rem;
+  background: #1a1d28;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.po-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    58% 36% at 78% 10%,
+    rgba(240, 138, 89, 0.14) 0%,
+    rgba(240, 138, 89, 0.04) 40%,
+    transparent 70%
+  );
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.75rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.kicker .num { color: var(--muted); }
+
+h1, h2, h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.65rem;
+  text-transform: lowercase;
+  overflow-wrap: anywhere;
+}
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 9vw, 2.6rem);
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.35rem, 6vw, 1.75rem);
+}
+h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+.hook { color: var(--ink); margin-bottom: 1.25rem; }
+strong { color: var(--ink); font-weight: 600; }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(240, 138, 89, 0.35);
+}
+
+section { margin: 0 0 var(--gap-section); }
+section > :first-child { margin-top: 0; }
+
+.takeaway {
+  background: var(--accent);
+  color: #1a1d28;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border: none;
+}
+.takeaway :is(h2, h3, p, strong, code, li) { color: #1a1d28; }
+.takeaway :last-child { margin-bottom: 0; }
+
+.card {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0 0 var(--gap-block);
+}
+.card.ok { border-left: 2px solid var(--accent); padding-left: 0.75rem; }
+.card.teal { border-left: 2px solid var(--teal); padding-left: 0.75rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  min-height: 36px;
+  border-radius: var(--radius-pill);
+  border: var(--hairline);
+  color: var(--ink);
+}
+.chip.ok { color: var(--sage); border-color: rgba(135, 168, 120, 0.5); }
+.chip.work { color: var(--accent); border-color: rgba(240, 138, 89, 0.5); }
+.chip.stop { color: var(--teal); border-color: rgba(79, 166, 171, 0.5); }
+
+pre, code { font-family: var(--font-mono); font-size: 0.86rem; }
+code { color: var(--accent); }
+pre {
+  background: #14161f;
+  border: var(--hairline);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  overflow-x: auto;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+pre code { color: inherit; }
+.diff .add {
+  display: block;
+  background: var(--diff-add-bg);
+  color: var(--diff-add-fg);
+  margin: 0 -14px;
+  padding: 0 14px;
+}
+.diff .del {
+  display: block;
+  background: var(--diff-del-bg);
+  color: var(--diff-del-fg);
+  margin: 0 -14px;
+  padding: 0 14px;
+}
+.diff .add::before { content: "+ "; opacity: 0.6; }
+.diff .del::before { content: "- "; opacity: 0.6; }
+
+ul, ol { color: var(--muted); margin: 0 0 1rem; padding-left: 1.2rem; }
+li { margin: 0 0 0.35rem; }
+li::marker { color: var(--soft); }
+
+.stat {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 16vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.stat .unit { color: var(--accent); font-size: 0.4em; font-family: var(--font-mono); }
+
+/* diagram-design SVG host — scroll horizontally on phone, never shrink shapes */
+.diagram {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  margin-block: 1.25rem 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+.diagram::-webkit-scrollbar { height: 3px; }
+.diagram::-webkit-scrollbar-track { background: transparent; }
+.diagram::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: var(--radius-pill);
+}
+.diagram > svg,
+.diagram .dd-frame > svg {
+  display: block;
+  width: auto;
+  min-width: min(100%, 720px);
+  max-width: none;
+  height: auto;
+  background: transparent !important;
+}
+.diagram .dd-frame {
+  display: flex;
+  justify-content: center;
+  min-width: min-content;
+  padding: 0 0.75rem;
+}
+
+.figure {
+  margin: 0 0 1rem;
+  border: var(--hairline);
+  overflow: hidden;
+  background: #14161f;
+  position: relative;
+}
+.figure img { display: block; width: 100%; height: auto; }
+.figure figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--soft);
+  padding: 8px 12px;
+  border-top: var(--hairline);
+}
+.figure--veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 80% at 80% 0, rgba(240, 138, 89, 0.14), transparent 60%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.beat {
+  color: var(--soft);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise var(--dur) var(--ease) forwards;
+  }
+  .d1 { animation-delay: 60ms; }
+  .d2 { animation-delay: 140ms; }
+  .d3 { animation-delay: 220ms; }
+  .d4 { animation-delay: 300ms; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+}
+
+@media (min-width: 768px) {
+  body { max-width: 660px; font-size: 16px; padding: 3.5rem 2rem 5rem; }
+  p { text-wrap: pretty; }
+}
+@media (min-width: 1024px) {
+  body { max-width: 840px; font-size: 17px; padding: 4.5rem 3rem 6rem; }
+  h1 { font-size: clamp(2.4rem, 4vw, 3.4rem); }
+  .po-glow {
+    background: radial-gradient(
+      50% 38% at 82% 8%,
+      rgba(240, 138, 89, 0.18) 0%,
+      rgba(240, 138, 89, 0.05) 42%,
+      transparent 72%
+    );
+  }
+}
+
+/* interactive compare (optional) */
+.compare-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0 14px;
+  margin: 0 0 8px;
+  background: linear-gradient(180deg, #1a1d28 75%, transparent);
+}
+.compare-tab {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  padding: 10px 14px;
+  min-height: 44px;
+  border: var(--hairline);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--muted);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.compare-tab.is-active { color: var(--ink); border-color: var(--accent); }
+[data-compare-panel][hidden] { display: none !important; }
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin: 0 0 1.5rem;
+}
+.compare-col--a { border-left: 2px solid var(--accent); padding-left: 12px; }
+.compare-col--b { border-left: 2px solid var(--teal); padding-left: 12px; }
+.compare-col-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  display: block;
+}
+.compare-col--a .compare-col-label { color: var(--accent); }
+.compare-col--b .compare-col-label { color: var(--teal); }
+@media (min-width: 768px) {
+  .compare-row { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+</style>
+</head>
+<body>
+<div class="po-glow" aria-hidden="true"></div>
+
+<section class="rise d1">
+  <p class="kicker"><span class="num">01</span> · decision</p>
+  <h1>{{TITLE}}</h1>
+  <p class="hook">{{HOOK}}</p>
+  <div class="chips">{{CHIPS}}</div>
+</section>
+<section class="rise d2">
+  <p class="kicker"><span class="num">02</span> · why</p>
+  {{WHY}}
+</section>
+<section class="rise d3">
+  <div class="takeaway">{{TAKEAWAY}}</div>
+</section>
+
+<p class="beat">gj-sk-report · mobile</p>
+</body>
+</html>

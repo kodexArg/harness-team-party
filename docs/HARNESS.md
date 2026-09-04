@@ -34,12 +34,13 @@ Every harness artifact name starts with its kind:
 |---|---|
 | skill (reusable) | `kskill-` |
 | skill (this product) | `hb-sk-` |
+| skill (report lineage) | `gj-sk-` |
 | hook | `khook-` |
 | agent (guardian/lobe) | `kbot-` |
 | agent (this product) | `hb-ag-` |
 | delivery-party node | `kwf-` |
 
-The stem after the prefix names the role. Product knowledge skills use `hb-sk-` + contract (`hb-sk-contracts`). Product agents use `hb-ag-` + area or role (`hb-ag-service`, title **The Dwarf**; `hb-ag-adventurer`, title **The Adventurer**). Reusable harness skills keep `kskill-`. A stem that *is* the role may name a technology (`kskill-cowsay`). Canonical and forbidden forms: [[GLOSSARY]] (`harness kind prefix`, `harness name stem`).
+The stem after the prefix names the role. Product knowledge skills use `hb-sk-` + contract (`hb-sk-contracts`). Product agents use `hb-ag-` + area or role (`hb-ag-service`, title **The Dwarf**; `hb-ag-adventurer`, title **The Adventurer**). Reusable harness skills keep `kskill-`. Report-lineage skills use `gj-sk-` (`gj-sk-report`, `gj-sk-reporte`). A stem that *is* the role may name a technology (`kskill-cowsay`). Canonical and forbidden forms: [[GLOSSARY]] (`harness kind prefix`, `harness name stem`).
 
 `hb-` is this template's own product prefix. Instantiation batch-renames it to the new project's prefix ([[CLONE]]).
 
@@ -132,9 +133,11 @@ This heading does not cover adding a rule or changing what a rule requires or fo
 | `kskill-qw` | Slash `/qw` — Quick Win. | `/qw` close-out |
 | `kskill-cowsay` | Slash `/cowsay`. | Stop brief, `/qw` close-out |
 | `kskill-micro-solid-font` | 3-row block font for `/cowsay` legends. | `kskill-cowsay` |
-| `kskill-report` | Structured run/status reporting. | main loop |
+| `gj-sk-report` | Mobile-first low-verbosity HTML reports (English). diagram-design SVG inside; replaces `kskill-report`. | main loop · `/gj-sk-report` |
+| `gj-sk-reporte` | Identical to `gj-sk-report`; Castellano delivery. | main loop · `/gj-sk-reporte` |
+| `kskill-report` | **Deprecated** — superseded by `gj-sk-report` / `gj-sk-reporte`. Pending removal. | — |
 | `kskill-send-to-telegram` | Owner notification channel. | run notifications |
-| `diagram-design` | Branded diagrams. | docs / architecture drawings |
+| `diagram-design` | Branded diagrams; used internally by `gj-sk-report*`. | docs / architecture drawings |
 
 ## Vendored MCP servers
 
