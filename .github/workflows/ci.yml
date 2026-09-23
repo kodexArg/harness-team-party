@@ -20,4 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Run tests
-        run: python3 -m pip install --user pytest && python3 -m pytest tests/ -q
+        run: |
+          python3 -m pip install --user pytest uv
+          export PATH="$HOME/.local/bin:$PATH"
+          python3 -m pytest tests/ -q
