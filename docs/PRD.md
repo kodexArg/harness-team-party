@@ -23,6 +23,7 @@ A repository that:
 2. Draws diagrams through `diagram-design`.
 3. Sets a session stance through `kskill-mood` and `kskill-qw`.
 4. Proves the wiring with `tests/`.
+5. Indexes configured repositories under `context/` through `kskill-context`, on demand.
 
 ## Who it is for
 
@@ -45,6 +46,11 @@ Scenario: Missing graph
   Given graph.json is absent
   When a session starts
   Then skills/kskill-graphify/bin/ensure runs and Grep is the fallback only after that
+
+Scenario: Sync a context repo
+  Given context/repos.json names a repository
+  When skills/kskill-context/bin/sync runs for that name
+  Then the clone is fast-forwarded under context/ and a code-only graph is written under context/.graphs/
 
 Scenario: Ship a change
   Given tests cover the change

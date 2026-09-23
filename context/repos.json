@@ -1,0 +1,9 @@
+{
+  "repos": [
+    {
+      "name": "alvs-feedlot-campo",
+      "remote": "git@github.com:kodexArg/alvs-feedlot-campo.git",
+      "branch": "main"
+    }
+  ]
+}

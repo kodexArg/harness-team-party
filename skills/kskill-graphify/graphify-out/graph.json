@@ -4,48 +4,12 @@
   "graph": {},
   "nodes": [
     {
-      "id": "skills_diagram_design_scripts_self_check_diagramparser",
-      "label": "DiagramParser",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "diagramparser",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L34"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_payloadtoolarge",
-      "label": "PayloadTooLarge",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "payloadtoolarge",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L53"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_page",
-      "label": "Page",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "page",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L337"
-    },
-    {
       "id": "skills_diagram_design_scripts_drawio_extract_edge",
       "label": "Edge",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "edge",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
@@ -57,11 +21,47 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "node",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L299"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_page",
+      "label": "Page",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "page",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L337"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_payloadtoolarge",
+      "label": "PayloadTooLarge",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "payloadtoolarge",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L53"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_diagramparser",
+      "label": "DiagramParser",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "diagramparser",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L34"
     },
     {
       "id": "skills_diagram_design_scripts_mermaid_extract_operator",
@@ -69,7 +69,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "file_type": "code",
       "norm_label": "_operator",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -81,7 +81,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 3,
       "file_type": "code",
       "norm_label": "sourceblock",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -93,7 +93,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 5,
       "file_type": "code",
       "norm_label": "diagram",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -105,7 +105,7 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 5,
       "file_type": "code",
       "norm_label": "edge",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -117,634 +117,18 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 5,
       "file_type": "code",
       "norm_label": "node",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L67"
     },
     {
-      "id": "skills_diagram_design_scripts_self_check_canonical_controller",
-      "label": "canonical_controller()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "canonical_controller()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L200"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_check_motion",
-      "label": "check_motion()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "check_motion()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L269"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_check_scripts",
-      "label": "check_scripts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "check_scripts()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L247"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_check_svgs",
-      "label": "check_svgs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "check_svgs()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L214"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_data",
-      "label": ".handle_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": ".handle_data()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L140"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_endtag",
-      "label": ".handle_endtag()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": ".handle_endtag()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L112"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_starttag",
-      "label": ".handle_starttag()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": ".handle_starttag()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L57"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_diagramparser_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L35"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_is_approved_google_fonts_stylesheet",
-      "label": "is_approved_google_fonts_stylesheet()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "is_approved_google_fonts_stylesheet()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L164"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L368"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_normalized_controller",
-      "label": "normalized_controller()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "normalized_controller()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L153"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_parsed_document",
-      "label": "parsed_document()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "parsed_document()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L157"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_reference_error",
-      "label": "reference_error()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "reference_error()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L179"
-    },
-    {
-      "id": "skills_diagram_design_scripts_self_check_verify",
-      "label": "verify()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "file_type": "code",
-      "norm_label": "verify()",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
-      "source_location": "L353"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_decompress_limited",
-      "label": "_decompress_limited()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "_decompress_limited()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L69"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_inflate",
-      "label": "_inflate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "_inflate()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L93"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_load_mxfile",
-      "label": "load_mxfile()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "load_mxfile()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L162"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_png_embedded_xml",
-      "label": "_png_embedded_xml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "_png_embedded_xml()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L113"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_svg_embedded_xml",
-      "label": "_svg_embedded_xml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "file_type": "code",
-      "norm_label": "_svg_embedded_xml()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L152"
-    },
-    {
-      "id": "cursor_hooks_load_hook_build_context",
-      "label": "build_context()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "build_context()",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L41"
-    },
-    {
-      "id": "cursor_hooks_load_hook_iter_files",
-      "label": "iter_files()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "iter_files()",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L16"
-    },
-    {
-      "id": "cursor_hooks_load_hook_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L51"
-    },
-    {
-      "id": "cursor_hooks_load_hook_read_text",
-      "label": "read_text()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "read_text()",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L37"
-    },
-    {
-      "id": "cursor_hooks_load_hook_ssot_files",
-      "label": "ssot_files()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "ssot_files()",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L23"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_classify_shape",
-      "label": "classify_shape()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "classify_shape()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L267"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_clean_label",
-      "label": "clean_label()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "clean_label()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L211"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_num",
-      "label": "_num()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "_num()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L349"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_parse_page",
-      "label": "parse_page()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "parse_page()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L358"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_parse_style",
-      "label": "parse_style()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "parse_style()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L198"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_logical_statements",
-      "label": "_logical_statements()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "norm_label": "_logical_statements()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L408"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_flowchart",
-      "label": "_parse_flowchart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "norm_label": "_parse_flowchart()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L703"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_statement_complete",
-      "label": "_statement_complete()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "code",
-      "norm_label": "_statement_complete()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L383"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_escape_inline",
-      "label": "_escape_inline()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "file_type": "code",
-      "norm_label": "_escape_inline()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L693"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_escape_markdown",
-      "label": "_escape_markdown()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "file_type": "code",
-      "norm_label": "_escape_markdown()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L684"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_escape_table",
-      "label": "_escape_table()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "file_type": "code",
-      "norm_label": "_escape_table()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L697"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_fold_lines",
-      "label": "_fold_lines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "file_type": "code",
-      "norm_label": "_fold_lines()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L689"
-    },
-    {
-      "id": "cursor_hooks_graphify_ensure_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": ".cursor/hooks/graphify-ensure.py",
-      "source_location": "L19"
-    },
-    {
-      "id": "cursor_hooks_graphify_ensure_present",
-      "label": "_present()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 16,
-      "file_type": "code",
-      "norm_label": "_present()",
-      "source_file": ".cursor/hooks/graphify-ensure.py",
-      "source_location": "L15"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_digest",
-      "label": "digest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "digest()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L713"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_fail",
-      "label": "_fail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "_fail()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L57"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L856"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_page_bounds",
-      "label": "page_bounds()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "page_bounds()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L701"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_page_node_map",
-      "label": ".node_map()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": ".node_map()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L345"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_parse_file",
-      "label": "parse_file()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "parse_file()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L523"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_reject_unsafe_xml",
-      "label": "_reject_unsafe_xml()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "_reject_unsafe_xml()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L62"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_select_pages",
-      "label": "select_pages()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "select_pages()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L838"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_to_json",
-      "label": "to_json()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "to_json()",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L818"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_configure_stdout_utf8",
-      "label": "_configure_stdout_utf8()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "file_type": "code",
-      "norm_label": "_configure_stdout_utf8()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L54"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_classify_shape",
-      "label": "classify_shape()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "classify_shape()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L506"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_endpoint_group",
-      "label": "_endpoint_group()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_endpoint_group()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L675"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_expanded_attributes",
-      "label": "_parse_expanded_attributes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_parse_expanded_attributes()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L526"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_node_expression",
-      "label": "_parse_node_expression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_parse_node_expression()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L557"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_split_top_level",
-      "label": "_split_top_level()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_split_top_level()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L371"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_state_endpoint",
-      "label": "_state_endpoint()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_state_endpoint()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L877"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_strip_class_suffix",
-      "label": "_strip_class_suffix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_strip_class_suffix()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L514"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_top_level_mask",
-      "label": "_top_level_mask()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "code",
-      "norm_label": "_top_level_mask()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L336"
-    },
-    {
       "id": "skills_diagram_design_scripts_drawio_extract_aligned",
       "label": "_aligned()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "_aligned()",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
@@ -755,55 +139,858 @@
       "label": "analyze()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "analyze()",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L587"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_classify_shape",
+      "label": "classify_shape()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "classify_shape()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L267"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_clean_label",
+      "label": "clean_label()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "clean_label()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L211"
+    },
+    {
       "id": "skills_diagram_design_scripts_drawio_extract_configure_stdout_utf8",
       "label": "_configure_stdout_utf8()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "_configure_stdout_utf8()",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L46"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_decompress_limited",
+      "label": "_decompress_limited()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_decompress_limited()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_digest",
+      "label": "digest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "digest()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L713"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_escape_inline",
+      "label": "_escape_inline()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_escape_inline()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L693"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_escape_markdown",
+      "label": "_escape_markdown()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_escape_markdown()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L684"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_escape_table",
+      "label": "_escape_table()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_escape_table()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L697"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_fail",
+      "label": "_fail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_fail()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_fold_lines",
+      "label": "_fold_lines()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_fold_lines()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L689"
+    },
+    {
       "id": "skills_diagram_design_scripts_drawio_extract_has_cycle",
       "label": "_has_cycle()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "_has_cycle()",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L545"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_inflate",
+      "label": "_inflate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_inflate()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L93"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_load_mxfile",
+      "label": "load_mxfile()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "load_mxfile()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L162"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L856"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_num",
+      "label": "_num()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_num()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L349"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_page_bounds",
+      "label": "page_bounds()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "page_bounds()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L701"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_page_node_map",
+      "label": ".node_map()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": ".node_map()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L345"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_parse_file",
+      "label": "parse_file()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "parse_file()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L523"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_parse_page",
+      "label": "parse_page()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "parse_page()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L358"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_parse_style",
+      "label": "parse_style()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "parse_style()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L198"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_png_embedded_xml",
+      "label": "_png_embedded_xml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_png_embedded_xml()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L113"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_reject_unsafe_xml",
+      "label": "_reject_unsafe_xml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_reject_unsafe_xml()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L62"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_select_pages",
+      "label": "select_pages()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "select_pages()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L838"
+    },
+    {
       "id": "skills_diagram_design_scripts_drawio_extract_shape_family",
       "label": "shape_family()",
       "_callable": true,
       "_origin": "ast",
-      "community": 4,
+      "community": 0,
       "file_type": "code",
       "norm_label": "shape_family()",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L285"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_svg_embedded_xml",
+      "label": "_svg_embedded_xml()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "_svg_embedded_xml()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L152"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_to_json",
+      "label": "to_json()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "to_json()",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L818"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_canonical_controller",
+      "label": "canonical_controller()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "canonical_controller()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L200"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_check_motion",
+      "label": "check_motion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "check_motion()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L269"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_check_scripts",
+      "label": "check_scripts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "check_scripts()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L247"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_check_svgs",
+      "label": "check_svgs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "check_svgs()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L214"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_data",
+      "label": ".handle_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": ".handle_data()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L140"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_endtag",
+      "label": ".handle_endtag()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": ".handle_endtag()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L112"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_diagramparser_handle_starttag",
+      "label": ".handle_starttag()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": ".handle_starttag()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L57"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_diagramparser_init",
+      "label": ".__init__()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": ".__init__()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_is_approved_google_fonts_stylesheet",
+      "label": "is_approved_google_fonts_stylesheet()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "is_approved_google_fonts_stylesheet()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L164"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L368"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_normalized_controller",
+      "label": "normalized_controller()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "normalized_controller()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L153"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_parsed_document",
+      "label": "parsed_document()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "parsed_document()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L157"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_reference_error",
+      "label": "reference_error()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "reference_error()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L179"
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check_verify",
+      "label": "verify()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "verify()",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "source_location": "L353"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_clean_label",
+      "label": "clean_label()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "clean_label()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L194"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_discard_nonsemantic",
+      "label": "_discard_nonsemantic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "_discard_nonsemantic()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L692"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_kind_and_direction",
+      "label": "_kind_and_direction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "_kind_and_direction()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L311"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_block",
+      "label": "parse_block()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "parse_block()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1011"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_er",
+      "label": "_parse_er()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "_parse_er()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L959"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_sequence",
+      "label": "_parse_sequence()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "_parse_sequence()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L773"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_state",
+      "label": "_parse_state()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "file_type": "code",
+      "norm_label": "_parse_state()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L898"
+    },
+    {
+      "id": "cursor_hooks_graphify_ensure_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": ".cursor/hooks/graphify-ensure.py",
+      "source_location": "L19"
+    },
+    {
+      "id": "cursor_hooks_graphify_ensure_present",
+      "label": "_present()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 13,
+      "file_type": "code",
+      "norm_label": "_present()",
+      "source_file": ".cursor/hooks/graphify-ensure.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_configure_stdout_utf8",
+      "label": "_configure_stdout_utf8()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "file_type": "code",
+      "norm_label": "_configure_stdout_utf8()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L54"
+    },
+    {
       "id": "skills_diagram_design_scripts_mermaid_extract_edge_operators",
       "label": "_edge_operators()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 2,
       "file_type": "code",
       "norm_label": "_edge_operators()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L600"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_endpoint_group",
+      "label": "_endpoint_group()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_endpoint_group()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L675"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_logical_statements",
+      "label": "_logical_statements()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_logical_statements()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L408"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_operator_style",
+      "label": "_operator_style()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_operator_style()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L590"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_flowchart",
+      "label": "_parse_flowchart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_parse_flowchart()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L703"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_split_top_level",
+      "label": "_split_top_level()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_split_top_level()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L371"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_statement_complete",
+      "label": "_statement_complete()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_statement_complete()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L383"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_top_level_mask",
+      "label": "_top_level_mask()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "code",
+      "norm_label": "_top_level_mask()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L336"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_analyze",
+      "label": "analyze()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "analyze()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1068"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_digest",
+      "label": "digest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "digest()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1145"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_escape_markdown",
+      "label": "_escape_markdown()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "_escape_markdown()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1136"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_escape_table",
+      "label": "_escape_table()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "_escape_table()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1141"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_frontmatter_end",
+      "label": "_frontmatter_end()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "_frontmatter_end()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L266"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_prepared_lines",
+      "label": "_prepared_lines()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "_prepared_lines()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L281"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_shape_family",
+      "label": "shape_family()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "code",
+      "norm_label": "shape_family()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L1064"
+    },
+    {
+      "id": "cursor_hooks_load_hook_build_context",
+      "label": "build_context()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "build_context()",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "cursor_hooks_load_hook_iter_files",
+      "label": "iter_files()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "iter_files()",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L16"
+    },
+    {
+      "id": "cursor_hooks_load_hook_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "cursor_hooks_load_hook_read_text",
+      "label": "read_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "read_text()",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "cursor_hooks_load_hook_ssot_files",
+      "label": "ssot_files()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "ssot_files()",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L23"
+    },
+    {
+      "id": "skills_kskill_context_bin_registry_load",
+      "label": "load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "load()",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L14"
+    },
+    {
+      "id": "skills_kskill_context_bin_registry_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L37"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_add_edge",
+      "label": ".add_edge()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": ".add_edge()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L160"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_add_node",
+      "label": ".add_node()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": ".add_node()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L112"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_attach",
+      "label": "._attach()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "._attach()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L154"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_depth_for",
+      "label": "._depth_for()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": "._depth_for()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L148"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_node_map",
+      "label": ".node_map()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "file_type": "code",
+      "norm_label": ".node_map()",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L109"
     },
     {
       "id": "skills_diagram_design_scripts_mermaid_extract_finalize_degrees",
@@ -817,110 +1004,33 @@
       "source_location": "L1027"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_frontmatter_end",
-      "label": "_frontmatter_end()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_has_cycle",
+      "label": "_has_cycle()",
       "_callable": true,
       "_origin": "ast",
       "community": 5,
       "file_type": "code",
-      "norm_label": "_frontmatter_end()",
+      "norm_label": "_has_cycle()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L266"
+      "source_location": "L1036"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_kind_and_direction",
-      "label": "_kind_and_direction()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_fail",
+      "label": "_fail()",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 8,
       "file_type": "code",
-      "norm_label": "_kind_and_direction()",
+      "norm_label": "_fail()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L311"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_operator_style",
-      "label": "_operator_style()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "_operator_style()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L590"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_block",
-      "label": "parse_block()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "parse_block()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1011"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_prepared_lines",
-      "label": "_prepared_lines()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "code",
-      "norm_label": "_prepared_lines()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L281"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_analyze",
-      "label": "analyze()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "analyze()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1068"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_digest",
-      "label": "digest()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "digest()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1145"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_escape_markdown",
-      "label": "_escape_markdown()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "_escape_markdown()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1136"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_escape_table",
-      "label": "_escape_table()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "_escape_table()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1141"
+      "source_location": "L61"
     },
     {
       "id": "skills_diagram_design_scripts_mermaid_extract_load_blocks",
       "label": "load_blocks()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "file_type": "code",
       "norm_label": "load_blocks()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -931,7 +1041,7 @@
       "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
@@ -942,199 +1052,121 @@
       "label": "_read_bounded()",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "file_type": "code",
       "norm_label": "_read_bounded()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L212"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_shape_family",
-      "label": "shape_family()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "shape_family()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1064"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_to_json",
-      "label": "to_json()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 6,
-      "file_type": "code",
-      "norm_label": "to_json()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1269"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_clean_label",
-      "label": "clean_label()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "clean_label()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L194"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_discard_nonsemantic",
-      "label": "_discard_nonsemantic()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "_discard_nonsemantic()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L692"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_fail",
-      "label": "_fail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "_fail()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L61"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_er",
-      "label": "_parse_er()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "_parse_er()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L959"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_sequence",
-      "label": "_parse_sequence()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "_parse_sequence()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L773"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_parse_state",
-      "label": "_parse_state()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "code",
-      "norm_label": "_parse_state()",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L898"
-    },
-    {
       "id": "skills_diagram_design_scripts_mermaid_extract_select_diagrams",
       "label": "select_diagrams()",
       "_callable": true,
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "file_type": "code",
       "norm_label": "select_diagrams()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L1295"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_add_edge",
-      "label": ".add_edge()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_to_json",
+      "label": "to_json()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
       "file_type": "code",
-      "norm_label": ".add_edge()",
+      "norm_label": "to_json()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L160"
+      "source_location": "L1269"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_add_node",
-      "label": ".add_node()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_classify_shape",
+      "label": "classify_shape()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 9,
       "file_type": "code",
-      "norm_label": ".add_node()",
+      "norm_label": "classify_shape()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L112"
+      "source_location": "L506"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_attach",
-      "label": "._attach()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_expanded_attributes",
+      "label": "_parse_expanded_attributes()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 9,
       "file_type": "code",
-      "norm_label": "._attach()",
+      "norm_label": "_parse_expanded_attributes()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L154"
+      "source_location": "L526"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_depth_for",
-      "label": "._depth_for()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_parse_node_expression",
+      "label": "_parse_node_expression()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 9,
       "file_type": "code",
-      "norm_label": "._depth_for()",
+      "norm_label": "_parse_node_expression()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L148"
+      "source_location": "L557"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_diagram_node_map",
-      "label": ".node_map()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_state_endpoint",
+      "label": "_state_endpoint()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 9,
       "file_type": "code",
-      "norm_label": ".node_map()",
+      "norm_label": "_state_endpoint()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L109"
+      "source_location": "L877"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_has_cycle",
-      "label": "_has_cycle()",
+      "id": "skills_diagram_design_scripts_mermaid_extract_strip_class_suffix",
+      "label": "_strip_class_suffix()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
+      "community": 9,
       "file_type": "code",
-      "norm_label": "_has_cycle()",
+      "norm_label": "_strip_class_suffix()",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L1036"
+      "source_location": "L514"
     },
     {
-      "id": "htmlparser",
-      "label": "HTMLParser",
+      "id": "element",
+      "label": "Element",
       "_origin": "ast",
       "community": 0,
       "file_type": "code",
-      "norm_label": "htmlparser",
+      "norm_label": "element",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "skills_diagram_design_scripts_self_check",
-      "label": "self_check.py",
+      "id": "skills_diagram_design_scripts_drawio_extract",
+      "label": "drawio_extract.py",
       "_origin": "ast",
       "community": 0,
       "file_type": "code",
-      "norm_label": "self_check.py",
-      "source_file": "skills/diagram-design/scripts/self_check.py",
+      "norm_label": "drawio_extract.py",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L1"
     },
     {
-      "id": "skills_diagram_design_scripts_self_check_py_path",
+      "id": "skills_diagram_design_scripts_drawio_extract_py_any",
+      "label": "Any",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "code",
+      "norm_label": "any",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_py_path",
       "label": "Path",
       "_origin": "ast",
       "community": 0,
@@ -1147,7 +1179,7 @@
       "id": "valueerror",
       "label": "ValueError",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "code",
       "norm_label": "valueerror",
       "source_file": "",
@@ -1157,7 +1189,7 @@
       "id": "skills_diagram_design_scripts_drawio_extract_rationale_114",
       "label": "Pull the ``mxfile`` tEXt/zTXt chunk out of a draw.io-exported PNG.",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "rationale",
       "norm_label": "pull the ``mxfile`` text/ztxt chunk out of a draw.io-exported png.",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
@@ -1167,27 +1199,67 @@
       "id": "skills_diagram_design_scripts_drawio_extract_rationale_163",
       "label": "Return the ``<mxfile>`` (or bare ``<mxGraphModel>``) XML for any input.",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "rationale",
       "norm_label": "return the ``<mxfile>`` (or bare ``<mxgraphmodel>``) xml for any input.",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L163"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_rationale_212",
+      "label": "draw.io labels are often HTML fragments; flatten to plain text lines.",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "rationale",
+      "norm_label": "draw.io labels are often html fragments; flatten to plain text lines.",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L212"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_rationale_47",
+      "label": "Emit digests as UTF-8 even when Windows selects a legacy codepage.",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "rationale",
+      "norm_label": "emit digests as utf-8 even when windows selects a legacy codepage.",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L47"
+    },
+    {
       "id": "skills_diagram_design_scripts_drawio_extract_rationale_54",
       "label": "Raised when compressed metadata expands beyond the supported limit.",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "rationale",
       "norm_label": "raised when compressed metadata expands beyond the supported limit.",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L54"
     },
     {
+      "id": "skills_diagram_design_scripts_drawio_extract_rationale_577",
+      "label": "True when the boxes stack as lanes \u2014 shared left edge or shared top edge.",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "rationale",
+      "norm_label": "true when the boxes stack as lanes \u2014 shared left edge or shared top edge.",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L577"
+    },
+    {
+      "id": "skills_diagram_design_scripts_drawio_extract_rationale_63",
+      "label": "Reject declarations that can make XML parsing expand external data.",
+      "_origin": "ast",
+      "community": 0,
+      "file_type": "rationale",
+      "norm_label": "reject declarations that can make xml parsing expand external data.",
+      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
+      "source_location": "L63"
+    },
+    {
       "id": "skills_diagram_design_scripts_drawio_extract_rationale_70",
       "label": "Decompress without allowing a small payload to expand without bound.",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "rationale",
       "norm_label": "decompress without allowing a small payload to expand without bound.",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
@@ -1197,187 +1269,63 @@
       "id": "skills_diagram_design_scripts_drawio_extract_rationale_94",
       "label": "Undo draw.io's base64 + raw-deflate + URL-encoding pipeline.",
       "_origin": "ast",
-      "community": 1,
+      "community": 0,
       "file_type": "rationale",
       "norm_label": "undo draw.io's base64 + raw-deflate + url-encoding pipeline.",
       "source_file": "skills/diagram-design/scripts/drawio_extract.py",
       "source_location": "L94"
     },
     {
-      "id": "mcp",
-      "label": ".mcp.json",
+      "id": "htmlparser",
+      "label": "HTMLParser",
       "_origin": "ast",
-      "community": 10,
+      "community": 1,
       "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_config_file"
-      },
-      "norm_label": ".mcp.json",
-      "source_file": ".mcp.json",
+      "norm_label": "htmlparser",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "skills_diagram_design_scripts_self_check",
+      "label": "self_check.py",
+      "_origin": "ast",
+      "community": 1,
+      "file_type": "code",
+      "norm_label": "self_check.py",
+      "source_file": "skills/diagram-design/scripts/self_check.py",
       "source_location": "L1"
     },
     {
-      "id": "mcp_mcp",
-      "label": "mcp/mcp.json",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_config_file"
-      },
-      "norm_label": "mcp/mcp.json",
-      "source_file": "mcp/mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_json_mcp_command_bunx",
-      "label": "bunx",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_command"
-      },
-      "norm_label": "bunx",
-      "source_file": ".mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_json_mcp_command_uvx",
-      "label": "uvx",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_command"
-      },
-      "norm_label": "uvx",
-      "source_file": ".mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_mcp_server_chrome_devtools",
-      "label": "chrome-devtools",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_server"
-      },
-      "norm_label": "chrome-devtools",
-      "source_file": "mcp/mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_mcp_server_graphify",
-      "label": "graphify",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_server"
-      },
-      "norm_label": "graphify",
-      "source_file": "mcp/mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_server_chrome_devtools",
-      "label": "chrome-devtools",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_server"
-      },
-      "norm_label": "chrome-devtools",
-      "source_file": ".mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "mcp_mcp_server_graphify",
-      "label": "graphify",
-      "_origin": "ast",
-      "community": 10,
-      "file_type": "code",
-      "metadata": {
-        "mcp_kind": "mcp_server"
-      },
-      "norm_label": "graphify",
-      "source_file": ".mcp.json",
-      "source_location": "L1"
-    },
-    {
-      "id": "cursor_hooks_load_hook",
-      "label": "load-hook.py",
-      "_origin": "ast",
-      "community": 11,
-      "file_type": "code",
-      "norm_label": "load-hook.py",
-      "source_file": ".cursor/hooks/load-hook.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "path",
+      "id": "skills_diagram_design_scripts_self_check_py_path",
       "label": "Path",
       "_origin": "ast",
-      "community": 11,
+      "community": 1,
       "file_type": "code",
       "norm_label": "path",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "element",
-      "label": "Element",
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_195",
+      "label": "Flatten Mermaid label markup without interpreting it.",
       "_origin": "ast",
-      "community": 12,
-      "file_type": "code",
-      "norm_label": "element",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_rationale_212",
-      "label": "draw.io labels are often HTML fragments; flatten to plain text lines.",
-      "_origin": "ast",
-      "community": 12,
+      "community": 10,
       "file_type": "rationale",
-      "norm_label": "draw.io labels are often html fragments; flatten to plain text lines.",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L212"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_384",
-      "label": "Return whether quotes and node delimiters close within a statement.",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "rationale",
-      "norm_label": "return whether quotes and node delimiters close within a statement.",
+      "norm_label": "flatten mermaid label markup without interpreting it.",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L384"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_411",
-      "label": "Join multiline Mermaid strings before parsing semicolon statements.",
-      "_origin": "ast",
-      "community": 13,
-      "file_type": "rationale",
-      "norm_label": "join multiline mermaid strings before parsing semicolon statements.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L411"
+      "source_location": "L195"
     },
     {
       "id": "skills_kskill_graphify_bin_lib",
-      "label": "lib.sh",
+      "label": "kskill-graphify/bin/lib.sh",
       "_origin": "ast",
-      "community": 14,
+      "community": 11,
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "file"
       },
-      "norm_label": "lib.sh",
+      "norm_label": "kskill-graphify/bin/lib.sh",
       "source_file": "skills/kskill-graphify/bin/lib.sh",
       "source_location": "L1"
     },
@@ -1385,7 +1333,7 @@
       "id": "skills_kskill_graphify_bin_lib_cd_repo",
       "label": "cd_repo()",
       "_origin": "ast",
-      "community": 14,
+      "community": 11,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1399,7 +1347,7 @@
       "id": "skills_kskill_graphify_bin_lib_path",
       "label": "PATH",
       "_origin": "ast",
-      "community": 14,
+      "community": 11,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1413,7 +1361,7 @@
       "id": "skills_kskill_graphify_bin_lib_require_cli",
       "label": "require_cli()",
       "_origin": "ast",
-      "community": 14,
+      "community": 11,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1427,7 +1375,7 @@
       "id": "skills_kskill_graphify_bin_lib_sh__entry",
       "label": "lib.sh script",
       "_origin": "ast",
-      "community": 14,
+      "community": 11,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1438,20 +1386,118 @@
       "source_location": "L1"
     },
     {
+      "id": "skills_kskill_context_bin_lib",
+      "label": "kskill-context/bin/lib.sh",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "kskill-context/bin/lib.sh",
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_kskill_context_bin_lib_each_repo",
+      "label": "each_repo()",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "each_repo()",
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L26"
+    },
+    {
+      "id": "skills_kskill_context_bin_lib_require_cli",
+      "label": "require_cli()",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "require_cli()",
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L19"
+    },
+    {
+      "id": "skills_kskill_context_bin_lib_sh__entry",
+      "label": "lib.sh script",
+      "_origin": "ast",
+      "community": 12,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "lib.sh script",
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L1"
+    },
+    {
       "id": "cursor_hooks_graphify_ensure",
       "label": "graphify-ensure.py",
       "_origin": "ast",
-      "community": 16,
+      "community": 13,
       "file_type": "code",
       "norm_label": "graphify-ensure.py",
       "source_file": ".cursor/hooks/graphify-ensure.py",
       "source_location": "L1"
     },
     {
+      "id": "skills_kskill_context_bin_sync",
+      "label": "sync",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "sync",
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_kskill_context_bin_sync__entry",
+      "label": "sync script",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "sync script",
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_kskill_context_bin_sync_sync_one",
+      "label": "sync_one()",
+      "_origin": "ast",
+      "community": 14,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_function"
+      },
+      "norm_label": "sync_one()",
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L12"
+    },
+    {
       "id": "scripts_cloud_setup",
       "label": "cloud_setup.sh",
       "_origin": "ast",
-      "community": 17,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1465,7 +1511,7 @@
       "id": "scripts_cloud_setup_sh__entry",
       "label": "cloud_setup.sh script",
       "_origin": "ast",
-      "community": 17,
+      "community": 15,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1479,7 +1525,7 @@
       "id": "scripts_graphify_extract",
       "label": "graphify-extract",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1493,7 +1539,7 @@
       "id": "scripts_graphify_extract__entry",
       "label": "graphify-extract script",
       "_origin": "ast",
-      "community": 18,
+      "community": 16,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1507,7 +1553,7 @@
       "id": "scripts_graphify_update",
       "label": "graphify-update",
       "_origin": "ast",
-      "community": 19,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1521,7 +1567,7 @@
       "id": "scripts_graphify_update__entry",
       "label": "graphify-update script",
       "_origin": "ast",
-      "community": 19,
+      "community": 17,
       "file_type": "code",
       "metadata": {
         "language": "bash",
@@ -1532,34 +1578,100 @@
       "source_location": "L1"
     },
     {
-      "id": "skills_diagram_design_scripts_drawio_extract_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_rationale_63",
-      "label": "Reject declarations that can make XML parsing expand external data.",
-      "_origin": "ast",
-      "community": 2,
-      "file_type": "rationale",
-      "norm_label": "reject declarations that can make xml parsing expand external data.",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L63"
-    },
-    {
       "id": "skills_diagram_design_scripts_mermaid_extract_rationale_55",
       "label": "Emit digests as UTF-8 even when Windows selects a legacy codepage.",
       "_origin": "ast",
-      "community": 20,
+      "community": 18,
       "file_type": "rationale",
       "norm_label": "emit digests as utf-8 even when windows selects a legacy codepage.",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L55"
+    },
+    {
+      "id": "skills_kskill_context_bin_index",
+      "label": "index",
+      "_origin": "ast",
+      "community": 19,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "index",
+      "source_file": "skills/kskill-context/bin/index",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_kskill_context_bin_index__entry",
+      "label": "index script",
+      "_origin": "ast",
+      "community": 19,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "index script",
+      "source_file": "skills/kskill-context/bin/index",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_337",
+      "label": "Keep top-level syntax positions and blank quoted/bracketed content.",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "rationale",
+      "norm_label": "keep top-level syntax positions and blank quoted/bracketed content.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L337"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_384",
+      "label": "Return whether quotes and node delimiters close within a statement.",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "rationale",
+      "norm_label": "return whether quotes and node delimiters close within a statement.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L384"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_411",
+      "label": "Join multiline Mermaid strings before parsing semicolon statements.",
+      "_origin": "ast",
+      "community": 2,
+      "file_type": "rationale",
+      "norm_label": "join multiline mermaid strings before parsing semicolon statements.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L411"
+    },
+    {
+      "id": "skills_kskill_context_bin_list",
+      "label": "list",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "norm_label": "list",
+      "source_file": "skills/kskill-context/bin/list",
+      "source_location": "L1"
+    },
+    {
+      "id": "skills_kskill_context_bin_list__entry",
+      "label": "list script",
+      "_origin": "ast",
+      "community": 20,
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "list script",
+      "source_file": "skills/kskill-context/bin/list",
+      "source_location": "L1"
     },
     {
       "id": "skills_kskill_graphify_bin_ensure",
@@ -1712,150 +1824,70 @@
       "source_location": ""
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_337",
-      "label": "Keep top-level syntax positions and blank quoted/bracketed content.",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "rationale",
-      "norm_label": "keep top-level syntax positions and blank quoted/bracketed content.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L337"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_507",
-      "label": "Return the normalized Mermaid shape family for a node suffix.",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "rationale",
-      "norm_label": "return the normalized mermaid shape family for a node suffix.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L507"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_515",
-      "label": "Drop Mermaid's `:::class` attachment; source styling is discarded.",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "rationale",
-      "norm_label": "drop mermaid's `:::class` attachment; source styling is discarded.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L515"
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_527",
-      "label": "Normalize Mermaid v11.3+ ``@{ ... }`` node attributes. Only semantic\u2026",
-      "_origin": "ast",
-      "community": 3,
-      "file_type": "rationale",
-      "norm_label": "normalize mermaid v11.3+ ``@{ ... }`` node attributes. only semantic...",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L527"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract",
-      "label": "drawio_extract.py",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "code",
-      "norm_label": "drawio_extract.py",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_py_any",
-      "label": "Any",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "code",
-      "norm_label": "any",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_rationale_47",
-      "label": "Emit digests as UTF-8 even when Windows selects a legacy codepage.",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "rationale",
-      "norm_label": "emit digests as utf-8 even when windows selects a legacy codepage.",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L47"
-    },
-    {
-      "id": "skills_diagram_design_scripts_drawio_extract_rationale_577",
-      "label": "True when the boxes stack as lanes \u2014 shared left edge or shared top edge.",
-      "_origin": "ast",
-      "community": 4,
-      "file_type": "rationale",
-      "norm_label": "true when the boxes stack as lanes \u2014 shared left edge or shared top edge.",
-      "source_file": "skills/diagram-design/scripts/drawio_extract.py",
-      "source_location": "L577"
-    },
-    {
       "id": "skills_diagram_design_scripts_mermaid_extract",
       "label": "mermaid_extract.py",
       "_origin": "ast",
-      "community": 5,
+      "community": 3,
       "file_type": "code",
       "norm_label": "mermaid_extract.py",
       "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
       "source_location": "L1"
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_267",
-      "label": "Return the last line index of a leading `---` frontmatter block, or -1.",
-      "_origin": "ast",
-      "community": 5,
-      "file_type": "rationale",
-      "norm_label": "return the last line index of a leading `---` frontmatter block, or -1.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L267"
-    },
-    {
       "id": "skills_diagram_design_scripts_mermaid_extract_py_any",
       "label": "Any",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "file_type": "code",
       "norm_label": "any",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "skills_diagram_design_scripts_mermaid_extract_py_path",
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_267",
+      "label": "Return the last line index of a leading `---` frontmatter block, or -1.",
+      "_origin": "ast",
+      "community": 3,
+      "file_type": "rationale",
+      "norm_label": "return the last line index of a leading `---` frontmatter block, or -1.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L267"
+    },
+    {
+      "id": "cursor_hooks_load_hook",
+      "label": "load-hook.py",
+      "_origin": "ast",
+      "community": 4,
+      "file_type": "code",
+      "norm_label": "load-hook.py",
+      "source_file": ".cursor/hooks/load-hook.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "path",
       "label": "Path",
       "_origin": "ast",
-      "community": 6,
+      "community": 4,
       "file_type": "code",
       "norm_label": "path",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "noreturn",
-      "label": "NoReturn",
+      "id": "skills_kskill_context_bin_registry",
+      "label": "registry.py",
       "_origin": "ast",
-      "community": 7,
+      "community": 4,
       "file_type": "code",
-      "norm_label": "noreturn",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_195",
-      "label": "Flatten Mermaid label markup without interpreting it.",
-      "_origin": "ast",
-      "community": 7,
-      "file_type": "rationale",
-      "norm_label": "flatten mermaid label markup without interpreting it.",
-      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
-      "source_location": "L195"
+      "norm_label": "registry.py",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L1"
     },
     {
       "id": "cursor_mcp",
       "label": ".cursor/mcp.json",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_config_file"
@@ -1868,7 +1900,7 @@
       "id": "cursor_mcp_mcp_server_chrome_devtools",
       "label": "chrome-devtools",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_server"
@@ -1881,7 +1913,7 @@
       "id": "cursor_mcp_mcp_server_graphify",
       "label": "graphify",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_server"
@@ -1894,7 +1926,7 @@
       "id": "cursor_mcp_mcp_server_laya",
       "label": "laya",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_server"
@@ -1907,7 +1939,7 @@
       "id": "env_var_path",
       "label": "PATH",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "env_var"
@@ -1920,7 +1952,7 @@
       "id": "mcp_command_bunx",
       "label": "bunx",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_command"
@@ -1933,7 +1965,7 @@
       "id": "mcp_command_home_kodex_local_bin_kdx_mcp_runner",
       "label": "/home/kodex/.local/bin/kdx-mcp-runner",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_command"
@@ -1946,7 +1978,7 @@
       "id": "mcp_command_uvx",
       "label": "uvx",
       "_origin": "ast",
-      "community": 9,
+      "community": 6,
       "file_type": "code",
       "metadata": {
         "mcp_kind": "mcp_command"
@@ -1954,6 +1986,160 @@
       "norm_label": "uvx",
       "source_file": ".cursor/mcp.json",
       "source_location": "L1"
+    },
+    {
+      "id": "mcp",
+      "label": ".mcp.json",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_config_file"
+      },
+      "norm_label": ".mcp.json",
+      "source_file": ".mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp",
+      "label": "mcp/mcp.json",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_config_file"
+      },
+      "norm_label": "mcp/mcp.json",
+      "source_file": "mcp/mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_json_mcp_command_bunx",
+      "label": "bunx",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_command"
+      },
+      "norm_label": "bunx",
+      "source_file": ".mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_json_mcp_command_uvx",
+      "label": "uvx",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_command"
+      },
+      "norm_label": "uvx",
+      "source_file": ".mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_mcp_server_chrome_devtools",
+      "label": "chrome-devtools",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "norm_label": "chrome-devtools",
+      "source_file": "mcp/mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_mcp_server_graphify",
+      "label": "graphify",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "norm_label": "graphify",
+      "source_file": "mcp/mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_server_chrome_devtools",
+      "label": "chrome-devtools",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "norm_label": "chrome-devtools",
+      "source_file": ".mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "mcp_mcp_server_graphify",
+      "label": "graphify",
+      "_origin": "ast",
+      "community": 7,
+      "file_type": "code",
+      "metadata": {
+        "mcp_kind": "mcp_server"
+      },
+      "norm_label": "graphify",
+      "source_file": ".mcp.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "noreturn",
+      "label": "NoReturn",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "noreturn",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 8,
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_507",
+      "label": "Return the normalized Mermaid shape family for a node suffix.",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "rationale",
+      "norm_label": "return the normalized mermaid shape family for a node suffix.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L507"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_515",
+      "label": "Drop Mermaid's `:::class` attachment; source styling is discarded.",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "rationale",
+      "norm_label": "drop mermaid's `:::class` attachment; source styling is discarded.",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L515"
+    },
+    {
+      "id": "skills_diagram_design_scripts_mermaid_extract_rationale_527",
+      "label": "Normalize Mermaid v11.3+ ``@{ ... }`` node attributes. Only semantic\u2026",
+      "_origin": "ast",
+      "community": 9,
+      "file_type": "rationale",
+      "norm_label": "normalize mermaid v11.3+ ``@{ ... }`` node attributes. only semantic...",
+      "source_file": "skills/diagram-design/scripts/mermaid_extract.py",
+      "source_location": "L527"
     }
   ],
   "links": [
@@ -3542,6 +3728,42 @@
       "weight": 1.0
     },
     {
+      "source": "skills_kskill_context_bin_registry_main",
+      "target": "path",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_registry_main",
+      "target": "skills_kskill_context_bin_registry_load",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_sync__entry",
+      "target": "skills_kskill_context_bin_sync_sync_one",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
       "source": "cursor_mcp_mcp_server_chrome_devtools",
       "target": "mcp_command_bunx",
       "relation": "references",
@@ -4187,6 +4409,18 @@
       "context": "parameter_type",
       "source_file": "skills/diagram-design/scripts/self_check.py",
       "source_location": "L353",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_registry_load",
+      "target": "path",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -5302,6 +5536,72 @@
       "weight": 1.0
     },
     {
+      "source": "skills_kskill_context_bin_index",
+      "target": "skills_kskill_context_bin_index__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/index",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_lib",
+      "target": "skills_kskill_context_bin_lib_sh__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_list",
+      "target": "skills_kskill_context_bin_list__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/list",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_registry",
+      "target": "skills_kskill_context_bin_registry_load",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_registry",
+      "target": "skills_kskill_context_bin_registry_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/registry.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_sync",
+      "target": "skills_kskill_context_bin_sync__entry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
       "source": "skills_kskill_graphify_bin_ensure",
       "target": "skills_kskill_graphify_bin_ensure__entry",
       "relation": "contains",
@@ -5365,6 +5665,39 @@
       "confidence_score": 1.0,
       "source_file": "skills/kskill-graphify/bin/upgrade-cli",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_lib",
+      "target": "skills_kskill_context_bin_lib_require_cli",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_lib",
+      "target": "skills_kskill_context_bin_lib_each_repo",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/lib.sh",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "skills_kskill_context_bin_sync",
+      "target": "skills_kskill_context_bin_sync_sync_one",
+      "relation": "defines",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "skills/kskill-context/bin/sync",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -5743,5 +6076,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3ffd5d0d66b50a6ac59754a4a4094d15fc9fef7e"
+  "built_at_commit": "b46bc538a3a51083668186ee73fb3a602cfd856f"
 }

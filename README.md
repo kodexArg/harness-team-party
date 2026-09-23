@@ -4,7 +4,8 @@ Skills, the code graph, and the tests for this repository. Version **v0.1.0**.
 
 ## What is here
 
-- **`skills/`** — `kskill-graphify`, `kskill-mood`, `kskill-qw`, and `diagram-design`.
+- **`skills/`** — `kskill-graphify`, `kskill-context`, `kskill-mood`, `kskill-qw`, and `diagram-design`.
+- **`context/`** — registry of repos to clone and index on demand. Clones stay local.
 - **`docs/`** and **`adrs/`** — product intent, interfaces, and the decisions the code follows.
 - **`tests/`** — checks that the graph, the skills, and the session hooks stay wired.
 - **`mcp/`** — Graphify MCP declaration.

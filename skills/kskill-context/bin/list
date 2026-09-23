@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Print each registry entry and its local state. Does not fetch.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+
+while IFS=$'\t' read -r name remote branch; do
+  clone="$CONTEXT_DIR/$name"
+  graph="$GRAPHS_DIR/$name/graphify-out/graph.json"
+  if [[ ! -d "$clone/.git" ]]; then
+    state="missing"
+  else
+    state="cloned"
+    if [[ -f "$graph" ]]; then
+      state="graph"
+    fi
+    upstream="$(git -C "$clone" rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null || true)"
+    if [[ -n "$upstream" ]]; then
+      behind="$(git -C "$clone" rev-list --count "HEAD..$upstream" 2>/dev/null || echo 0)"
+      if [[ "$behind" != "0" ]]; then
+        state="$state behind:$behind"
+      fi
+    fi
+  fi
+  printf '%s\t%s\t%s\t%s\n' "$name" "$branch" "$remote" "$state"
+done < <(each_repo "${1:-}")

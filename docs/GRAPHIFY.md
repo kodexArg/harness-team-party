@@ -82,6 +82,10 @@ The server exposes ten tools. First-line for this repo: `query_graph`, `get_node
 
 `graph.json` and `manifest.json` are tracked. `graphify-out/cache/` is gitignored. Never `graphify add <url>`.
 
+## Context repos
+
+Configured clones live under `context/<name>` and are gitignored. The registry is `context/repos.json`. `skills/kskill-context/bin/sync` clones or fast-forwards a repo, then writes a code-only graph to `context/.graphs/<name>/graphify-out/graph.json`. Query that graph by passing `project_path` as the absolute path of `context/.graphs/<name>` (the directory that contains `graphify-out/`). The harness graph stays the server default. Refresh the context graph by running `sync` again after the remote moves. Session start does not clone or pull.
+
 When Graphify is installed and the graph is present, explore through the MCP
 tools first. Then Glob, Grep, and Read the files returned by the graph. If it
 is not installed, run `ensure` before falling back to Grep.

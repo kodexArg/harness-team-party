@@ -8,6 +8,7 @@
 - **`docs/`** and **`adrs/`** hold intent and settled decisions. `.cursor/hooks/load-hook.py` reads them at session start.
 - **`tests/`** checks that those files stay linked.
 - **`mcp/mcp.json`** declares the Graphify server. `.mcp.json` points at it.
+- **`context/`** holds on-demand clones of configured repos. `context/repos.json` is tracked. Clones and `context/.graphs/` are not.
 
 There is no service process, database, or UI bundle in this tree.
 

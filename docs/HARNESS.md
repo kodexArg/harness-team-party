@@ -15,6 +15,7 @@
 - **`skills/`**: procedures and the scripts they call.
 - **`tests/`**: automated checks for this tree.
 - **`mcp/`**: MCP server declarations.
+- **`context/`**: configured clones (`kskill-context`). The registry is tracked; the clones are not.
 
 ## 2. Graph navigation
 
@@ -25,5 +26,6 @@
 | Tool | Path | Description | Status |
 |---|---|---|---|
 | `kskill-graphify` | `skills/kskill-graphify` | Knowledge graph navigation skill | active |
+| `kskill-context` | `skills/kskill-context` | On-demand clone and Graphify index of configured repos | active |
 
 Run tests with `uv run --with pytest pytest tests/`.

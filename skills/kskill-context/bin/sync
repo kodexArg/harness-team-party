@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Clone or fast-forward one context repo (or every repo), then index it.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+
+if [[ $# -gt 1 ]]; then
+  echo "usage: sync [NAME]" >&2
+  exit 1
+fi
+
+sync_one() {
+  local name="$1" remote="$2" branch="$3"
+  local clone="$CONTEXT_DIR/$name"
+  local action before after graph nodes
+  mkdir -p "$CONTEXT_DIR"
+  if [[ ! -d "$clone/.git" ]]; then
+    echo "check: $name missing"
+    git clone --branch "$branch" "$remote" "$clone"
+    action="clone"
+  else
+    echo "check: $name present"
+    if [[ -n "$(git -C "$clone" status --porcelain)" ]]; then
+      echo "refusing to pull a dirty tree: $clone" >&2
+      exit 1
+    fi
+    before="$(git -C "$clone" rev-parse HEAD)"
+    git -C "$clone" fetch "$remote" "$branch"
+    if ! git -C "$clone" merge --ff-only FETCH_HEAD; then
+      echo "refusing to pull: $clone is not a fast-forward of $branch" >&2
+      exit 1
+    fi
+    after="$(git -C "$clone" rev-parse HEAD)"
+    if [[ "$before" == "$after" ]]; then
+      action="current"
+    else
+      action="pull"
+    fi
+  fi
+  "$SKILL_DIR/bin/index" "$name"
+  graph="$GRAPHS_DIR/$name/graphify-out/graph.json"
+  nodes="$(python3 -c 'import json,sys; print(len(json.load(open(sys.argv[1], encoding="utf-8")).get("nodes", [])))' "$graph")"
+  echo "inform: repo=$name action=$action branch=$branch nodes=$nodes graph=$graph"
+}
+
+while IFS=$'\t' read -r name remote branch; do
+  sync_one "$name" "$remote" "$branch"
+done < <(each_repo "${1:-}")
