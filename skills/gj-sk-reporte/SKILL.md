@@ -3,7 +3,7 @@ name: gj-sk-reporte
 title: Reportes HTML mobile-first de baja verbosidad (castellano)
 type: skill
 status: active
-version: v0.1.0
+version: v1.3.1
 tags: [skill, report, mobile, diagram-design, castellano]
 description: >
   Idéntico a gj-sk-report: convierte un resumen markdown dado en UN HTML oscuro
@@ -54,7 +54,6 @@ python3 skills/gj-sk-report/scripts/validate_report.py <artifact.html>
 (o vía el symlink `skills/gj-sk-reporte/scripts/…`)
 
 6. Guardar siempre en `~/Documents/gj-sk-report/<slug>-YYYYMMDD.html`.
-7. Auto-Telegram salvo "no lo mandes" / "solo local" (`kskill-send-to-telegram`).
 
 `lang="es"` en el `<html>` del artefacto. Kickers y copy en castellano.
 

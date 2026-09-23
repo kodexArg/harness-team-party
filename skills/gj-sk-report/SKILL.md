@@ -3,7 +3,7 @@ name: gj-sk-report
 title: Mobile-first low-verbosity HTML reports (English)
 type: skill
 status: active
-version: v0.1.0
+version: v1.3.1
 tags: [skill, report, mobile, diagram-design]
 description: >
   Converts a given markdown summary into ONE self-contained, mobile-first,
@@ -65,7 +65,6 @@ python3 skills/gj-sk-report/scripts/validate_report.py <artifact.html>
 Exit 0 only. Fix leftovers / viewport / Mermaid CDN / a11y until green.
 
 8. **Save always** to `~/Documents/gj-sk-report/<slug>-YYYYMMDD.html` (`mkdir -p`). If the user named another folder, write there too; the Documents archive is always written. Report absolute path(s).
-9. **Auto-send Telegram** (mandatory unless "no lo mandes" / "solo local"): use `kskill-send-to-telegram` with the saved `.html` as `sendDocument`, caption = `<h1>` + one-line hook. Report `message_id`. On send failure, still surface the local path.
 
 ## Template mapping
 
