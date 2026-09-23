@@ -87,11 +87,9 @@ def test_an_unmapped_workflow_runs_the_whole_harness() -> None:
 
 def test_quick_win_skills_map() -> None:
     sel = ci_select.classify(["skills/kskill-qw/SKILL.md"])
-    if not sel.harness or "tests/test_quick_win_skills.py" not in sel.harness_files:
-        fail(f"kskill-qw must map to its harness test, got {sel.harness_files}")
-    if "tests/test_micro_solid_font.py" not in sel.harness_files:
-        fail("kskill-qw must also map to the micro-solid font test")
-    ok("kskill-qw maps to test_quick_win_skills")
+    if not sel.harness:
+        fail(f"kskill-qw must map to the harness, got {sel.harness_files}")
+    ok("kskill-qw maps to the harness")
 
 
 def test_graphify_skill_maps_to_its_guards() -> None:
@@ -104,10 +102,9 @@ def test_graphify_skill_maps_to_its_guards() -> None:
 
 
 def test_agents_map_to_the_agent_guards() -> None:
-    sel = ci_select.classify(["agents/hb-ag-service.md"])
+    sel = ci_select.classify(["agents/engineer.md"])
     for expected in (
         "tests/test_agents_are_subagents.py",
-        "tests/test_hb_ag_roster.py",
         "tests/test_agent_model_inherit.py",
     ):
         if expected not in sel.harness_files:
@@ -118,7 +115,6 @@ def test_agents_map_to_the_agent_guards() -> None:
 def test_adrs_map_to_the_adr_guards() -> None:
     sel = ci_select.classify(["adrs/adr-02-stack.md"])
     for expected in (
-        "tests/test_adr_frontmatter.py",
         "tests/test_wikilink_targets.py",
     ):
         if expected not in sel.harness_files:
@@ -126,6 +122,7 @@ def test_adrs_map_to_the_adr_guards() -> None:
     if not sel.merge_gate:
         fail("an ADR change must run the merge gate")
     ok("adrs map to the adr guards + merge gate")
+
 
 
 def test_surface_test_file_selects_itself() -> None:

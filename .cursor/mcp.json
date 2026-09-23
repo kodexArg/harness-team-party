@@ -9,6 +9,16 @@
       ],
       "env": {}
     },
+    "laya": {
+      "command": "/home/kodex/.local/bin/kdx-mcp-runner",
+      "args": [
+        "/home/kodex/Services/laya-mcp/.venv/bin/laya-mcp",
+        "stdio"
+      ],
+      "env": {
+        "PATH": "/home/kodex/Services/laya-mcp/.venv/bin:/home/kodex/.local/bin:/usr/local/bin:/usr/bin:/bin"
+      }
+    },
     "graphify": {
       "command": "uvx",
       "args": [

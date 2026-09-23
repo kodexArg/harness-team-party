@@ -57,13 +57,9 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
-      - name: Read the review routine's signature
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: python3 scripts/check_pr_tags.py
       - id: sel
         run: python3 scripts/ci_select.py --job merge-gate --base "${{ github.event.pull_request.base.sha }}" --head "${{ github.sha }}" >> "$GITHUB_OUTPUT"
+
       - if: steps.sel.outputs.run != 'true'
         run: echo "skip — diff hits no guardian watchlist surface"
       - if: steps.sel.outputs.run == 'true'

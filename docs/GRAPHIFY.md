@@ -86,4 +86,3 @@ When Graphify is installed and the graph is present, explore through the MCP
 tools first. Then Glob, Grep, and Read the files returned by the graph. If it
 is not installed, run `ensure` before falling back to Grep.
 
-[[CODEMAP]] remains the generated doc→code inverse index.
