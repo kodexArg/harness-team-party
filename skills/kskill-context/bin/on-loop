@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Deterministic loop start. Clone every registry repo, or fast-forward it
+# when the checkout already exists, then index. No arguments, no prompts.
+set -euo pipefail
+exec "$(cd "$(dirname "$0")" && pwd)/sync"

@@ -21,7 +21,8 @@ does not clone on its own.
 
 ## Do this
 
-1. **Which repos?** `skills/kskill-context/bin/list`
+1. **Loop start.** Run `skills/kskill-context/bin/on-loop`. It calls `sync` for every row in `context/repos.json`: clone when the checkout is missing, fast-forward when it exists, then index. The registry chooses the repos. Session start does not run this.
+2. **Which repos?** `skills/kskill-context/bin/list`
 2. **Bring one up to date and index it:**
 
    ```
@@ -30,8 +31,10 @@ does not clone on its own.
    skills/kskill-context/bin/index NAME    # graph only; clone must exist
    ```
 
-   `sync` clones on the configured branch when the checkout is
-   missing. When it exists, `sync` fetches and fast-forwards. A dirty
+   `sync` checks the checkout, clones when it is missing, and
+   fast-forwards when it exists. It then refreshes the code-only
+   graph and prints one `inform:` line: repo, action (`clone`,
+   `pull`, or `current`), branch, node count, and graph path. A dirty
    tree or a non-fast-forward stops the script.
 3. **Query the context graph** with Graphify MCP `project_path` set to
    `context/.graphs/NAME` (the directory that contains

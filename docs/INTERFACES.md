@@ -26,6 +26,7 @@ An entry point is valid when it has a row here. This repository has no HTTP serv
 | skill | `skills/diagram-design` | `SKILL.md` | diagram brief | local | Diagram procedure |
 | mcp | `mcp/mcp.json` | `graphify.serve` | `graphify-out/graph.json` | local | Graphify MCP server |
 | skill | `skills/kskill-context` | `SKILL.md` | repo name | local | Clone and index configured context repos |
+| script | `skills/kskill-context/bin/on-loop` | `on-loop` | none | local | Loop start: clone or fast-forward every registry repo, then index |
 | script | `skills/kskill-context/bin/list` | `list` | optional repo name | local | Print registry entries and local state |
 | script | `skills/kskill-context/bin/sync` | `sync` | optional repo name | local | Clone or fast-forward, then index |
 | script | `skills/kskill-context/bin/index` | `index` | repo name | local | Code-only Graphify graph for one clone |

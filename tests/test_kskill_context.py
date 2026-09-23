@@ -86,7 +86,7 @@ def test_registry_is_tracked_and_valid() -> None:
     for entry in repos:
         assert entry["name"] and entry["remote"] and entry["branch"]
     interfaces = (ROOT / "docs" / "INTERFACES.md").read_text(encoding="utf-8")
-    for script in ("bin/list", "bin/sync", "bin/index"):
+    for script in ("bin/on-loop", "bin/list", "bin/sync", "bin/index"):
         path = SKILL_BIN / script.split("/")[-1]
         assert path.is_file()
         assert path.stat().st_mode & stat.S_IXUSR
@@ -99,6 +99,8 @@ def test_sync_clones_fast_forwards_and_refuses_dirty(tmp_path: Path) -> None:
     sync = SKILL_BIN / "sync"
     first = _run([str(sync), "sample"], env=env)
     assert first.returncode == 0, first.stderr
+    assert "check: sample missing" in first.stdout
+    assert "inform: repo=sample action=clone" in first.stdout
     clone = context / "sample"
     assert (clone / ".git").exists()
     assert (context / ".graphs" / "sample" / "graphify-out" / "graph.json").is_file()
@@ -114,6 +116,8 @@ def test_sync_clones_fast_forwards_and_refuses_dirty(tmp_path: Path) -> None:
 
     second = _run([str(sync), "sample"], env=env)
     assert second.returncode == 0, second.stderr
+    assert "check: sample present" in second.stdout
+    assert "inform: repo=sample action=pull" in second.stdout
     head = _run(["git", "-C", str(clone), "log", "-1", "--format=%s"])
     assert head.stdout.strip() == "two"
 
