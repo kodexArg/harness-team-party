@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import json
-import subprocess
 import sys
 from pathlib import Path
 
@@ -11,8 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PRD_REL = Path("docs") / "PRD.md"
 ADRS_REL = Path("adrs")
 DOCS_REL = Path("docs")
-COWSAY = ROOT / "skills" / "kskill-cowsay" / "bin" / "cowsay"
-COWSAY_MSG = "SSoT Loaded into context"
+BANNER = "SSoT Loaded into context"
 
 
 def iter_files(directory: Path) -> list[Path]:
@@ -40,25 +38,8 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8", errors="replace")
 
 
-def render_cowsay() -> str:
-    if not COWSAY.is_file():
-        return COWSAY_MSG
-    try:
-        proc = subprocess.run(
-            [sys.executable, str(COWSAY), COWSAY_MSG],
-            capture_output=True,
-            text=True,
-            timeout=10,
-            check=False,
-        )
-    except (OSError, subprocess.TimeoutExpired):
-        return COWSAY_MSG
-    text = proc.stdout.strip()
-    return text or COWSAY_MSG
-
-
 def build_context(root: Path, banner: str | None = None) -> str:
-    chunks: list[str] = [banner or render_cowsay(), ""]
+    chunks: list[str] = [banner or BANNER, ""]
     for path in ssot_files(root):
         rel = path.relative_to(root).as_posix()
         chunks.append(f"===== {rel} =====")
@@ -72,7 +53,7 @@ def main() -> None:
         json.load(sys.stdin)
     except json.JSONDecodeError:
         pass
-    banner = render_cowsay()
+    banner = BANNER
     sys.stderr.write(banner + "\n")
     print(json.dumps({"additional_context": build_context(ROOT, banner)}))
 

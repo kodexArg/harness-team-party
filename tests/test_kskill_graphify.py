@@ -1,7 +1,7 @@
 """kskill-graphify is vendored with real update scripts.
 
-docs/HARNESS.md is the SSOT of what the harness is:
-a vendored skill absent from that table is not part of it. Scripts
+docs/HARNESS.md lists the skills in this repository.
+A skill absent from that table is not part of the layout. Scripts
 are the update mechanism — not npx, not a second skill.
 """
 

@@ -2,67 +2,59 @@
 title: Product requirements
 type: reference
 status: active
-version: v0.1.1
+version: v0.1.0
 tags: [prd, product]
-description: "Defines the product, its users, purpose, core stories, and acceptance criteria. Ships as a fill-in template: instantiation replaces every placeholder."
+description: "Purpose, users, and acceptance for the code in this repository."
 applies_when:
-  - When deciding whether work serves the product.
-  - When evaluating product acceptance.
+  - When deciding whether work serves the repository.
+  - When evaluating acceptance.
 related_adrs:
   - adr-00-adr-doctrine
 ---
-# PRD — {{project name}}
+# PRD — harness-team-party
 
-This is the product constitution template. Every double-curly slot is filled at
-instantiation ([[ONBOARDING]], [[CLONE]]); the section skeleton below is the
-shape every project's constitution keeps. Until it is filled, the harness
-treats this file as undecided product ground: agents read it first and find the
-questions, not the answers.
+This repository holds the skills and checks used to work in the tree: a code graph, diagram tooling, and session stance skills, with tests that keep those wires intact.
 
-## What are we building
+## What we are building
 
-{{product paragraph}}
+A repository that:
 
-A {{product kind}} that:
+1. Explores code through Graphify (`kskill-graphify`) before text search.
+2. Draws diagrams through `diagram-design`.
+3. Sets a session stance through `kskill-mood` and `kskill-qw`.
+4. Proves the wiring with `tests/`.
 
-1. {{core capability 1}}
-2. {{core capability 2}}
-3. {{core capability 3}}
-4. Carries a concise, living project harness so every change retains product context.
+## Who it is for
 
-## Who it's for
+- People changing this repository, who need the graph, the skills, and a test run that fails when the wiring breaks.
+- Agents working in the tree, who need `docs/PRD.md`, `docs/INTERFACES.md`, and the ADRs loaded before they edit.
 
-- {{user role 1}} who need {{need 1}}.
-- {{user role 2}} who need {{need 2}}.
-- {{user role 3}} who {{need 3}}.
+## Purpose
 
-## What purpose it will have
-
-{{purpose paragraph}}
+Keep the code small and the contracts written down, so a change to a skill, a hook, or the graph is visible in docs and in `pytest`.
 
 ## User stories
 
 ```gherkin
-Scenario: {{primary read story}}
-  Given {{precondition}}
-  When {{user action}}
-  Then {{observable outcome}}
+Scenario: Explore the tree
+  Given graphify-out/graph.json is present
+  When an agent looks up a symbol
+  Then query_graph returns the node before Grep or Read
 
-Scenario: {{primary exception story}}
-  Given {{a condition that needs attention}}
-  When {{the product evaluates it}}
-  Then {{the responsible user sees an actionable result}}
+Scenario: Missing graph
+  Given graph.json is absent
+  When a session starts
+  Then skills/kskill-graphify/bin/ensure runs and Grep is the fallback only after that
 
-Scenario: {{primary action story}}
-  Given {{an authorized user identifies a required action}}
-  When {{they perform it in the product}}
-  Then {{the action is validated, recorded, and attributable}}
+Scenario: Ship a change
+  Given tests cover the change
+  When the branch is opened as a pull request
+  Then CI runs pytest tests/
 ```
 
 ## Acceptance criteria
 
-- {{observable acceptance criterion 1}}
-- {{observable acceptance criterion 2}}
-- {{observable acceptance criterion 3}}
-- The interface is fast, clear, and usable in {{interface language}}.
-- The living harness remains concise and preserves product intent across changes.
+- `uv run --with pytest pytest tests/ -q` passes.
+- `graphify-out/graph.json` is tracked and contains nodes.
+- `OPENROUTER_API_KEY` and `OPENROUTER_MODEL_ID` are declared in `docs/VARIABLES.md` and seeded from `.env.example`. The key value lives only in gitignored `.env`.
+- Docs name the skills and scripts that exist, and do not describe files that have been removed.

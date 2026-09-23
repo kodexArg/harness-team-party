@@ -5,7 +5,7 @@ description: >
   quick-win (/qw), afk, cannabis, directive, or normal. A mood
   changes how you work, never what the work is. Triggers:
   /kdx-mood, mood, quick win, qw, scout, afk, stance.
-  Ruled by this procedure over [[HARNESS]]. Not a guardian.
+  Ruled by this procedure.
 ---
 
 # kskill-mood
@@ -91,9 +91,8 @@ Do not re-announce the mood on later turns. It is set; act it.
 ## Standing rules are not overridden
 
 Moods change register, verbosity, autonomy, and delegation. They never
-override the [[AGENTS]] / CLAUDE.md security posture, scope control, the
-ABC gate, or the requirement to confirm destructive and irreversible
-actions.
+override [`AGENTS.md`](../../AGENTS.md), scope control, or the
+requirement to confirm destructive and irreversible actions.
 
 ## Do not
 
