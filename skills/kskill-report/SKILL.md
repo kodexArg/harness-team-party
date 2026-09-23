@@ -83,19 +83,7 @@ fonts, radii, or layout. Do not add frameworks. Do not improvise.
    user named a different target folder in the request, ALSO write a copy there,
    but the `~/Documents/kskill-report/` archive copy is always written regardless. Tell the
    user the absolute path(s). If a chrome-devtools MCP is available and they want
-   a preview, offer to open it. **Never** deliver a report (Telegram or
-   otherwise) without first having written its local copy — the saved file is the
-   source of truth that the send step reuses.
-8. **Auto-send to Telegram (mandatory, no asking).** After the gate passes and
-   the file is saved, ALWAYS send it to kodex's Telegram — do NOT ask first,
-   this is the default close of every report. Invoke the `kskill-send-to-telegram`
-   skill (or its direct Bot API path) with the saved `.html` as a
-   `sendDocument`, caption = the report's `<h1>` + one-line summary. Send the
-   self-contained `.html` itself (it carries all CSS inline; fonts/mermaid load
-   from CDN when opened), NOT a screenshot. Report the returned `message_id`. If
-   the send fails, surface the error and the local path so the user still has
-   the artifact. The only time to skip the send is if the user explicitly says
-   "no lo mandes" / "solo local" in the same request.
+   a preview, offer to open it. The saved file is the delivered artifact.
 
 ## Validation gate (mandatory)
 

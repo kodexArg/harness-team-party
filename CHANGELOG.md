@@ -3,6 +3,12 @@
 Every change landing on `main` records an entry here in the same batch
 ([[adr-05-after-versioning]]). Version format: `vA.B.C`.
 
+## v1.3.1 — 2026-09-23
+
+Drop the Telegram notification skill from the harness.
+
+- Delete `skills/kskill-send-to-telegram`. Report skills save the HTML locally.
+
 ## v1.2.0 — 2026-08-29
 
 Add The Liturgist (`hb-ag-liturgy`) as a non-dispatchable authoring mock:

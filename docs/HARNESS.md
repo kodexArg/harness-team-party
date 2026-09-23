@@ -2,7 +2,7 @@
 title: Harness inventory, vendored skills, and agent contracts
 type: reference
 status: active
-version: v1.2.0
+version: v1.3.1
 tags: [harness, skills, agents, ssot]
 description: "Complete inventory of vendored skills, kind prefixes, MCP policies, and agent definition contracts."
 applies_when:
@@ -136,7 +136,6 @@ This heading does not cover adding a rule or changing what a rule requires or fo
 | `gj-sk-report` | Mobile-first low-verbosity HTML reports (English). diagram-design SVG inside; replaces `kskill-report`. | main loop · `/gj-sk-report` |
 | `gj-sk-reporte` | Identical to `gj-sk-report`; Castellano delivery. | main loop · `/gj-sk-reporte` |
 | `kskill-report` | **Deprecated** — superseded by `gj-sk-report` / `gj-sk-reporte`. Pending removal. | — |
-| `kskill-send-to-telegram` | Owner notification channel. | run notifications |
 | `diagram-design` | Branded diagrams; used internally by `gj-sk-report*`. | docs / architecture drawings |
 
 ## Vendored MCP servers
