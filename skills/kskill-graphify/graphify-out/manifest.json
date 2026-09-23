@@ -24,14 +24,14 @@
     "semantic_hash": "bc762237a894b0a8822bf8999a6fec49"
   },
   ".cursor/hooks/load-hook.py": {
-    "mtime": 1790186459.4142148,
-    "seen": 1790186512.5809994,
+    "mtime": 1790186626.5873682,
+    "seen": 1790188010.6048245,
     "ast_hash": "5798b51ea8a5046454920f3cc7face67",
     "semantic_hash": "5798b51ea8a5046454920f3cc7face67"
   },
   ".cursor/mcp.json": {
-    "mtime": 1790184271.227753,
-    "seen": 1790186512.5810018,
+    "mtime": 1790186626.5879982,
+    "seen": 1790188010.6048276,
     "ast_hash": "dea6a409d0dbefdcaf81052b32f10fe8",
     "semantic_hash": "dea6a409d0dbefdcaf81052b32f10fe8"
   },
@@ -48,8 +48,8 @@
     "semantic_hash": "260239c75a29da9e39e9b631e32dc553"
   },
   "scripts/cloud_setup.sh": {
-    "mtime": 1790186460.2577407,
-    "seen": 1790186512.581009,
+    "mtime": 1790186626.589632,
+    "seen": 1790188010.604882,
     "ast_hash": "fd2eb60c072dd7e9c8f62cab81816eff",
     "semantic_hash": "fd2eb60c072dd7e9c8f62cab81816eff"
   },
@@ -124,5 +124,35 @@
     "seen": 1790186512.581037,
     "ast_hash": "f66e0e597810bc482e887e6cceed417e",
     "semantic_hash": "f66e0e597810bc482e887e6cceed417e"
+  },
+  "skills/kskill-context/bin/index": {
+    "mtime": 1790187987.7928748,
+    "seen": 1790188010.605029,
+    "ast_hash": "d4932acc3642e00ab49a37d08c9b7c18",
+    "semantic_hash": "d4932acc3642e00ab49a37d08c9b7c18"
+  },
+  "skills/kskill-context/bin/lib.sh": {
+    "mtime": 1790188001.6411572,
+    "seen": 1790188010.605032,
+    "ast_hash": "61b0213b0b2e87fd2efe6d7458b75562",
+    "semantic_hash": "61b0213b0b2e87fd2efe6d7458b75562"
+  },
+  "skills/kskill-context/bin/list": {
+    "mtime": 1790187897.2645354,
+    "seen": 1790188010.6050336,
+    "ast_hash": "57a7b4375cc06ea326537ee142bc0099",
+    "semantic_hash": "57a7b4375cc06ea326537ee142bc0099"
+  },
+  "skills/kskill-context/bin/registry.py": {
+    "mtime": 1790187879.8796563,
+    "seen": 1790188010.6050358,
+    "ast_hash": "bd01116cad55cd2bedaa1f7a38b05566",
+    "semantic_hash": "bd01116cad55cd2bedaa1f7a38b05566"
+  },
+  "skills/kskill-context/bin/sync": {
+    "mtime": 1790187890.354361,
+    "seen": 1790188010.605037,
+    "ast_hash": "81bf9465a051992151f4e7a7685e73c7",
+    "semantic_hash": "81bf9465a051992151f4e7a7685e73c7"
   }
 }

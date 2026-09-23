@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Clone or fast-forward one context repo (or every repo), then index it.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+
+if [[ $# -gt 1 ]]; then
+  echo "usage: sync [NAME]" >&2
+  exit 1
+fi
+
+sync_one() {
+  local name="$1" remote="$2" branch="$3"
+  local clone="$CONTEXT_DIR/$name"
+  mkdir -p "$CONTEXT_DIR"
+  if [[ ! -d "$clone/.git" ]]; then
+    git clone --branch "$branch" "$remote" "$clone"
+  else
+    if [[ -n "$(git -C "$clone" status --porcelain)" ]]; then
+      echo "refusing to pull a dirty tree: $clone" >&2
+      exit 1
+    fi
+    git -C "$clone" fetch "$remote" "$branch"
+    if ! git -C "$clone" merge --ff-only FETCH_HEAD; then
+      echo "refusing to pull: $clone is not a fast-forward of $branch" >&2
+      exit 1
+    fi
+  fi
+  "$SKILL_DIR/bin/index" "$name"
+}
+
+while IFS=$'\t' read -r name remote branch; do
+  sync_one "$name" "$remote" "$branch"
+done < <(each_repo "${1:-}")

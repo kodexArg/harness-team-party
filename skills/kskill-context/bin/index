@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Build a code-only Graphify graph for one context repo. No LLM key.
+set -euo pipefail
+# shellcheck source=lib.sh
+source "$(cd "$(dirname "$0")" && pwd)/lib.sh"
+
+if [[ $# -ne 1 ]]; then
+  echo "usage: index NAME" >&2
+  exit 1
+fi
+
+IFS=$'\t' read -r name remote branch < <(each_repo "$1")
+
+clone="$CONTEXT_DIR/$name"
+if [[ ! -d "$clone/.git" ]]; then
+  echo "clone missing: $clone" >&2
+  exit 1
+fi
+
+require_cli
+out="$GRAPHS_DIR/$name"
+mkdir -p "$out"
+graphify extract "$clone" --out "$out" --code-only
+echo "graph: $out/graphify-out/graph.json"
