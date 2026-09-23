@@ -1,29 +1,18 @@
 # AGENTS
 
-> Runtime index and development instructions for autonomous agents.
+How to work in this repository.
 
 ## Instructions
 
-1. **Understand WHAT & WHY first:**
-   - Read [`docs/PRD.md`](docs/PRD.md) for product purpose, user requirements, and acceptance criteria.
-   - Read [`docs/INTERFACES.md`](docs/INTERFACES.md) for declared API and route contracts.
-2. **Context & Orientation:**
-   - Use Graphify (`query_graph`, `get_node`, `get_neighbors`) as the primary mechanism for codebase exploration.
-   - Read local code, tests, and documentation before making assumptions or consulting external sources.
-3. **Execution & Agency:**
-   - Follow [`docs/DEVELOPMENT-LOOP.md`](docs/DEVELOPMENT-LOOP.md).
-   - You have end-to-end full-stack agency: solve problems cleanly, implement necessary service and surface code, and write automated tests verifying your changes.
-   - Keep code and documentation clear, concise, and well-tested in English (screen copy follows project localization).
-   - If public routes or interfaces change, update [`docs/INTERFACES.md`](docs/INTERFACES.md) to keep contracts authoritative.
-4. **Delivery:**
-   - Follow [`docs/GITHUB.md`](docs/GITHUB.md): deliver changes through ephemeral branches and PRs into `main`.
+1. Read [`docs/PRD.md`](docs/PRD.md) and [`docs/INTERFACES.md`](docs/INTERFACES.md) before changing behavior.
+2. Explore with Graphify (`query_graph`, `get_node`, `get_neighbors`) when `graphify-out/graph.json` is present. Procedure: [`docs/GRAPHIFY.md`](docs/GRAPHIFY.md), [`adrs/adr-35-graphify.md`](adrs/adr-35-graphify.md).
+3. Follow [`docs/DEVELOPMENT-LOOP.md`](docs/DEVELOPMENT-LOOP.md). Tests live in `tests/`. English in code and technical docs.
+4. Ship through an ephemeral branch and a pull request into `main`: [`docs/GITHUB.md`](docs/GITHUB.md).
 
 ## References
 
-- [`docs/PRD.md`](docs/PRD.md) — Product constitution.
-- [`docs/INTERFACES.md`](docs/INTERFACES.md) — Route and API catalog.
-- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — Architectural overview (service, data, auth, infra).
-- [`docs/TESTING.md`](docs/TESTING.md) — Automated testing guidelines.
-- [`docs/DEVELOPMENT-LOOP.md`](docs/DEVELOPMENT-LOOP.md) — Development workflow.
-- [`docs/GITHUB.md`](docs/GITHUB.md) — Git and PR delivery standards.
-- [`docs/SETUP.md`](docs/SETUP.md) — Setup and onboarding guide.
+- [`docs/GRAPHIFY.md`](docs/GRAPHIFY.md) — code graph and MCP.
+- [`docs/SETUP.md`](docs/SETUP.md) — clone and local setup.
+- [`docs/TESTING.md`](docs/TESTING.md) — how to run tests.
+- [`docs/HARNESS.md`](docs/HARNESS.md) — repository layout.
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — how the tree is put together.

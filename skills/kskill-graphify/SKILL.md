@@ -2,7 +2,7 @@
 name: kskill-graphify
 description: >
   First exploration mechanism when the graph is present (adr-35-graphify).
-  Query, path, explain against the docs+harness graph; ensure the CLI
+  Query, path, explain against the repository graph; ensure the CLI
   and graph.json after clone; extract or update it; upgrade the CLI;
   fetch the upstream skill snapshot. Triggers: graphify, graph.json,
   first mechanism, GRAPHIFY, kskill-graphify. Slash /kskill-graphify.
@@ -21,7 +21,7 @@ tools:
 # kskill-graphify
 
 Procedure for [[adr-35-graphify]] over [[GRAPHIFY]]. Where this file
-and that doc disagree, the doc wins ([[HARNESS]]).
+and that doc disagree, the doc wins (`docs/GRAPHIFY.md`).
 
 Trim of Graphify-Labs `graphify/skill.md` (Apache 2.0). Upstream
 snapshot: `skills/kskill-graphify/upstream/`. This copy keeps query,
@@ -29,7 +29,7 @@ path, explain, extract, and update. MCP is declared in `mcp/mcp.json`,
 not vendored here. It drops Neo4j, Whisper, `graphify add <url>`,
 GitHub clone, wiki, Obsidian, and pip/npx install.
 
-Graph files live in the harness:
+Graph files live at
 `skills/kskill-graphify/graphify-out/`. Repo-root `graphify-out`
 is a symlink to that directory. `graph.json` and `manifest.json`
 are tracked; `cache/` is not.
@@ -47,7 +47,7 @@ are tracked; `cache/` is not.
 
    ```
    skills/kskill-graphify/bin/ensure           # CLI + code-only graph if missing
-   skills/kskill-graphify/bin/extract          # semantic docs+harness (LLM key)
+   skills/kskill-graphify/bin/extract          # semantic extract (LLM key)
    skills/kskill-graphify/bin/update-graph     # incremental AST --code-only
    skills/kskill-graphify/bin/upgrade-cli      # uv tool install --upgrade graphifyy
    skills/kskill-graphify/bin/fetch-upstream   # snapshot official SKILL.md
@@ -55,7 +55,7 @@ are tracked; `cache/` is not.
 
    `GRAPHIFY_UPSTREAM_REF` (default `v8`) selects the GitHub ref
    for fetch-upstream.
-6. [[CODEMAP]] is a different graph. This skill does not write `docs/`.
+6. This skill does not write `docs/`.
 
 ## Return shape
 
@@ -74,6 +74,5 @@ file: docs/GRAPHIFY.md
 - Run `graphify claude|codex|opencode install` (rewrites AGENTS).
 - Vendor `upstream/SKILL.md` onto this file.
 - Commit `graphify-out/cache/`.
-- Load the full [[HARNESS]] file to answer one row.
-- Replace [[CODEMAP]].
+- Load `docs/HARNESS.md` in full to answer one layout row.
 - Block clone or session start on an LLM API key.

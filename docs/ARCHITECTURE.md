@@ -1,27 +1,24 @@
 # Architecture
 
-> Architectural overview: Service structure, Data layer, Authentication, and Infrastructure.
+> How this repository is put together.
 
-## 1. Service Layout & Patterns
+## 1. Layout
 
-- **Service Structure:** Top-level layout under `{{service tree}}` and/or `{{surface tree}}`.
-- **Layering:** Clear separation of domain logic, persistence, and external presentation/API interfaces.
-- **Contract Adherence:** All exposed endpoints and public actions must adhere to contracts defined in [`docs/INTERFACES.md`](docs/INTERFACES.md).
+- **`skills/`** holds procedures and the scripts they run.
+- **`docs/`** and **`adrs/`** hold intent and settled decisions. `.cursor/hooks/load-hook.py` reads them at session start.
+- **`tests/`** checks that those files stay linked.
+- **`mcp/mcp.json`** declares the Graphify server. `.mcp.json` points at it.
 
-## 2. Data & Persistence
+There is no service process, database, or UI bundle in this tree.
 
-- **Database Engine:** `{{database}}` (e.g., PostgreSQL, SQLite, or managed service).
-- **Schema & Migrations:** Framework-standard migrations versioned in code.
-- **Data Lifecycle:** Clear boundaries between persistent records, ephemeral cache, and computed values.
+## 2. Code graph
 
-## 3. Authentication & Authorization
+`graphify-out` is a symlink to `skills/kskill-graphify/graphify-out`. `graph.json` and `manifest.json` are tracked. `cache/` is not.
 
-- **Identity Provider:** `{{identity provider}}` (e.g., JWT, OAuth2, session-based).
-- **Session Management:** Secure token or session transmission.
-- **Authorization Pattern:** Declarative or middleware-based permission checks at the boundary.
+## 3. Secrets
 
-## 4. Infrastructure & Runtime
+Model credentials are `OPENROUTER_API_KEY` in a gitignored `.env`. Names are listed in [`docs/VARIABLES.md`](docs/VARIABLES.md). Values are not committed.
 
-- **Deployment Target:** `{{deploy target}}` on `{{cloud provider}}`.
-- **Local Runtime:** Orchestrated locally via Docker Compose or equivalent runtime tooling.
-- **Environment & Secrets:** Secret variables are injected via environment; names are recorded without committing secret values.
+## 4. Runtime
+
+Python 3 and `uv` on the workstation. Tests run with pytest. Graphify is installed with `uv tool` by `skills/kskill-graphify/bin/ensure`, not as a project dependency.

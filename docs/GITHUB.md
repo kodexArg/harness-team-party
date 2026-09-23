@@ -32,7 +32,7 @@ Commits should be focused, atomic, and follow standard conventional commit forma
 ```
 
 - **Types:** `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`.
-- **Scopes:** domain or subsystem (e.g. `service`, `surface`, `infra`, `harness`, `api`).
+- **Scopes:** area of the tree (e.g. `skills`, `docs`, `graph`, `tests`).
 - **Subject:** Imperative, present tense, concise summary (e.g. `add user authentication route`).
 
 ## 3. Pull Request Workflow

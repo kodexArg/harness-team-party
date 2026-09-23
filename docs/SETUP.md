@@ -1,45 +1,29 @@
-# Project Setup & Instantiation Guide
+# Setup
 
-> Clean, straightforward guide to instantiate and develop with this harness.
-
-## 1. Quickstart
-
-To create a new project from this harness:
+## 1. Clone
 
 ```bash
-# 1. Copy the template to your new project directory
-cp -r /path/to/harness-team-party /path/to/my-project
-cd /path/to/my-project
-git init
+git clone git@github.com:kodexArg/harness-team-party.git
+cd harness-team-party
 ```
 
-## 2. Fill Core Project Information
-
-Define the foundational project identity in `docs/PRD.md` and `docs/INTERFACES.md`:
-
-1. **`docs/PRD.md`**: Define product purpose, target users, and acceptance criteria (**WHAT & WHY**).
-2. **`docs/INTERFACES.md`**: Define the initial API, routes, and public contract catalog (**WHAT**).
-3. **`adrs/adr-02-stack.md`**: Select and record your backend, frontend, database, and infrastructure stack.
-
-Replace common placeholder tokens across docs:
-- `{{project name}}` — Human-readable project name.
-- `{{project slug}}` — Repository and package slug.
-- `{{owner}}` / `{{repo}}` — GitHub organization/user and repository name.
-
-## 3. Code Graph (Graphify)
-
-Graphify provides semantic knowledge graph navigation of the repository:
+## 2. Local environment
 
 ```bash
-# Ensure Graphify CLI is ready (requires uv)
+cp .env.example .env
+```
+
+Set `OPENROUTER_API_KEY` in `.env`. The file is gitignored. The name is declared in [`docs/VARIABLES.md`](docs/VARIABLES.md).
+
+## 3. Code graph
+
+```bash
 skills/kskill-graphify/bin/ensure
 ```
 
-When MCP is supported, enable the project MCP server in `.mcp.json`.
+When the editor supports project MCP, enable the server in `.mcp.json`.
 
-## 4. Verification
-
-Verify the harness and test suite:
+## 4. Tests
 
 ```bash
 uv run --with pytest pytest tests/ -q

@@ -4,8 +4,8 @@ description: >
   Slash /qw. Quick Win shortcut: identical to /kdx-mood quick-win
   (kskill-mood + references/quick-win.md). Use when the user says
   /qw, quick win, quick-win, or qw. Mandatory: understand the plan
-  (re-ask if needed), open a PR, merge to main immediately, then
-  /cowsay with the QUICK WIN legend. Triggers: /qw, quick win,
+  (re-ask if needed), open a PR, and merge to main immediately.
+  Triggers: /qw, quick win,
   kskill-qw. Not a second mood parser.
 ---
 
@@ -27,4 +27,4 @@ separate stance here.
 - Invent a second quick-win procedure.
 - Skip the understand / PR / merge / cowsay loop when the task is
   repo work.
-- Override [[AGENTS]], the ABC gate, or [[INTERFACES]].
+- Override [`AGENTS.md`](../../AGENTS.md) or [`docs/INTERFACES.md`](../../docs/INTERFACES.md).

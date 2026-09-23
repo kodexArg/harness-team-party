@@ -1,35 +1,34 @@
 # Development Loop
 
-> The workflow for developing features, fixing defects, and delivering changes.
-
-## 1. The Core Loop
-
 ```mermaid
 flowchart LR
-    ORIENT["1. Orient<br/>PRD + INTERFACES + Graph"] --> PLAN["2. Plan<br/>Contracts & Design"]
-    PLAN --> BUILD["3. Implement & Test<br/>Code + Automated Tests"]
-    BUILD --> VERIFY["4. Verify<br/>Run Test Suite"]
-    VERIFY --> SHIP["5. Ship<br/>Branch & PR"]
+    ORIENT["1. Orient<br/>PRD + INTERFACES + Graph"] --> PLAN["2. Plan"]
+    PLAN --> BUILD["3. Implement & Test"]
+    BUILD --> VERIFY["4. Verify"]
+    VERIFY --> SHIP["5. Ship"]
 ```
 
 ### 1. Orient
-- Check [`docs/PRD.md`](docs/PRD.md) for product objectives and acceptance criteria.
-- Check [`docs/INTERFACES.md`](docs/INTERFACES.md) for route and API contracts.
-- Use Graphify (`query_graph`) or code search to understand affected components.
+
+- Read [`docs/PRD.md`](docs/PRD.md) and [`docs/INTERFACES.md`](docs/INTERFACES.md).
+- Use Graphify (`query_graph`) before grepping.
 
 ### 2. Plan
-- Determine the minimal, elegant technical approach.
-- If public APIs, routes, or models change, declare them in [`docs/INTERFACES.md`](docs/INTERFACES.md).
 
-### 3. Implement & Test
-- Implement functionality across service and surface boundaries with full-stack agency.
-- Write tests (unit, integration, or contract) verifying behavior, edge cases, and preventing regressions.
+- Keep the change small.
+- If an entry point is added or removed, update [`docs/INTERFACES.md`](docs/INTERFACES.md).
+
+### 3. Implement and test
+
+- Change the skill, script, hook, or doc that owns the behavior.
+- Add or adjust a test in `tests/` when the wiring can break silently.
 
 ### 4. Verify
-- Run the automated test suite locally:
-  ```bash
-  uv run --with pytest pytest tests/ -q
-  ```
+
+```bash
+uv run --with pytest pytest tests/ -q
+```
 
 ### 5. Ship
-- Create an ephemeral branch, make atomic commits with clear messages, and open a Pull Request to `main`.
+
+- Ephemeral branch, conventional commit, pull request into `main`.

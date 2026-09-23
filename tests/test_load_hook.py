@@ -82,7 +82,7 @@ def test_order_on_a_synthetic_tree(tmp_path: Path) -> None:
     ok("order is PRD, then adrs/**, then docs/** without a second PRD")
 
 
-def test_repo_payload_contains_cowsay_and_discovered_files() -> None:
+def test_repo_payload_contains_banner_and_discovered_files() -> None:
     hook = load_hook()
     files = hook.ssot_files(ROOT)
     if not files or files[0] != ROOT / "docs" / "PRD.md":
@@ -95,7 +95,7 @@ def test_repo_payload_contains_cowsay_and_discovered_files() -> None:
         fail(f"walked {len(files)} files, expected {expected}")
     context = hook.build_context(ROOT)
     if "SSoT Loaded into context" not in context:
-        fail("cowsay banner is missing from additional_context")
+        fail("context banner is missing from additional_context")
     prd = (ROOT / "docs" / "PRD.md").read_text(encoding="utf-8")
     if prd.strip() and prd.splitlines()[0] not in context:
         fail("PRD.md body is missing from additional_context")
@@ -105,7 +105,7 @@ def test_repo_payload_contains_cowsay_and_discovered_files() -> None:
         fail("an ADR filename header is missing")
     if f"===== {sample_doc.relative_to(ROOT).as_posix()} =====" not in context:
         fail("a docs/ filename header is missing")
-    ok("payload has cowsay, PRD, discovered ADRs, and discovered docs")
+    ok("payload has the banner, PRD, discovered ADRs, and discovered docs")
 
 
 def main() -> int:
@@ -118,7 +118,7 @@ def main() -> int:
     tests = [
         test_hook_is_registered_first,
         test_paths_are_discovered_not_hardcoded,
-        test_repo_payload_contains_cowsay_and_discovered_files,
+        test_repo_payload_contains_banner_and_discovered_files,
     ]
     failed = 0
     for fn in tests:

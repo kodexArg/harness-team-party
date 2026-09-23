@@ -1,31 +1,29 @@
-# Harness Overview
+# Repository layout
 
-> Architecture, tooling, and organization of this agentic development harness.
+> Where the code, docs, and checks live.
 
-## 1. Repository Structure
+## 1. Tree
 
-- **`docs/`**: Core specifications, architecture, and developer documentation.
-  - `PRD.md`: Product constitution, user requirements, and acceptance criteria (**WHAT & WHY**).
-  - `INTERFACES.md`: Explicit API and route catalog (**WHAT**).
-  - `ARCHITECTURE.md`: Technical architecture across services, persistence, auth, and infrastructure.
-  - `TESTING.md`: Automated test guidelines and quality standards.
-  - `GITHUB.md`: Git branching, commit guidelines, and PR workflow.
-  - `SETUP.md`: Quickstart and project instantiation.
-- **`adrs/`**: Architectural Decision Records documenting significant technical choices.
-- **`skills/`**: Specialized procedures and tools.
-- **`agents/`**: Agent role definitions and tool configurations.
-- **`tests/`**: Automated test suite for the harness and product.
+- **`docs/`**: specifications for this repository.
+  - `PRD.md`: purpose and acceptance.
+  - `INTERFACES.md`: skills, scripts, and MCP entry points.
+  - `ARCHITECTURE.md`: how the tree is put together.
+  - `TESTING.md`: how tests are run.
+  - `GITHUB.md`: branches, commits, and pull requests.
+  - `SETUP.md`: clone and local setup.
+- **`adrs/`**: settled technical decisions.
+- **`skills/`**: procedures and the scripts they call.
+- **`tests/`**: automated checks for this tree.
+- **`mcp/`**: MCP server declarations.
 
-## 2. Tools & Graph Navigation
+## 2. Graph navigation
 
-- **Graphify:** Repository knowledge graph for structural navigation before grepping code.
-  - `skills/kskill-graphify/bin/ensure`: Ensures Graphify CLI and graph state.
-  - Project MCP server in `.mcp.json` provides graph query tools (`query_graph`, `get_node`, `get_neighbors`).
+- **Graphify:** code graph used before grepping.
+  - `skills/kskill-graphify/bin/ensure`: installs the CLI and builds `graph.json` when it is missing.
+  - Project MCP server in `.mcp.json` exposes `query_graph`, `get_node`, and `get_neighbors`.
 
 | Tool | Path | Description | Status |
 |---|---|---|---|
 | `kskill-graphify` | `skills/kskill-graphify` | Knowledge graph navigation skill | active |
 
-- **Tests & Verification:**
-
-  - Fast test execution via standard runners: `uv run --with pytest pytest tests/`.
+Run tests with `uv run --with pytest pytest tests/`.
